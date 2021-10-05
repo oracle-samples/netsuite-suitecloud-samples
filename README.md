@@ -5,21 +5,21 @@ This SuiteScript sample is designed to process partially fulfilled sales orders 
 
 The sample starts by identifying sales order records that have a status of Pending Billing/Partially Fulfilled.
 
-<img alt="sales order.png" class="js-lazy-loaded qa-js-lazy-loaded" src="https://gitpub.eng.netsuite.com/platform-suitescript/code-samples/-/raw/patch-1/assets/sales%20order.png" loading="lazy">
+<img alt="sales order.png" class="js-lazy-loaded qa-js-lazy-loaded" src="assets/sales order.png" loading="lazy">
 
 The sample then checks the quantity of back ordered items on these sales order records.
 
-<img alt="sales order record.png" class="js-lazy-loaded qa-js-lazy-loaded" src="https://gitpub.eng.netsuite.com/platform-suitescript/code-samples/-/raw/patch-1/assets/sales%20order%20record.png" loading="lazy">
+<img alt="sales order record.png" class="js-lazy-loaded qa-js-lazy-loaded" src="assets/sales order record.png" loading="lazy">
 
 If the quantity of back ordered items is greater than zero, the sample obtains the item fulfillment record that is associated with the sales order and updates the item quantity on that record. The item quantity is updated by adding the existing item quantity (from the item fulfillment record) to the back ordered item quantity (from the sales order).
 
-<img alt="bak order before.png" class="js-lazy-loaded qa-js-lazy-loaded" src="https://gitpub.eng.netsuite.com/platform-suitescript/code-samples/-/raw/patch-1/assets/bak%20order%20before.png" loading="lazy">
+<img alt="back order before.png" class="js-lazy-loaded qa-js-lazy-loaded" src="assets/bak order before.png" loading="lazy">
 
-<img alt="back order after.png" class="js-lazy-loaded qa-js-lazy-loaded" src="https://gitpub.eng.netsuite.com/platform-suitescript/code-samples/-/raw/patch-1/assets/back%20order%20after.png" loading="lazy">
+<img alt="back order after.png" class="js-lazy-loaded qa-js-lazy-loaded" src="assets/back order after.png" loading="lazy">
 
 After the item quantities are updated for a sales order record, that record moves to the Pending Billing status.
 
-<img alt="updated sales order.png" class="js-lazy-loaded qa-js-lazy-loaded" src="https://gitpub.eng.netsuite.com/platform-suitescript/code-samples/-/raw/patch-1/assets/updated%20sales%20order.png" loading="lazy">
+<img alt="updated sales order.png" class="js-lazy-loaded qa-js-lazy-loaded" src="assets/updated sales order.png" loading="lazy">
 
 # Key Concepts
 This sample demonstrates the following concepts:
