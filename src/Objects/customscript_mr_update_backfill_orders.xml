@@ -1,0 +1,15 @@
+<mapreducescript scriptid="customscript_mr_update_backfill_orders">
+    <isinactive>F</isinactive>
+    <name>MR Update Backfill Orders</name>
+    <notifyowner>T</notifyowner>
+    <scriptfile>[/SuiteApps/com.netsuite.updatebackfillorders/updateBackfillOrders.js]</scriptfile>
+    <scriptdeployments>
+        <scriptdeployment scriptid="customdeploy_mr_update_backfill_orders">
+            <isdeployed>T</isdeployed>
+            <loglevel>DEBUG</loglevel>
+            <status>NOTSCHEDULED</status>
+            <yieldaftermins>60</yieldaftermins>
+            <title>MR Update Backfill Orders</title>
+        </scriptdeployment>
+    </scriptdeployments>
+</mapreducescript>

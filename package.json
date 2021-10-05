@@ -1,0 +1,30 @@
+{
+  "name": "updatebackfillorders",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@oracle/suitecloud-unit-testing": "^1.1.0",
+    "N": "^0.1.0",
+    "eslint": "^6.8.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "jest": "^25.5.4",
+    "standard": "^14.3.4"
+  },
+  "dependencies": {
+    "@jest/globals": "^26.5.3"
+  },
+  "main": "jest.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git@gitpub.eng.netsuite.com:platform-suitescript/code-samples.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
