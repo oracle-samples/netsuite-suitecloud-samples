@@ -31,7 +31,7 @@ SuiteCloud Customization Tutorials - https://docs.oracle.com/en/cloud/saas/netsu
 
 ## Contributing
 
-SuiteScript samples are open source projects. Pull Requests are currently not being accepted. See CONTRIBUTING for details.
+SuiteScript samples are open source projects. Pull Requests are currently not being accepted. See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
 
 ## Security
 
