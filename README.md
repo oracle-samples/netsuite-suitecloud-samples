@@ -15,7 +15,7 @@ This repository holds a variety of sample projects meant to demonstrate the ways
 
 ## Installation
 
-You can download this complete project as a SDF account customization project. After you download the project, open it using an IDE that offers the NetSuite SuiteCloud IDE Plug-In or Extension, such as WebStorm or Visual Studio Code. In the IDE, you can see each of the customization objects (the scripts, custom fields, and saved search) represented as an XML file. Using the SuiteCloud IDE Plug-In or Extension, you can then choose to deploy the entire solution to your account for testing.
+You can download a folder as a complete SDF account customization project. After you download the project, you can either open it using an IDE that offers the NetSuite SuiteCloud IDE Plug-In or Extension, such as WebStorm or Visual Studio Code, or you can connect it to a NetSuite account using Node CLI or Java CLI. In the IDE, you can see each of the customization objects (the scripts, custom fields, and saved search) represented as an XML file. Using the SuiteCloud IDE Plug-In or Extension, you can then choose to deploy the entire solution to your account for testing.
 
 While the script deployments in the project default to Testing mode, the custom fields and saved search may be visible to others in your account. Use caution when choosing the NetSuite account and account type to download and test.
 
@@ -28,10 +28,10 @@ For information about deploying the project from the IDE to your account, see:
 
 ## Documentation
 
-SuiteCloud Platform Customization - https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/chapter_1529088392.html
-SuiteCloud Plug-Ins and Extensions  - https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_156026287422.html
-SuiteCloud CLI - https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_156026261619.html  
-SuiteScript 2.1 - https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/chapter_156042690639.html
+NetSuite's online documentation can be found in the Oracle Help Center at [docs.oracle.com](docs.oracle.com). The platform documentation can be found here: 
+- SuiteCloud Platform Customization - https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/chapter_1529088392.html
+
+User guides in downloadable PDF format for NetSuite are listed here: https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/preface_3710621755.html 
 
 ## Examples
 
