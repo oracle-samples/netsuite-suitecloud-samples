@@ -1,0 +1,24 @@
+<manifest projecttype="ACCOUNTCUSTOMIZATION">
+  <projectname>Deposit Tracking</projectname>
+  <frameworkversion>1.0</frameworkversion>
+  <dependencies>
+    <features>
+      <feature required="true">SERVERSIDESCRIPTING</feature>
+      <feature required="false">WEBSTORE</feature>
+      <feature required="true">ADVRECEIVING</feature>
+      <feature required="false">ASSEMBLIES</feature>
+      <feature required="false">INVENTORY</feature>
+      <feature required="false">PAYABLES</feature>
+      <feature required="true">RECEIVABLES</feature>
+      <feature required="true">ACCOUNTING</feature>
+      <feature required="true">SALESORDERS</feature>
+      <feature required="true">ADVSHIPPING</feature>
+      <feature required="false">EXPREPORTS</feature>
+      <feature required="false">OPPORTUNITIES</feature>
+      <feature required="true">CRM</feature>
+    </features>
+    <files>
+      <file>/SuiteScripts/ue_update_custom_fields.js</file>
+    </files>
+  </dependencies>
+</manifest>
