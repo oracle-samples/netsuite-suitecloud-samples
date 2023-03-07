@@ -1,5 +1,3 @@
-<p align="center"><a href="#"><img width="250" src="assets/oracle_netsuite_logo.png"></a></p>
-
 # Summary
 This script validates an order to make sure that the number of items in the order corresponds to the number of cases of that item that can fit on a pallet (i.e., only accept orders fulfilled by full cases), and verifies that the total weight of the order does not exceed the maximum allowed weight for a single order.
 
