@@ -1,0 +1,22 @@
+<manifest projecttype="ACCOUNTCUSTOMIZATION">
+  <projectname>Validate Order on Entry</projectname>
+  <frameworkversion>1.0</frameworkversion>
+  <dependencies>
+    <features>
+      <feature required="false">EXPREPORTS</feature>
+      <feature required="false">WEBSITE</feature>
+      <feature required="false">ADVRECEIVING</feature>
+      <feature required="true">SERVERSIDESCRIPTING</feature>
+      <feature required="false">MULTILOCINVT</feature>
+      <feature required="false">OPPORTUNITIES</feature>
+      <feature required="false">PAYCHECKJOURNAL</feature>
+      <feature required="false">ACCOUNTING</feature>
+      <feature required="false">WORKORDERS</feature>
+      <feature required="false">TIMETRACKING</feature>
+      <feature required="false">CRM</feature>
+    </features>
+    <files>
+      <file>/SuiteScripts/cs_validateOrder.js</file>
+    </files>
+  </dependencies>
+</manifest>
