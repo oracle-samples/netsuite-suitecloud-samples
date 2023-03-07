@@ -1,0 +1,16 @@
+<!--
+  ~ Copyright (c) 2021 Oracle and/or its affiliates.
+  ~ Licensed under the Universal Permissive License v 1.0 as shown at https://oss.oracle.com/licenses/upl/
+  ~
+  -->
+
+<!-- This file is used for hiding the content of your SuiteApp when deploying to a NetSuite account. -->
+<!-- The configuration below hides all content except for the files and objects specified under the apply tag. Use the commented lines as examples. -->
+<!-- The content protection is only applied when the "Apply Content Protection" option is provided through SuiteCloud SDK. Otherwise this file is ignored. -->
+<!-- For more information, see https://system.netsuite.com/app/help/helpcenter.nl?fid=section_1515950176.html -->
+
+<preference type="HIDING" defaultAction="HIDE">
+    <apply action="UNHIDE">
+        <!-- <path>~/FileCabinet/SuiteApps/xxx.xxx.xxx/MyScript.js</path> -->
+    </apply>
+</preference>
