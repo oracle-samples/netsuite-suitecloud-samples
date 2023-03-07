@@ -1,0 +1,14 @@
+<customlist scriptid="customlist102">
+  <description></description>
+  <isinactive>F</isinactive>
+  <ismatrixoption>F</ismatrixoption>
+  <isordered>T</isordered>
+  <name>Billing Items</name>
+  <customvalues>
+    <customvalue scriptid="val_81370_t2484080_998">
+      <abbreviation>7</abbreviation>
+      <isinactive>F</isinactive>
+      <value>704875</value>
+    </customvalue>
+  </customvalues>
+</customlist>
