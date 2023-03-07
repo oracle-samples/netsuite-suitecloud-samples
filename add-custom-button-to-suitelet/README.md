@@ -1,5 +1,3 @@
-<p align="center"><a href="#"><img width="250" src="assets/oracle_netsuite_logo.png"></a></p>
-
 # Summary
 This SuiteScript sample adds a custom button to the sales order form if the status of the sales order record is Pending Fulfillment. When the user clicks the new button, a window is displayed for the Suitelet. 
 
