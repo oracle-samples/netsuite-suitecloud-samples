@@ -1,0 +1,16 @@
+<manifest projecttype="ACCOUNTCUSTOMIZATION">
+  <projectname>Set Default Values in a Sublist</projectname>
+  <frameworkversion>1.0</frameworkversion>
+  <dependencies>
+    <features>
+      <feature required="true">CLASSES</feature>
+      <feature required="false">WEBSITE</feature>
+      <feature required="true">SERVERSIDESCRIPTING</feature>
+      <feature required="true">DEPARTMENTS</feature>
+      <feature required="false">CRM</feature>
+      <feature required="false">JOBS</feature>
+      <feature required="false">ADVANCEDJOBS</feature>
+      <feature required="false">ACCOUNTING</feature>
+    </features>
+  </dependencies>
+</manifest>
