@@ -1,0 +1,101 @@
+<manifest projecttype="ACCOUNTCUSTOMIZATION">
+  <projectname>Copy a Value to the Item Column</projectname>
+  <frameworkversion>1.0</frameworkversion>
+  <dependencies>
+    <features>
+      <feature required="true">SERVERSIDESCRIPTING</feature>
+      <feature required="false">WEBSTORE</feature>
+      <feature required="true">ADVRECEIVING</feature>
+      <feature required="false">ASSEMBLIES</feature>
+      <feature required="false">INVENTORY</feature>
+      <feature required="false">PAYABLES</feature>
+      <feature required="true">RECEIVABLES</feature>
+      <feature required="true">ACCOUNTING</feature>
+      <feature required="true">SALESORDERS</feature>
+      <feature required="true">ADVSHIPPING</feature>
+      <feature required="false">EXPREPORTS</feature>
+      <feature required="true">CRM</feature>
+      <feature required="false">WEBSITE</feature>
+      <feature required="false">MULTILOCINVT</feature>
+      <feature required="false">PAYCHECKJOURNAL</feature>
+      <feature required="false">WORKORDERS</feature>
+      <feature required="false">TIMETRACKING</feature>
+      <feature required="true">DOWNLOADITEMS</feature>
+      <feature required="true">LOCATIONS</feature>
+      <feature required="false">ADVANCEDPRINTING</feature>
+      <feature required="true">MULTIBOOK</feature>
+      <feature required="true">ADVBINSERIALLOTMGMT</feature>
+      <feature required="true">DEPARTMENTS</feature>
+      <feature required="true">WORKFLOW</feature>
+      <feature required="true">PROMOCODES</feature>
+      <feature required="true">JOBS</feature>
+      <feature required="true">BUSINESS</feature>
+      <feature required="true">BILLSCOSTS</feature>
+      <feature required="true">ADVANCEDJOBS</feature>
+      <feature required="true">MULTICURRENCY</feature>
+      <feature required="true">CLASSES</feature>
+      <feature required="true">ACCOUNTINGPERIODS</feature>
+      <feature required="true">ITEMOPTIONS</feature>
+      <feature required="true">CHARGEBASEDBILLING</feature>
+      <feature required="true">GIFTCERTIFICATES</feature>
+      <feature required="true">MULTPRICE</feature>
+      <feature required="true">OPPORTUNITIES</feature>
+      <feature required="true">SUBSIDIARIES</feature>
+      <feature required="true">REVENUERECOGNITION</feature>
+      <feature required="true">UNITSOFMEASURE</feature>
+      <feature required="true">PARTNEREMPLOYEECOMMISSN</feature>
+      <feature required="false">MATRIXITEMS</feature>
+    </features>
+    <objects>
+      <object>custcol_salesorder_msrp</object>
+      <object>customlist102</object>
+      <object>custcol_cases_per_pallet</object>
+      <object>custbody_amount_remaining</object>
+      <object>customrole1005</object>
+      <object>customrole1049</object>
+      <object>customrole1027</object>
+      <object>customrole1026</object>
+      <object>customrole1048</object>
+      <object>customrole1025</object>
+      <object>customrole1047</object>
+      <object>customrole1003</object>
+      <object>customrole1046</object>
+      <object>customrole1024</object>
+      <object>customrole1029</object>
+      <object>custcol_item_weight</object>
+      <object>customrole1028</object>
+      <object>customrole1040</object>
+      <object>custbody_commission_amount</object>
+      <object>customrole1001</object>
+      <object>customrole1045</object>
+      <object>customrole1023</object>
+      <object>customrole1000</object>
+      <object>customrole1044</object>
+      <object>customrole1043</object>
+      <object>customrole1042</object>
+      <object>custbody_balance_remaining</object>
+      <object>custbody_total_deposit_paid</object>
+      <object>customrole1038</object>
+      <object>customrole1037</object>
+      <object>customrole1036</object>
+      <object>customrole1013</object>
+      <object>customrole1019</object>
+      <object>customrole1018</object>
+      <object>customrole1017</object>
+      <object>customrole1039</object>
+      <object>custbody5</object>
+      <object>customrole1030</object>
+      <object>customrole1052</object>
+      <object>customrole1050</object>
+      <object>customrole1034</object>
+      <object>customrole1012</object>
+      <object>custbody_marketing_order</object>
+      <object>customrole1033</object>
+      <object>customrole1010</object>
+      <object>customrole1031</object>
+    </objects>
+    <files>
+      <file>/SuiteScripts/cs_copyValueToltem.js</file>
+    </files>
+  </dependencies>
+</manifest>

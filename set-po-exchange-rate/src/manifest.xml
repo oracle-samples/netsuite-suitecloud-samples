@@ -1,0 +1,23 @@
+<manifest projecttype="ACCOUNTCUSTOMIZATION">
+  <projectname>Set PO Exchange Rate</projectname>
+  <frameworkversion>1.0</frameworkversion>
+  <dependencies>
+    <features>
+      <feature required="false">ASSEMBLIES</feature>
+      <feature required="false">EXPREPORTS</feature>
+      <feature required="false">ADVRECEIVING</feature>
+      <feature required="false">MULTILOCINVT</feature>
+      <feature required="false">INVENTORY</feature>
+      <feature required="false">CRM</feature>
+      <feature required="false">RECEIVABLES</feature>
+      <feature required="false">PAYABLES</feature>
+      <feature required="true">SERVERSIDESCRIPTING</feature>
+      <feature required="false">OPPORTUNITIES</feature>
+      <feature required="false">PAYCHECKJOURNAL</feature>
+      <feature required="false">ACCOUNTING</feature>
+      <feature required="false">WEBSTORE</feature>
+      <feature required="false">WORKORDERS</feature>
+      <feature required="true">MULTICURRENCY</feature>
+    </features>
+  </dependencies>
+</manifest>

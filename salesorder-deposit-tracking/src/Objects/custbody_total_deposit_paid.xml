@@ -1,0 +1,42 @@
+<transactionbodycustomfield scriptid="custbody_total_deposit_paid">
+  <accesslevel>2</accesslevel>
+  <applyformatting>T</applyformatting>
+  <bodyassemblybuild>F</bodyassemblybuild>
+  <bodycustomerpayment>F</bodycustomerpayment>
+  <bodydeposit>F</bodydeposit>
+  <bodydepositapplication>F</bodydepositapplication>
+  <bodyexpensereport>F</bodyexpensereport>
+  <bodyinventoryadjustment>F</bodyinventoryadjustment>
+  <bodyitemfulfillment>F</bodyitemfulfillment>
+  <bodyitemfulfillmentorder>F</bodyitemfulfillmentorder>
+  <bodyitemreceipt>F</bodyitemreceipt>
+  <bodyitemreceiptorder>F</bodyitemreceiptorder>
+  <bodyjournal>F</bodyjournal>
+  <bodyopportunity>F</bodyopportunity>
+  <bodyothertransaction>F</bodyothertransaction>
+  <bodypickingticket>F</bodypickingticket>
+  <bodyprintflag>F</bodyprintflag>
+  <bodyprintpackingslip>F</bodyprintpackingslip>
+  <bodyprintstatement>F</bodyprintstatement>
+  <bodypurchase>F</bodypurchase>
+  <bodysale>T</bodysale>
+  <bodystore>F</bodystore>
+  <bodyvendorpayment>F</bodyvendorpayment>
+  <checkspelling>F</checkspelling>
+  <defaultchecked>F</defaultchecked>
+  <description>This field is set by script to show the total amount deposited on a sales order.</description>
+  <displaytype>STATICTEXT</displaytype>
+  <encryptatrest>F</encryptatrest>
+  <fieldtype>CURRENCY</fieldtype>
+  <globalsearch>F</globalsearch>
+  <help>This field is set by script to show the total amount deposited on a sales order.</help>
+  <isformula>F</isformula>
+  <ismandatory>F</ismandatory>
+  <isparent>F</isparent>
+  <label>Amount Deposited</label>
+  <searchlevel>2</searchlevel>
+  <showhierarchy>F</showhierarchy>
+  <showinlist>F</showinlist>
+  <storevalue>T</storevalue>
+  <subtab>TRANSACTIONMAIN</subtab>
+</transactionbodycustomfield>
