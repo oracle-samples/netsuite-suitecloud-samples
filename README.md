@@ -4,11 +4,11 @@
 
 This repository holds a variety of sample projects meant to demonstrate the ways that account customization projects can be created on [NetSuite's SuiteCloud platform](https://www.netsuite.com/portal/platform.shtml). Each folder represents an independent project with its own README.md file for detailed descriptions of the use case and customization.  
 
-##Prerequisites
+## Prerequisites
 * You will need access to a NetSuite account that can be used with test data, such as a NetSuite sandbox account or trial/demo/training account.
 * You will need one of the following tools from the SuiteCloud Developer Toolkit:
     * [SuiteCloud Extension for Visual Stuido Code](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/article_159223155621.html) 
-    * [SuiteCloud PLug-in for Webstorm](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_1529431804.html) 
+    * [SuiteCloud Plug-in for Webstorm](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_1529431804.html) 
     * [SuiteCloud Node CLI](https://github.com/oracle/netsuite-suitecloud-sdk) 
     * [SuiteCloud Java CLI](https://github.com/oracle/netsuite-suitecloud-sdk) 
 * Existing knowledge of NetSuite, SuiteScript, and the SuiteCloud Development Framwork is helpful but not required.
