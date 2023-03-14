@@ -1,0 +1,64 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true,
+        "jest": true,
+        "amd": true
+    },
+    "extends": "eslint:recommended",
+    "overrides": [
+    ],
+    "parserOptions": {
+        "ecmaVersion": 9,
+        "sourceType": "module"
+    },
+    "rules": {
+        "indent": [
+            "error",
+            4
+        ],
+        "quotes": [
+            "error",
+            "single"
+        ],
+        "semi": [
+            "error",
+            "always"
+        ],
+        "prefer-const": [
+            "error", {
+                "destructuring": "any",
+                "ignoreReadBeforeAssign": false
+            }
+        ],
+        "no-trailing-spaces": "off",
+        "require-jsdoc": "warn",
+        "no-var": "error",
+        "no-duplicate-imports": "error",
+        "no-label-var": "error",
+        "no-unsafe-finally": "error",
+        "no-unused-vars": "error",
+        "no-undef-init": "error",
+        "max-len": [
+            "error", { 
+                "code": 80, 
+                "tabWidth": 4
+            }
+        ],
+        "prefer-arrow-callback": "error",
+        "max-lines": [
+            "error", 
+            500
+        ],
+        "function-call-argument-newline": [
+            "error", 
+            "never"
+        ],
+        "array-element-newline": [
+            "error", 
+            "never"
+        ],
+        "vars-on-top": "error",
+        "linebreak-style":"off"
+    }
+}
