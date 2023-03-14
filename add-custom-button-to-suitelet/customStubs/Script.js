@@ -1,7 +1,7 @@
 define([], () => {
-  const Script = () => {}
+    const Script = () => {};
     
-  Script.prototype.getParameter = () => {}
+    Script.prototype.getParameter = () => {};
   
-  return new Script()
-})
+    return new Script();
+});
