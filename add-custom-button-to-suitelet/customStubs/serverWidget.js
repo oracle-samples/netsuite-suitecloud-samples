@@ -1,10 +1,9 @@
-/* eslint-disable new-cap */
 define(['./Form', './Button'], (Form, Button) => {
-  const serverWidget = () => {}
+    const serverWidget = () => {};
 
-  serverWidget.prototype.createForm = () => {}
-  serverWidget.prototype.createAssistant = () => {}
-  serverWidget.prototype.createList = () => {}
+    serverWidget.prototype.createForm = () => {};
+    serverWidget.prototype.createAssistant = () => {};
+    serverWidget.prototype.createList = () => {};
   
-  return new serverWidget()
-})
+    return new serverWidget();
+});
