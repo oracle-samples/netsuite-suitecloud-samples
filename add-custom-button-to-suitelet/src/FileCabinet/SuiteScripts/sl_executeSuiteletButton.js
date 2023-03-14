@@ -18,27 +18,27 @@ define(['N/runtime', 'N/log'], (runtime, log) => {
       const recCurrent = scriptContext.newRecord
       const objForm = scriptContext.form
       const stStatus = recCurrent.getValue({
-        'fieldId': 'status'
+        fieldId: 'status'
       })
       const stSuiteletLinkParam = runtime.getCurrentScript().getParameter({
-        'name': 'custscript_suiteletlink'
+        name: 'custscript_suiteletlink'
       })
       const suiteletURL = '"' + stSuiteletLinkParam + '"'
       if (stStatus === 'Pending Fulfillment') {
         objForm.addButton({
-          'id': 'custpage_suiteletbutton',
-          'label': 'Open Suitelet',
-          'functionName': 'window.open(' + suiteletURL + ')'
+          id: 'custpage_suiteletbutton',
+          label: 'Open Suitelet',
+          functionName: 'window.open(' + suiteletURL + ')'
         })
       }
     } catch (error) {
       log.error({
-        'title': 'beforeLoad_addButton',
-        'details': error.message
+        title: 'beforeLoad_addButton',
+        details: error.message
       })
     }
   }
   return {
-    'beforeLoad': beforeLoad
+    beforeLoad: beforeLoad
   }
 })
