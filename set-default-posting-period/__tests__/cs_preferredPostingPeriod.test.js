@@ -39,8 +39,8 @@ describe('Set default posting period test', () => {
     expect(Search.run).toHaveBeenCalled()
     expect(CurrentRecord.setValue).toHaveBeenCalledTimes(2)
     expect(ResultSet.getRange).toHaveBeenCalledWith({ 
-      'start': 0, 
-      'end': 1 
+      start: 0, 
+      end: 1 
     })
   })
   it('Should test pageInit function for error', () => {
@@ -76,12 +76,12 @@ describe('Set default posting period test', () => {
 
     // then
     expect(CurrentRecord.getValue).toHaveBeenCalledWith({ 
-      'fieldId': 'custbody_preferred_posting_period' 
+      fieldId: 'custbody_preferred_posting_period' 
     })
 
     expect(CurrentRecord.setValue).toHaveBeenCalledWith({ 
-      'fieldId': 'postingperiod', 
-      'value': 5 
+      fieldId: 'postingperiod', 
+      value: 5 
     })
   })
   it('Should test context.fieldId param - line 37', () => {
