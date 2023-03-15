@@ -1,7 +1,7 @@
 define([], () => {
-    const log = () => {};
+  const log = () => {}
 
-    log.prototype.error = () => {};
+  log.prototype.error = () => {}
 
-    return new log();
-});
+  return new log()
+})
