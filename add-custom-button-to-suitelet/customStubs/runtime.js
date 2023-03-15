@@ -1,7 +1,7 @@
 define(['./Script'], (Script) => {
-    const runtime = () => {};
+  const runtime = () => {}
     
-    runtime.prototype.getCurrentScript = () => {};
+  runtime.prototype.getCurrentScript = () => {}
   
-    return new runtime();
-});
+  return new runtime()
+})
