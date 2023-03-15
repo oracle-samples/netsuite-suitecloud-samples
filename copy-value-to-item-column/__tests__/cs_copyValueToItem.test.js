@@ -57,8 +57,8 @@ describe('Copy to a Value to Item test', () => {
 
     // then
     expect(CurrentRecord.getCurrentSublistText).toHaveBeenCalledWith({ 
-      'sublistId': context.sublistId, 
-      'fieldId': context.fieldId 
+      sublistId: context.sublistId, 
+      fieldId: context.fieldId 
     })
     expect(context.currentRecord).toBeDefined()
   }) 
