@@ -18,12 +18,12 @@ define(['N/runtime', 'N/log'], (runtime, log) => {
       const stFuncName = '_DisableTaxField_' + stRecordType
       if (scriptContext.mode !== 'copy') {
         const objContext = runtime.getCurrentScript()
-        const stExclusionRoleList = objContext.getParameter({
-          name: 'custscript_exclusion_role_list'
+        const stAllowList = objContext.getParameter({
+          name: 'custscript_tax_allowlist'
         })
         const stUserRole = runtime.getCurrentUser().role
-        const arrExclusionRoleList = stExclusionRoleList.split(',')
-        if (NSUtil.isEmpty(stExclusionRoleList)) {
+        const arrExclusionRoleList = stAllowList.split(',')
+        if (NSUtil.isEmpty(stAllowList)) {
           log.error({
             title: stFuncName,
             details: 'Script parameter is empty. Script will now exit'
