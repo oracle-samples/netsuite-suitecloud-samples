@@ -15,10 +15,10 @@ beforeEach(() => {
 })
 
 const context = {
-  'UserEventType': {
-    'CREATE': 'CREATE',
-    'EDIT': 'EDIT',
-    'VIEW': 'VIEW'
+  UserEventType: {
+    CREATE: 'CREATE',
+    EDIT: 'EDIT',
+    VIEW: 'VIEW'
   }
 }
 
@@ -47,7 +47,7 @@ describe('Hide a sublist column UES test', () => {
     
     // enums used 
     serverWidget.FieldDisplayType = {
-      'HIDDEN': 'HIDDEN'
+      HIDDEN: 'HIDDEN'
     }
 
     const mySublistId = 'item'
@@ -57,8 +57,8 @@ describe('Hide a sublist column UES test', () => {
     script.beforeLoad(context)
 
     // then
-    expect(Form.getSublist).toHaveBeenCalledWith({ 'id': mySublistId })
-    expect(Sublist.getField).toHaveBeenCalledWith({ 'id': myFieldId })
-    expect(Field.updateDisplayType).toBeCalledWith({ 'displayType': 'HIDDEN' })
+    expect(Form.getSublist).toHaveBeenCalledWith({ id: mySublistId })
+    expect(Sublist.getField).toHaveBeenCalledWith({ id: myFieldId })
+    expect(Field.updateDisplayType).toBeCalledWith({ displayType: 'HIDDEN' })
   })
 })
