@@ -1,9 +1,3 @@
-/*
- * Copyright (c) 2021 Oracle and/or its affiliates.
- * Licensed under the Universal Permissive License v 1.0 as shown at https://oss.oracle.com/licenses/upl/
- *
- */
-
 /**
  * @NApiVersion 2.1
  * @NScriptType UserEventScript
@@ -33,26 +27,26 @@ define(['N/record', 'N/log', 'N/error'], (record, log, error) => {
       let flQuantity = 0.00
       const recSalesOrder = scriptContext.newRecord
       const flSubtotal = parseFloat(recSalesOrder.getValue({
-        'fieldId': 'subtotal'
+        fieldId: 'subtotal'
       }))
       const numItems = recSalesOrder.getLineCount({
-        'sublistId': 'item'
+        sublistId: 'item'
       })
       for (let intLinenum = 0; intLinenum < numItems; intLinenum++) {
         flMSRPAmt = parseFloat(recSalesOrder.getSublistValue({
-          'sublistId': 'item',
-          'fieldId': 'custcol_salesorder_msrp',
-          'line': intLinenum
+          sublistId: 'item',
+          fieldId: 'custcol_salesorder_msrp',
+          line: intLinenum
         }))
         flQuantity = parseFloat(recSalesOrder.getSublistValue({
-          'sublistId': 'item',
-          'fieldId': 'quantity',
-          'line': intLinenum
+          sublistId: 'item',
+          fieldId: 'quantity',
+          line: intLinenum
         }))
         stItemType = recSalesOrder.getSublistValue({
-          'sublistId': 'item',
-          'fieldId': 'itemtype',
-          'line': intLinenum
+          sublistId: 'item',
+          fieldId: 'itemtype',
+          line: intLinenum
         })
         if ((stItemType !== 'Discount' && stItemType !== 'Subtotal') &&
          (stItemType !== 'Markup')) {
@@ -75,38 +69,38 @@ define(['N/record', 'N/log', 'N/error'], (record, log, error) => {
       }
       const thisSalesOrderID = recSalesOrder.id
       const updateSalesOrder = record.load({
-        'type': record.Type.SALES_ORDER,
-        'id': thisSalesOrderID
+        type: record.Type.SALES_ORDER,
+        id: thisSalesOrderID
       })
       updateSalesOrder.setValue({
-        'fieldId': 'custbody_commission_amount',
-        'value': flCommissionAmount
+        fieldId: 'custbody_commission_amount',
+        value: flCommissionAmount
       })
       updateSalesOrder.save()
     } catch (e) {
       log.debug({
-        'title': stMethodName,
-        'details': ' - Exit (Catch)- '
+        title: stMethodName,
+        details: ' - Exit (Catch)- '
       })
-      if (e.getDetails !== undefined) {
+      if (e !== undefined) {
         log.error({
-          'title': 'Process Error',
-          'details': e.getCode() + ': ' + e.getDetails()
+          title: 'Process Error',
+          details: e
         })
         throw e
       } else {
         log.error({
-          'title': 'Unexpected Error',
-          'details': e.toString()
+          title: 'Unexpected Error',
+          details: e
         })
         throw error.create({
-          'name': 'Unexpected Error',
-          'message': e.toString()
+          name: 'Unexpected Error',
+          message: e
         })
       }
     }
   }
   return {
-    'afterSubmit': afterSubmit
+    afterSubmit: afterSubmit
   }
 })
