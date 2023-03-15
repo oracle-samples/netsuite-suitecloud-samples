@@ -21,15 +21,15 @@ beforeEach(() => {
 const scriptContext = {}
 
 record.Type = {
-  'CUSTOMER_REFUND': 'CUSTOMER_REFUND'
+  CUSTOMER_REFUND: 'CUSTOMER_REFUND'
 }
 
 search.Type = {
-  'DEPOSIT_APPLICATION': 'DEPOSIT_APPLICATION'
+  DEPOSIT_APPLICATION: 'DEPOSIT_APPLICATION'
 }
 
 search.Summary = {
-  'SUM': 'SUM'
+  SUM: 'SUM'
 }
 
 describe('UserEventScript - Handle Refund test', () => {
@@ -57,8 +57,8 @@ describe('UserEventScript - Handle Refund test', () => {
     {
       'createdfrom.salesorder': 
         [{
-          'values': 325,
-          'text': 5
+          values: 325,
+          text: 5
         }]
     }
 
