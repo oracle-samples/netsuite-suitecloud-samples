@@ -1,4 +1,3 @@
-/* eslint-disable camelcase */
 import script from '../src/FileCabinet/SuiteScripts/cs_defaultSublistValues'
 
 import CurrentRecord from 'N/currentRecord/instance'
@@ -16,7 +15,7 @@ const scriptContext = {}
 
 // enums used
 search.Type = {
-  'VENDOR': 'VENDOR'
+  VENDOR: 'VENDOR'
 }
 
 describe('Set default sublist values test', () => {
@@ -47,15 +46,15 @@ describe('Set default sublist values test', () => {
     })
 
     const vendorLookup = {
-      'custentity_custom_department': 
+      custentity_custom_department: 
         [{
-          'value': 4,
-          'text': 'company'
+          value: 4,
+          text: 'company'
         }],
-      'custentity_custom_class':
+      custentity_custom_class:
         [{
-          'value': 5,
-          'text': 'new company'
+          value: 5,
+          text: 'new company'
         }]
     }
     search.lookupFields.mockReturnValue(vendorLookup)
