@@ -1,9 +1,9 @@
 define([], () => {
-    const Form = () => {};
+  const Form = () => {}
     
-    Form.prototype.getSublist = () => {};
-    Form.prototype.getField = () => {};   
-    Form.prototype.addButton = () => {};
+  Form.prototype.getSublist = () => {}
+  Form.prototype.getField = () => {}   
+  Form.prototype.addButton = () => {}
   
-    return new Form();
-});
+  return new Form()
+})
