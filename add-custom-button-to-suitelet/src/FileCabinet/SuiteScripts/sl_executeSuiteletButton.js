@@ -21,9 +21,9 @@ define(['N/runtime', 'N/log'], (runtime, log) => {
         fieldId: 'status'
       })
       const stSuiteletLinkParam = 
-              runtime.getCurrentScript().getParameter({
-                name: 'custscript_suiteletlink'
-              })
+      runtime.getCurrentScript().getParameter({
+        name: 'custscript_suiteletlink'
+      })
       const suiteletURL = '"' + stSuiteletLinkParam + '"'
       if (stStatus === 'Pending Fulfillment') {
         objForm.addButton({
