@@ -1,5 +1,6 @@
 define([], () => {
-    const Button = () => {};
+  const Button = () => {}
     
-    return new Button();
-});
+  return new Button()
+})
+
