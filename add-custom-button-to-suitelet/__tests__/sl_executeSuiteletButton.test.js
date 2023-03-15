@@ -27,7 +27,7 @@ const scriptContext = {
 
 describe('UserEventScript - Add a custom button to form', () => {
     it('Should pass if statement to successfully add button', () => {
-    // given
+        // given
         scriptContext.newRecord = Record;
         scriptContext.form = Form;
 
