@@ -1,64 +1,40 @@
 {
     "env": {
         "browser": true,
-        "es2021": true,
+        "es6": true,
         "jest": true,
         "amd": true
     },
-    "extends": "eslint:recommended",
-    "overrides": [
+    "extends": [
+        "standard"
     ],
+    "globals": {
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly"
+    },
     "parserOptions": {
-        "ecmaVersion": 9,
-        "sourceType": "module"
+        "ecmaVersion": 2018
     },
     "rules": {
-        "indent": [
-            "error",
-            4
-        ],
-        "quotes": [
-            "error",
-            "single"
-        ],
-        "semi": [
-            "error",
-            "always"
-        ],
-        "prefer-const": [
-            "error", {
-                "destructuring": "any",
-                "ignoreReadBeforeAssign": false
-            }
-        ],
+        "prefer-const": ["error", {
+            "destructuring": "any",
+            "ignoreReadBeforeAssign": false
+        }],
         "no-trailing-spaces": "off",
         "require-jsdoc": "warn",
         "no-var": "error",
         "no-duplicate-imports": "error",
         "no-label-var": "error",
         "no-unsafe-finally": "error",
+        "indent": "warn",
         "no-unused-vars": "error",
+        "quotes": "error",
         "no-undef-init": "error",
-        "max-len": [
-            "error", { 
-                "code": 80, 
-                "tabWidth": 4
-            }
-        ],
+        "max-len": ["error", { "code": 80, "tabWidth": 4 }],
         "prefer-arrow-callback": "error",
-        "max-lines": [
-            "error", 
-            500
-        ],
-        "function-call-argument-newline": [
-            "error", 
-            "never"
-        ],
-        "array-element-newline": [
-            "error", 
-            "never"
-        ],
-        "vars-on-top": "error",
-        "linebreak-style":"off"
+        "max-lines": ["error", 500],
+        "function-call-argument-newline": ["error", "never"],
+        "array-element-newline": ["error", "never"],
+        "vars-on-top": "error"
     }
 }
