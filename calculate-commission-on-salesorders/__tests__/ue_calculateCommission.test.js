@@ -10,15 +10,15 @@ beforeEach(() => {
 })
 
 const scriptContext = {
-  'UserEventType': {
-    'CREATE': 'CREATE',
-    'EDIT': 'EDIT',
-    'VIEW': 'VIEW'
+  UserEventType: {
+    CREATE: 'CREATE',
+    EDIT: 'EDIT',
+    VIEW: 'VIEW'
   }
 }
 
 record.Type = {
-  'SALES_ORDER': 'SALES_ORDER'
+  SALES_ORDER: 'SALES_ORDER'
 }
 
 describe('ue_calcuateCommission AfterSubmit Test', () => {
@@ -71,12 +71,12 @@ describe('ue_calcuateCommission AfterSubmit Test', () => {
 
     // then
     expect(record.load).toHaveBeenCalledWith({ 
-      'type': record.Type.SALES_ORDER, 
-      'id': salesOrderId 
+      type: record.Type.SALES_ORDER, 
+      id: salesOrderId 
     })
     expect(Record.setValue).toHaveBeenCalledWith({ 
-      'fieldId': 'custbody_commission_amount', 
-      'value': expectedCommissionAmount 
+      fieldId: 'custbody_commission_amount', 
+      value: expectedCommissionAmount 
     })
     expect(Record.save).toHaveBeenCalled()
     expect(Record.getSublistValue).toHaveBeenCalled()
@@ -114,8 +114,8 @@ describe('ue_calcuateCommission AfterSubmit Test', () => {
 
     // then
     expect(record.load).toHaveBeenCalledWith({ 
-      'type': record.Type.SALES_ORDER, 
-      'id': salesOrderId 
+      type: record.Type.SALES_ORDER, 
+      id: salesOrderId 
     })
     expect(Record.save).toHaveBeenCalled()
     expect(Record.getSublistValue).toHaveBeenCalled()
