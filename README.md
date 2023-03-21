@@ -7,7 +7,7 @@ This repository holds a variety of sample projects meant to demonstrate the ways
 ## Prerequisites
 * You will need access to a NetSuite account that can be used with test data, such as a NetSuite sandbox account or trial/demo/training account.
 * You will need one of the following tools from the SuiteCloud Developer Toolkit:
-    * [SuiteCloud Extension for Visual Stuido Code](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/article_159223155621.html) 
+    * [SuiteCloud Extension for Visual Studio Code](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/article_159223155621.html) 
     * [SuiteCloud Plug-in for Webstorm](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_1529431804.html) 
     * [SuiteCloud Node CLI](https://github.com/oracle/netsuite-suitecloud-sdk) 
     * [SuiteCloud Java CLI](https://github.com/oracle/netsuite-suitecloud-sdk) 
