@@ -15,15 +15,15 @@ define(['N/search', 'N/log'], (search, log) => {
     if (sublistVal === 'item' || sublistVal === 'expense') {
       const rec = scriptContext.currentRecord
       const vendorId = rec.getValue({
-        'fieldId': 'entity'
+        fieldId: 'entity'
       })
       if (vendorId === '') {
         return
       }
       const vendorLookup = search.lookupFields({
-        'type': search.Type.VENDOR,
-        'id': vendorId,
-        'columns': ['custentity_custom_department', 'custentity_custom_class']
+        type: search.Type.VENDOR,
+        id: vendorId,
+        columns: ['custentity_custom_department', 'custentity_custom_class']
       })
       let classVal = ''
       let deptVal = ''
@@ -31,26 +31,26 @@ define(['N/search', 'N/log'], (search, log) => {
       deptVal = vendorLookup.custentity_custom_department[0].value
       try {
         rec.setCurrentSublistValue({
-          'sublistId': sublistVal,
-          'fieldId': 'department',
-          'value': deptVal,
-          'ignoreFieldChange': true
+          sublistId: sublistVal,
+          fieldId: 'department',
+          value: deptVal,
+          ignoreFieldChange: true
         })
         rec.setCurrentSublistValue({
-          'sublistId': sublistVal,
-          'fieldId': 'class',
-          'value': classVal,
-          'ignoreFieldChange': true
+          sublistId: sublistVal,
+          fieldId: 'class',
+          value: classVal,
+          ignoreFieldChange: true
         })
       } catch (e) {
         log.debug({
-          'title': 'Unable to set record values',
-          'details': 'Unable to set record values for department and class'
+          title: 'Unable to set record values',
+          details: 'Unable to set record values for department and class'
         })
       }
     }
   }
   return {
-    'fieldChanged': fieldChanged
+    fieldChanged: fieldChanged
   }
 })

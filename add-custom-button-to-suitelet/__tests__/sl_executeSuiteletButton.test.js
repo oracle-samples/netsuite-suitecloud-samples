@@ -18,10 +18,10 @@ beforeEach(() => {
 })
 
 const scriptContext = {
-  'UserEventType': {
-    'CREATE': 'CREATE',
-    'EDIT': 'EDIT',
-    'VIEW': 'VIEW'
+  UserEventType: {
+    CREATE: 'CREATE',
+    EDIT: 'EDIT',
+    VIEW: 'VIEW'
   }
 }
 
@@ -45,15 +45,15 @@ describe('UserEventScript - Add a custom button to form', () => {
     script.beforeLoad(scriptContext)
 
     // then
-    expect(Record.getValue).toHaveBeenCalledWith({ 'fieldId': 'status' })
+    expect(Record.getValue).toHaveBeenCalledWith({ fieldId: 'status' })
     expect(runtime.getCurrentScript).toHaveBeenCalled()
     expect(Script.getParameter).toHaveBeenCalledWith({ 
-      'name': 'custscript_suiteletlink'
+      name: 'custscript_suiteletlink'
     })
     expect(Form.addButton).toHaveBeenCalledWith({ 
-      'id': 'custpage_suiteletbutton', 
-      'label': 'Open Suitelet', 
-      'functionName': 'window.open("3192")' 
+      id: 'custpage_suiteletbutton', 
+      label: 'Open Suitelet', 
+      functionName: 'window.open("3192")' 
     })
   })
 })

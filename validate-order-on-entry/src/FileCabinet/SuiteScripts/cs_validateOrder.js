@@ -1,9 +1,3 @@
-/*
- * Copyright (c) 2021 Oracle and/or its affiliates.
- * Licensed under the Universal Permissive License v 1.0 as shown at https://oss.oracle.com/licenses/upl/
- *
- */
-
 /**
  * @NApiVersion 2.1
  * @NScriptType ClientScript
@@ -20,24 +14,20 @@ define(['N/runtime', 'N/log'], (runtime, log) => {
     const recSalesOrder = scriptContext.currentRecord
     if (scriptContext.sublistId === 'item') {
       const casePerPallet = recSalesOrder.getCurrentSublistValue({
-        'sublistId': 'item',
-        'fieldId': 'custcol_cases_per_pallet'
+        sublistId: 'item',
+        fieldId: 'custcol_cases_per_pallet'
       })
-
       const quantity = recSalesOrder.getCurrentSublistValue({
-        'sublistId': 'item',
-        'fieldId': 'quantity'
+        sublistId: 'item',
+        fieldId: 'quantity'
       })
-
       if (quantity % casePerPallet !== 0) {
         alert(`Please order in multiples of: ${casePerPallet} Case/Pallet 
                 for this item.`)
         return false
-      } else {
-        return true
-      }
+      } 
+      return true
     }
-    return true
   }
   /**
    * @param {Object} scriptContext Holds values for execution contexts.
@@ -46,30 +36,30 @@ define(['N/runtime', 'N/log'], (runtime, log) => {
   function saveRecord (scriptContext) {
     const scriptObj = runtime.getCurrentScript()
     const weightParam = scriptObj.getParameter({
-      'name': 'custscript_max_weight'
+      name: 'custscript_max_weight'
     })
     if (NSUtil.isEmpty(weightParam)) {
       log.error({
-        'title': 'saveRecord',
-        'details': 'Max weight script parameter not defined'
+        title: 'saveRecord',
+        details: 'Max weight script parameter not defined'
       })
       return
     }
     const recSalesOrder = scriptContext.currentRecord
     const lineCount = recSalesOrder.getLineCount({
-      'sublistId': 'item'
+      sublistId: 'item'
     })
     let totalWeight = 0
     for (let i = 0; i < lineCount; i++) {
       const itemWeight = recSalesOrder.getSublistValue({
-        'sublistId': 'item',
-        'fieldId': 'custcol_item_weight',
-        'line': i
+        sublistId: 'item',
+        fieldId: 'custcol_item_weight',
+        line: i
       })
       const quantity = recSalesOrder.getSublistValue({
-        'sublistId': 'item',
-        'fieldId': 'quantity',
-        'line': i
+        sublistId: 'item',
+        fieldId: 'quantity',
+        line: i
       })
       const lineWeight = itemWeight * quantity
       totalWeight += lineWeight
@@ -95,7 +85,7 @@ define(['N/runtime', 'N/log'], (runtime, log) => {
     )
   }
   return {
-    'validateLine': validateLine,
-    'saveRecord': saveRecord
+    validateLine: validateLine,
+    saveRecord: saveRecord
   }
 })

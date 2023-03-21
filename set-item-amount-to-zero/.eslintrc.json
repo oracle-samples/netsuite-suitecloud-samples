@@ -35,7 +35,6 @@
         "max-lines": ["error", 500],
         "function-call-argument-newline": ["error", "never"],
         "array-element-newline": ["error", "never"],
-        "vars-on-top": "error",
-        "quote-props": ["error", "always"]
+        "vars-on-top": "error"
     }
 }

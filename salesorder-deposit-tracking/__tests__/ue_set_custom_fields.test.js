@@ -20,16 +20,16 @@ beforeEach(() => {
 })
 
 const scriptContext = {
-  'UserEventType': {
-    'CREATE': 'CREATE',
-    'EDIT': 'EDIT',
-    'VIEW': 'VIEW'
+  UserEventType: {
+    CREATE: 'CREATE',
+    EDIT: 'EDIT',
+    VIEW: 'VIEW'
   }
 }
 
 search.Summary = {
-  'GROUP': 'GROUP',
-  'SUM': 'SUM'
+  GROUP: 'GROUP',
+  SUM: 'SUM'
 }
 
 describe('UserEventScript Set Custom Fields test', () => {

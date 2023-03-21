@@ -1,9 +1,3 @@
-/*
- * Copyright (c) 2021 Oracle and/or its affiliates.
- * Licensed under the Universal Permissive License v 1.0 as shown at https://oss.oracle.com/licenses/upl/
- *
- */
-
 /**
  * @NApiVersion 2.1
  * @NScriptType ClientScript
@@ -18,7 +12,7 @@ define(['N/runtime', 'N/currency', 'N/log'], (runtime, currency, log) => {
   function saveRecord (context) {
     try {
       const stUserCurrency = runtime.getCurrentScript().getParameter({
-        'name': 'custscript_custom_currency_po_amount'
+        name: 'custscript_custom_currency_po_amount'
       })
       if (stUserCurrency === ' ' || stUserCurrency === null || 
       stUserCurrency === undefined) {
@@ -27,40 +21,40 @@ define(['N/runtime', 'N/currency', 'N/log'], (runtime, currency, log) => {
       }
       const purchaseOrder = context.currentRecord
       const stTranCurrency = purchaseOrder.getValue({
-        'fieldId': 'currency'
+        fieldId: 'currency'
       })
       const stTranDate = purchaseOrder.getValue({
-        'fieldId': 'trandate'
+        fieldId: 'trandate'
       })
       const stTotal = purchaseOrder.getValue({
-        'fieldId': 'total'
+        fieldId: 'total'
       })
       const flTotalAmount = parseFloat(stTotal)
       const exchangeRate = currency.exchangeRate({
-        'source': stTranCurrency,
-        'target': stUserCurrency,
-        'date': stTranDate
+        source: stTranCurrency,
+        target: stUserCurrency,
+        date: stTranDate
       })
       const flExchangeRate = parseFloat(exchangeRate)
       const flAmountInUserCurrency = parseFloat(flTotalAmount * flExchangeRate)
       purchaseOrder.setValue({
-        'fieldId': 'custbody_currency_exchange_rate',
-        'value': flExchangeRate
+        fieldId: 'custbody_currency_exchange_rate',
+        value: flExchangeRate
       })
       purchaseOrder.setValue({
-        'fieldId': 'custbody_currency_po_amount',
-        'value': flAmountInUserCurrency
+        fieldId: 'custbody_currency_po_amount',
+        value: flAmountInUserCurrency
       })
     } catch (e) {
-      if (e.getDetails !== undefined) {
+      if (e !== undefined) {
         log.error({
-          'title': 'Process Error',
-          'details': e
+          title: 'Process Error',
+          details: e
         })
       } else {
         log.error({
-          'title': 'Unexpected Error',
-          'details': e
+          title: 'Unexpected Error',
+          details: e
         })
       }
       throw (e)
@@ -68,6 +62,6 @@ define(['N/runtime', 'N/currency', 'N/log'], (runtime, currency, log) => {
     return true
   }
   return {
-    'saveRecord': saveRecord
+    saveRecord: saveRecord
   }
 })

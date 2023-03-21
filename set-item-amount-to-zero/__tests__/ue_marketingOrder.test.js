@@ -11,10 +11,10 @@ beforeEach(() => {
 })
 
 const context = {
-  'UserEventType': {
-    'CREATE': 'CREATE',
-    'EDIT': 'EDIT',
-    'VIEW': 'VIEW'
+  UserEventType: {
+    CREATE: 'CREATE',
+    EDIT: 'EDIT',
+    VIEW: 'VIEW'
   }
 }
 
@@ -59,18 +59,18 @@ describe('Set item amount to zero test', () => {
 
     // then
     expect(record.load).toHaveBeenCalledWith({ 
-      'id': mockRecordId, 
-      'type': mockRecordType, 
-      'isDynamic': true 
+      id: mockRecordId, 
+      type: mockRecordType, 
+      isDynamic: true 
     })
     expect(Record.selectLine).toHaveBeenCalledWith({ 
-      'sublistId': 'item', 
-      'line': 0 
+      sublistId: 'item', 
+      line: 0 
     })
     expect(Record.setCurrentSublistValue).toHaveBeenCalledWith({ 
-      'sublistId': 'item', 
-      'fieldId': 'amount', 
-      'value': setOrdertoZero 
+      sublistId: 'item', 
+      fieldId: 'amount', 
+      value: setOrdertoZero 
     })
     expect(Record.save).toHaveBeenCalled()
   })

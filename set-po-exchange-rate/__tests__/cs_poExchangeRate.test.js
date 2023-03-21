@@ -41,12 +41,12 @@ describe('Set purchase order exchange rate test', () => {
     // then
     expect(runtime.getCurrentScript).toHaveBeenCalled()
     expect(Script.getParameter).toHaveBeenCalledWith({ 
-      'name': 'custscript_custom_currency_po_amount' 
+      name: 'custscript_custom_currency_po_amount' 
     })
     expect(CurrentRecord.getValue).toHaveBeenCalled()
   }) 
   it('Should set stUserCur to undefined value', () => {
-    // given
+    // then
     try {
       runtime.getCurrentScript.mockReturnValue(Script)
       Script.getParameter.mockImplementation(options => 
@@ -58,7 +58,6 @@ describe('Set purchase order exchange rate test', () => {
       // when
       script.saveRecord(context)
     } catch (e) {
-      // then
       expect(() => 
         script.saveRecord(context)).toThrow(`Please enter a value for 
         Custom Currency at Home > User Preferences > Custom.`)

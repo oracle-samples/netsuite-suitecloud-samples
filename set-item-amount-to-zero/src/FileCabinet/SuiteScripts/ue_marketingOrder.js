@@ -20,41 +20,41 @@ define(['N/record', 'N/log'], (record, log) => {
       const recordID = currentRecord.id
       const recordType = currentRecord.type
       const objSalesOrder = record.load({
-        'type': recordType,
-        'id': recordID,
-        'isDynamic': true
+        type: recordType,
+        id: recordID,
+        isDynamic: true
       })
       const isMktgSalesOrder = objSalesOrder.getValue({
-        'fieldId': 'custbody_marketing_order'
+        fieldId: 'custbody_marketing_order'
       })
       if (isMktgSalesOrder) {
         const intItemLines = objSalesOrder.getLineCount({
-          'sublistId': 'item'
+          sublistId: 'item'
         })
         for (let i = 0; i < intItemLines; i++) {
           objSalesOrder.selectLine({
-            'sublistId': 'item',
-            'line': i
+            sublistId: 'item',
+            line: i
           })
           objSalesOrder.setCurrentSublistValue({
-            'sublistId': 'item',
-            'fieldId': 'amount',
-            'value': 0
+            sublistId: 'item',
+            fieldId: 'amount',
+            value: 0
           })
           objSalesOrder.commitLine({
-            'sublistId': 'item'
+            sublistId: 'item'
           })
         }
         objSalesOrder.save()
       }
     } catch (e) {
       log.error({
-        'title': 'marketing order script - afterSubmit',
-        'details': e
+        title: 'marketing order script - afterSubmit',
+        details: e
       })
     }
   }
   return {
-    'afterSubmit': afterSubmit
+    afterSubmit: afterSubmit
   }
 })

@@ -1,4 +1,3 @@
-/* eslint-disable new-cap */
 define(['./Script'], (Script) => {
   const runtime = () => {}
     

@@ -153,8 +153,8 @@ describe('Validate order test on entry test', () => {
 
     // then
     expect(log.error).toHaveBeenCalledWith({ 
-      'title': 'saveRecord', 
-      'details': 'Max weight script parameter not defined' 
+      title: 'saveRecord', 
+      details: 'Max weight script parameter not defined' 
     })
   })
 })

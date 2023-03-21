@@ -26,29 +26,29 @@ define(['N/ui/serverWidget', 'N/log'], (serverWidget, log) => {
   function hideColumnField (formObj, sublistId, fieldId) {
     try {
       const formSublist = formObj.getSublist({
-        'id': sublistId
+        id: sublistId
       })
       if (formSublist) {
         const formField = formSublist.getField({
-          'id': fieldId
+          id: fieldId
         })
         if (formField !== 'undefined' && formField !== null) {
           formField.updateDisplayType({
-            'displayType': serverWidget.FieldDisplayType.HIDDEN
+            displayType: serverWidget.FieldDisplayType.HIDDEN
           })
         }
       }
     } catch (error) {
       log.error({
-        'title': 'Error occurred when hiding field',
-        'details': JSON.stringify({
-          'sublistId': sublistId,
-          'fieldId': fieldId
+        title: 'Error occurred when hiding field',
+        details: JSON.stringify({
+          sublistId: sublistId,
+          fieldId: fieldId
         })
       })
     }
   }
   return {
-    'beforeLoad': beforeLoad
+    beforeLoad: beforeLoad
   }
 })

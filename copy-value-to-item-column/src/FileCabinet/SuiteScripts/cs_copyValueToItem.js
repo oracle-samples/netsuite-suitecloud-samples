@@ -18,25 +18,25 @@ define(['N/search'], (search) => {
       // Get UPC Code of Billing Item
       if (stCurrSublist === 'item' && stCurrField === 'custcol_billingitem') {
         const billingitem = recInvoice.getCurrentSublistText({
-          'sublistId': 'item',
-          'fieldId': 'custcol_billingitem'
+          sublistId: 'item',
+          fieldId: 'custcol_billingitem'
         })
         // Search for Item with Billing Item's UPC Code
         const itemSearch = search.create({
-          'type': 'noninventoryitem',
-          'filters': [
+          type: 'noninventoryitem',
+          filters: [
             ['upccode', 'is', billingitem]
           ],
-          'columns': [
+          columns: [
             'upccode', 'itemid'
           ]
         }).run()
         const result = itemSearch.getRange(0, 1)
         const itemName = result[0].getValue(itemSearch.columns[1])
         recInvoice.setCurrentSublistText({
-          'sublistId': 'item',
-          'fieldId': 'item',
-          'text': itemName
+          sublistId: 'item',
+          fieldId: 'item',
+          text: itemName
         })
       }
     } catch (e) {
@@ -44,6 +44,6 @@ define(['N/search'], (search) => {
     }
   }
   return {
-    'fieldChanged': fieldChanged
+    fieldChanged: fieldChanged
   }
 })

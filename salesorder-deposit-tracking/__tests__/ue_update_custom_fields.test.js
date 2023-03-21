@@ -21,21 +21,21 @@ beforeEach(() => {
 })
 
 const scriptContext = {
-  'UserEventType': {
-    'CREATE': 'CREATE',
-    'EDIT': 'EDIT',
-    'VIEW': 'VIEW',
-    'DELETE': 'DELETE'
+  UserEventType: {
+    CREATE: 'CREATE',
+    EDIT: 'EDIT',
+    VIEW: 'VIEW',
+    DELETE: 'DELETE'
   }
 }
 
 record.Type = {
-  'SALES_ORDER': 'SALES_ORDER'
+  SALES_ORDER: 'SALES_ORDER'
 }
 
 search.Summary = {
-  'GROUP': 'GROUP',
-  'SUM': 'SUM'
+  GROUP: 'GROUP',
+  SUM: 'SUM'
 }
 
 describe('UserEventScript Update Custom Field test', () => {

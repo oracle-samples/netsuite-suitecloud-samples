@@ -20,10 +20,10 @@ beforeEach(() => {
 })
 
 const scriptContext = {
-  'UserEventType': {
-    'CREATE': 'CREATE',
-    'EDIT': 'EDIT',
-    'VIEW': 'VIEW'
+  UserEventType: {
+    CREATE: 'CREATE',
+    EDIT: 'EDIT',
+    VIEW: 'VIEW'
   }
 }
 

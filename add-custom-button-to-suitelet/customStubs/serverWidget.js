@@ -1,4 +1,3 @@
-/* eslint-disable new-cap */
 define(['./Form', './Button'], (Form, Button) => {
   const serverWidget = () => {}
 
