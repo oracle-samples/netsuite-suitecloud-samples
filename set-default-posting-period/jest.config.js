@@ -1,5 +1,4 @@
-const SuiteCloudJestConfiguration = require(`@oracle/suitecloud-unit-testing/
- jest-configuration/SuiteCloudJestConfiguration`)
+const SuiteCloudJestConfiguration = require('@oracle/suitecloud-unit-testing/jest-configuration/SuiteCloudJestConfiguration')
 
 module.exports = SuiteCloudJestConfiguration.build({
   projectFolder: 'src',
