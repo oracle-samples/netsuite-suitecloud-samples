@@ -26,7 +26,7 @@ This sample uses a client script type with the following entry points:
 
 * `pageInit` - Defines the function that is executed after the page completes loading or when the form is reset.
 
-# Test the Solution for a role not allowed to edit tax fields
+# Test the Solution (for a role not allowed to edit tax fields)
 1. Log in with a role that is not specified in the script parameter. Make sure that the role has permission to edit sales transactions.
 2. Go to Transaction > Sales > Enter Sales Orders to create a new sales order.
 3. In the Customer field, select a U.S. customer.
@@ -35,8 +35,7 @@ This sample uses a client script type with the following entry points:
 6. If the subsidiary or customer is set up with default tax values, you should be able to save the sales order. Click Save.
 7. Edit the sales order that you created in the previous step. Verify that tax fields are still editable on edit mode.
 
-# Test the Solution for a role that is allowed to edit tax fields
-
+# Test the Solution (for a role that is allowed to edit tax fields)
 1. Log in with a role specified in the script parameter. 
 2. Go to Transaction > Sales > Enter Sales Orders to create a new sales order.
 3. In the Customer field, select a U.S. customer.
