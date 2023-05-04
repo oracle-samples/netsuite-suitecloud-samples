@@ -21,6 +21,14 @@ This sample uses a client script type with the following entry points:
 
 * `fieldChanged` - Defines the function that is executed when a field is changed by a user or client call.
 
+# Customization Details
+The customization for this use case includes:
+* A custom field (Billing Item) to select an item by UPC code
+* A custom list (Billing Items) to store products with UPC codes
+* An item record to test the implementation of UPC code selection
+* A custom form to be used as a custom billing item invoice
+* A client script triggered on the fieldChanged entry point
+
 # Test the Solution
 1. Go to Transactions > Sales > Create Invoices (Administrator) to create a new invoice.
 2.  In the Custom Form field, select your custom Billing Item Invoice form.
