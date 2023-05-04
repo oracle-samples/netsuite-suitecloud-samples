@@ -1,3 +1,5 @@
+// import script and modules used
+
 import script from '../src/FileCabinet/SuiteScripts/sl_executeSuiteletButton'
 
 import runtime from 'N/runtime'
@@ -26,13 +28,30 @@ const scriptContext = {
 }
 
 describe('UserEventScript - Add a custom button to form', () => {
-  it('Should pass if statement to successfully add button', () => {
+  it('Should not set button link', () => {
+    // given
+    scriptContext.newRecord = Record
+    scriptContext.form = Form
+
+    // set status to determine if script should set button link
+    const status = 'Billed'
+    Record.getValue.mockImplementation(options => 
+      options.fieldId === 'status' && status)
+
+    // when 
+    script.beforeLoad(scriptContext)
+
+    // then
+    expect(Form.addButton).not.toHaveBeenCalled()
+  })
+  it('Should successfully set button link', () => {
     // given
     scriptContext.newRecord = Record
     scriptContext.form = Form
 
     const stStatus = 'Pending Fulfillment'
-
+    
+    // set status to determine if script should set button link
     Record.getValue.mockImplementation(options => 
       options.fieldId === 'status' && stStatus)
 
