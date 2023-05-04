@@ -3,7 +3,7 @@ This customization shows how to control who can edit tax fields on sales transac
 
 Only the Administrator and users logged in using specific roles will have permission to edit tax fields. The sales transaction will be created as normal, and taxation will depend on how the customer and items are set up. 
 
-This customization uses a script parameter to determine which roles can edit tax fields. If the user is logged in with a role that is not an Administrator or a role that is not specified in the parameter, the script disables the tax fields. This is independent of whether the sale is taxable or not. The script in this tutorial disables the following tax fields for U.S. sales transactions: istaxable, taxitem, and taxrate.
+This customization uses a script parameter to determine which roles can edit tax fields. If the user is logged in with a role that is not an Administrator or a role that is not specified in the parameter, the script disables the tax fields. This is independent of whether the sale is taxable or not. The script in this tutorial disables the following tax fields for U.S. sales transactions: istaxable, taxitem, and taxrate. For more information about this customization project, see [Disable Tax Fields](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_157174758775.html).
 
 # Key Concepts
 This sample demonstrates the following concepts:
