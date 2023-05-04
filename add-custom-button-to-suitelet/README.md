@@ -23,6 +23,11 @@ This sample uses a user event script type with the following entry points:
 
 * `beforeLoad` – Defines the function that is executed before a record is loaded; that is, whenever a read operation occurs on a record, and prior to returning the record or page.
 
+# Customization Details
+The customization for this use case includes: 
+* A script parameter (Suitelet Link) to specify the Suitelet link.
+* A user event script triggered on the beforeLoad entry point.
+
 # Test the Solution
 1. Go to Transactions > Sales > Enter Sales Orders > List (Administrator).
 2. Click View next to a sales order that is in Pending Fulfillment status.
