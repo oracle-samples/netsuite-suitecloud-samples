@@ -1,3 +1,5 @@
+// import script and modules used
+
 import script from '../src/FileCabinet/SuiteScripts/cs_copyValueToItem'
 
 import CurrentRecord from 'N/currentRecord/instance'
@@ -23,6 +25,8 @@ describe('Copy to a Value to Item test', () => {
   it('Should not copy a value to item', () => {
     // given
     context.currentRecord = CurrentRecord
+    
+    // incorrect fieldId will not execute script
     context.fieldId = 'items'
     context.sublistId = 'custcol_billing'
 
