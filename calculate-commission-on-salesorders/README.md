@@ -27,9 +27,9 @@ This sample uses a user event script type with the following entry points:
 
 # Customization Details
 The customization for this use case includes:
-* A custom field (MSRP) to store the MSRP for an item.
-* A custom field (Custom Commission) to store the calculated commission.
-* A user event script triggered on the afterSubmit entry point.
+* A custom field (MSRP) to store the MSRP for an item
+* A custom field (Custom Commission) to store the calculated commission
+* A user event script triggered on the afterSubmit entry point
 
 # Test the Solution
 1. Go to Transactions > Sales > Enter Sales Orders (Administrator) to create a new sales order.
