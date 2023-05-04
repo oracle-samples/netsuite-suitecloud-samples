@@ -17,14 +17,17 @@ define(['N/runtime', 'N/log'], (runtime, log) => {
     try {
       const recCurrent = scriptContext.newRecord
       const objForm = scriptContext.form
+      // retrieves sales order status
       const stStatus = recCurrent.getValue({
         fieldId: 'status'
       })
+      // retrieves link defined in script parameter
       const stSuiteletLinkParam = 
       runtime.getCurrentScript().getParameter({
         name: 'custscript_suiteletlink'
       })
       const suiteletURL = '"' + stSuiteletLinkParam + '"'
+      // will set suitelet url of button if status is pending
       if (stStatus === 'Pending Fulfillment') {
         objForm.addButton({
           id: 'custpage_suiteletbutton',
