@@ -26,6 +26,10 @@ This sample uses a client script type with the following entry points:
 
 * `pageInit` - Defines the function that is executed after the page completes loading or when the form is reset.
 
+# Customization Details
+* A script parameter (Tax Allowlist) to specify which roles are allowed to modify the tax fields on the transaction record
+* A client script triggered on the pageInit entry point
+
 # Test the Solution (for a role not allowed to edit tax fields)
 1. Log in with a role that is not specified in the script parameter. Make sure that the role has permission to edit sales transactions.
 2. Go to Transaction > Sales > Enter Sales Orders to create a new sales order.
