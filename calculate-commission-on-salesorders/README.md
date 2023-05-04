@@ -3,6 +3,8 @@ This customization calculates a custom commission amount when a sales order is s
 
 While NetSuite includes an Employee Commissions feature, this customization calculates and sets a simple custom commission amount in a custom field without using the feature. For more information about the more robust Employee Commissions feature, which can calculate commission for employees with different schedules and methods of calculation, see [Commissions](https://system.netsuite.com/app/help/helpcenter.nl?fid=chapter_N1122333.html).
 
+For more information about this customization project, see [Calculate Commission on Sales Orders](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_157227646073.html).
+
 # Key Concepts
 This sample demonstrates the following concepts:
 
