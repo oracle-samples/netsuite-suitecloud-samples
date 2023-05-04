@@ -1,5 +1,5 @@
 # Summary
-This SuiteScript sample adds a custom button to the sales order form if the status of the sales order record is Pending Fulfillment. When the user clicks the new button, a window is displayed for the Suitelet. 
+This SuiteScript sample adds a custom button to the sales order form if the status of the sales order record is Pending Fulfillment. When the user clicks the new button, a window is displayed for the Suitelet. For more information about this customization project, see [Add Custom Button to Execute a Suitelet](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_157169557654.html#:~:text=Go%20to%20Customization%20%3E%20Scripts%20%3E%20Script,when%20the%20button%20is%20clicked.). 
 
 # Key Concepts
 This sample demonstrates the following concepts:
