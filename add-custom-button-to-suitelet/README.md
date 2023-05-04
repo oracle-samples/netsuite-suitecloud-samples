@@ -29,10 +29,10 @@ The customization for this use case includes:
 * A user event script triggered on the beforeLoad entry point.
 
 # Test the Solution
-1. Go to Transactions > Sales > Enter Sales Orders > List (Administrator).
-2. Click View next to a sales order that is in Pending Fulfillment status.
-3. Verify your custom button, labeled ‘Open Suitelet’ appears on the sales order form. 
-4. Click the button and verify your Suitelet opens in a new window.
+1. Go to Transactions > Sales > Enter Sales Orders > List (Administrator)
+2. Click View next to a sales order that is in Pending Fulfillment status
+3. Verify your custom button, labeled ‘Open Suitelet’ appears on the sales order form
+4. Click the button and verify your Suitelet opens in a new window
 
 ## [License](./LICENSE.txt)
 Copyright (c) 2021 Oracle and/or its affiliates The Universal Permissive License (UPL), Version 1.0.
