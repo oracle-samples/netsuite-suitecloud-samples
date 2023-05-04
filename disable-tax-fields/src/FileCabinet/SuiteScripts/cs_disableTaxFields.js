@@ -16,11 +16,13 @@ define(['N/runtime', 'N/log'], (runtime, log) => {
       const objRecord = scriptContext.currentRecord
       const stRecordType = objRecord.type
       const stFuncName = '_DisableTaxField_' + stRecordType
+      // retrieve the value(s) for users allowed to disable tax fields
       if (scriptContext.mode !== 'copy') {
         const objContext = runtime.getCurrentScript()
         const stAllowList = objContext.getParameter({
           name: 'custscript_tax_allowlist'
         })
+        // retrieve the current user role
         const stUserRole = runtime.getCurrentUser().role
         const arrExclusionRoleList = stAllowList.split(',')
         if (NSUtil.isEmpty(stAllowList)) {
@@ -30,6 +32,9 @@ define(['N/runtime', 'N/log'], (runtime, log) => {
           })
           return
         }
+        // if taxitem field exists, determine if current user role matches the
+        // value in the allow list.
+        // If the user role matches the allow list, disable the tax fields.
         const taxitem = objRecord.getField({
           fieldId: 'taxitem'
         })
