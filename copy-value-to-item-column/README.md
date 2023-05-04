@@ -1,5 +1,5 @@
 # Summary
-This script copies the value stored in the custom Billing Item field to the standard Item field when the Billing Item field value is selected or changed.
+This script copies the value stored in the custom Billing Item field to the standard Item field when the Billing Item field value is selected or changed. For more information about this customization project, see [Copy a Value to the Item Column](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_157365998080.html).
 
 # Key Concepts
 This sample demonstrates the following concepts:
