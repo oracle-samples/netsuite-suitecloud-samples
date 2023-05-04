@@ -1,3 +1,4 @@
+// import script and modules used 
 import script from '../src/FileCabinet/SuiteScripts/cs_disableTaxFields'
 
 import runtime from 'N/runtime'
@@ -29,7 +30,7 @@ describe('Disable tax fields client script test', () => {
 
     runtime.getCurrentScript.mockReturnValue(Script)
     Script.getParameter.mockImplementation(options => {
-      if (options.name === 'custscript_exclusion_role_list') {
+      if (options.name === 'custscript_tax_allowlist') {
         return 'role'
       }
     })
@@ -56,7 +57,7 @@ describe('Disable tax fields client script test', () => {
 
     runtime.getCurrentScript.mockReturnValue(Script)
     Script.getParameter.mockImplementation(options => {
-      if (options.name === 'custscript_exclusion_role_list') {
+      if (options.name === 'custscript_tax_allowlist') {
         return ''
       }
     })
