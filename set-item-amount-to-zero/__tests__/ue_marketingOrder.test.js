@@ -1,3 +1,4 @@
+// import script and modules used
 import script from '../src/FileCabinet/SuiteScripts/ue_marketingOrder'
 
 import record from 'N/record'
@@ -21,6 +22,7 @@ const context = {
 describe('Set item amount to zero test', () => {
   it('Should test afterSubmit function parameters', () => {
     // given
+    // Mock incorrect newRecord param. Script should not execute
     context.currentRecord = Record
 
     // when
@@ -34,6 +36,7 @@ describe('Set item amount to zero test', () => {
 
   it('Should set item amount to 0 dollars', () => {
     // given
+    // Mock recordId and record type
     const mockRecordId = '1234'
     const mockRecordType = 'sales_order'
     Record.id = mockRecordId
@@ -43,15 +46,15 @@ describe('Set item amount to zero test', () => {
     Record.save.mockReturnValue(mockRecordId)
         
     Record.selectLine = jest.fn()
-    Record.setCurrentSublistValue.mockReturnValue(Record)
+    Record.setCurrentSublistValue.mockReturnValue(Record) // represents Record obj
     Record.commitLine.mockReturnValue(Record)
 
     context.newRecord = Record
 
     Record.getValue.mockImplementation(options => 
-      options.fieldId === 'custbody_marketing_order' && 5) 
+      options.fieldId === 'custbody_marketing_order' && 5) // returns 5
     Record.getLineCount.mockImplementation(options => 
-      options.sublistId === 'item' && 2) 
+      options.sublistId === 'item' && 2) // returns 2
     const setOrdertoZero = 0
 
     // when 
@@ -74,17 +77,18 @@ describe('Set item amount to zero test', () => {
     })
     expect(Record.save).toHaveBeenCalled()
   })
-  it('Should test MktgSalesOrder value - line 21', () => {
+  it('Should test MktgSalesOrder value', () => {
     // given
     const mockRecordId = '6789'
     const mockRecordType = 'sales_order'
     Record.id = mockRecordId
     Record.type = mockRecordType   
         
-    record.load.mockReturnValue(Record)  
+    record.load.mockReturnValue(Record) // represents Record obj
     Record.save.mockReturnValue(mockRecordId)
 
     context.newRecord = Record
+    // Mock empty marketing order field
     const isMktgSalesOrder = undefined
     Record.getValue.mockImplementation(options => 
       options.fieldId === 'custbody_marketing_order' && isMktgSalesOrder) 
