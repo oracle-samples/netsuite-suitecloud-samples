@@ -1,3 +1,4 @@
+// import script and modules used
 import script from '../src/FileCabinet/SuiteScripts/ue_handle_refund'
 
 import search from 'N/search'
@@ -20,6 +21,7 @@ beforeEach(() => {
 
 const scriptContext = {}
 
+// enums used
 record.Type = {
   CUSTOMER_REFUND: 'CUSTOMER_REFUND'
 }
@@ -37,7 +39,8 @@ describe('UserEventScript - Handle Refund test', () => {
     // given
     scriptContext.newRecord = Record
     Record.id = '44'
-
+    
+    // Set arbitrary values of loaded record and value on customer field.
     const soEntity = '2142'
     record.load.mockReturnValue(Record)
     Record.getValue.mockImplementation(options => {
@@ -46,6 +49,7 @@ describe('UserEventScript - Handle Refund test', () => {
       }
     })
 
+    // Set arbitrary line count on sales order sublist
     const lines = 3
     Record.getLineCount.mockImplementation(options => {
       if (options.sublistId === 'apply') {
@@ -53,6 +57,7 @@ describe('UserEventScript - Handle Refund test', () => {
       }
     })
 
+    // Mock return object of lookupFields method
     const order = 
     {
       'createdfrom.salesorder': 
@@ -63,9 +68,9 @@ describe('UserEventScript - Handle Refund test', () => {
     }
 
     search.lookupFields.mockReturnValue(order)
-    search.load.mockReturnValue(Search)
+    search.load.mockReturnValue(Search) // represents Search object
     Search.filters = []
-    Search.run.mockReturnValue(ResultSet)
+    Search.run.mockReturnValue(ResultSet) // represents ResultSet object
     ResultSet.each.mockImplementation((soresults) => soresults(Result))
     
     Result.getValue.mockReturnValue(5)
