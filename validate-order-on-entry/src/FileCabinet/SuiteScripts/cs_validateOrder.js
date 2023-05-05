@@ -12,6 +12,8 @@ define(['N/runtime', 'N/log'], (runtime, log) => {
    */
   function validateLine (scriptContext) {
     const recSalesOrder = scriptContext.currentRecord
+    // Retrieve sublist field value to ensure it is not divisible by 0.
+    // This helps ensure Case/Pallet value is correct.
     if (scriptContext.sublistId === 'item') {
       const casePerPallet = recSalesOrder.getCurrentSublistValue({
         sublistId: 'item',
@@ -34,6 +36,8 @@ define(['N/runtime', 'N/log'], (runtime, log) => {
    * @param {CurrentRecord} scriptContext.currentRecord The current form record.
    */
   function saveRecord (scriptContext) {
+    // Retrieve custom max weight field script parameter.
+    // If this field is empty, function will not execute. 
     const scriptObj = runtime.getCurrentScript()
     const weightParam = scriptObj.getParameter({
       name: 'custscript_max_weight'
@@ -45,6 +49,8 @@ define(['N/runtime', 'N/log'], (runtime, log) => {
       })
       return
     }
+    // Verify the total weight of the order does not exceed the max weight 
+    // allowed (specified in custom weight field).
     const recSalesOrder = scriptContext.currentRecord
     const lineCount = recSalesOrder.getLineCount({
       sublistId: 'item'
@@ -64,6 +70,7 @@ define(['N/runtime', 'N/log'], (runtime, log) => {
       const lineWeight = itemWeight * quantity
       totalWeight += lineWeight
     }
+    // Total weight should not exceed weight parameter value
     if (totalWeight > weightParam) {
       alert(`The total weight of the order is ${totalWeight}. 
       The max weight is ${weightParam}. Please adjust the order 
@@ -72,6 +79,7 @@ define(['N/runtime', 'N/log'], (runtime, log) => {
     }
     return true
   }
+  // Utility function to determine if script parameter is empty.
   const NSUtil = {}
   NSUtil.isEmpty = function (stValue) {
     return (
