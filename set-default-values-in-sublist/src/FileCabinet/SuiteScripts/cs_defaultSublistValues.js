@@ -11,6 +11,9 @@ define(['N/search', 'N/log'], (search, log) => {
    * @param {CurrentRecord} scriptContext.currentRecord The current form record.
    */
   function fieldChanged (scriptContext) {
+    // If the sublist field 'item' or 'expense' value changes, retrieve the 
+    // 'entity' field value. The entity is used to look up fields on the 
+    // Vendor search. 
     const sublistVal = scriptContext.sublistId
     if (sublistVal === 'item' || sublistVal === 'expense') {
       const rec = scriptContext.currentRecord
@@ -27,6 +30,8 @@ define(['N/search', 'N/log'], (search, log) => {
       })
       let classVal = ''
       let deptVal = ''
+      // After retrieving the custom field values for 'Department' and 'Class'
+      // of the vendor, set the values to the vendor bill record.
       classVal = vendorLookup.custentity_custom_class[0].value
       deptVal = vendorLookup.custentity_custom_department[0].value
       try {
