@@ -1,6 +1,9 @@
 # Summary
 This script hides the Item column on the Item sublist for an invoice.
 
+You are the NetSuite administrator for your organization. You use the invoice record type for your invoices. This record type includes everything you need to manage your invoices, but it also includes some fields you don’t need. In the Item sublist on an invoice record, you don’t need to populate the Item field. This field appears as a column in the Item sublist, and you want to use a script to hide this column before an invoice is edited. 
+For more information about this customization project, see [Hide a Column in a Sublist](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_157305280561.html).
+
 # Key Concepts
 This sample demonstrates the following concepts:
 
@@ -26,6 +29,10 @@ This sample uses a user event script type with the following entry points:
 This sample defines and uses the following helper methods:
 
 * `hideColumnField(formObj, sublistId, fieldId)` - Hides the Item column.
+
+# Customization Details
+The customization for this use case includes:
+* A user event script triggered on the beforeLoad entry point
 
 # Test the Solution
 1. Go to Transactions > Sales > Create Invoices > List (Administrator).
