@@ -19,6 +19,7 @@ define(['N/record', 'N/log'], (record, log) => {
       const currentRecord = context.newRecord
       const recordID = currentRecord.id
       const recordType = currentRecord.type
+      // Load the record to determine if it is a marketing order.
       const objSalesOrder = record.load({
         type: recordType,
         id: recordID,
@@ -27,6 +28,8 @@ define(['N/record', 'N/log'], (record, log) => {
       const isMktgSalesOrder = objSalesOrder.getValue({
         fieldId: 'custbody_marketing_order'
       })
+      // If record is a marketing order, set the amount sublist field to 0
+      // for each item.
       if (isMktgSalesOrder) {
         const intItemLines = objSalesOrder.getLineCount({
           sublistId: 'item'
