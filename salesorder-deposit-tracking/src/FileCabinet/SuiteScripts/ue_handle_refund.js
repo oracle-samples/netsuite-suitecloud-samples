@@ -16,6 +16,8 @@ define(['N/record', 'N/search', 'N/log'], (record, search, log) => {
    */
   function UpdateSalesOrder (refId) {
     try {
+      // Load the customer refund & retrieve the values for the total amt of the
+      // refund and the number of lines(transactions), the refund is applied to.
       const refund = record.load({
         type: record.Type.CUSTOMER_REFUND,
         id: refId,
@@ -27,6 +29,8 @@ define(['N/record', 'N/search', 'N/log'], (record, search, log) => {
       const lines = refund.getLineCount({
         sublistId: 'apply'
       })
+      // For each deposit application associated with a customer refund, get
+      // the deposit number and refund amount.
       for (let i = 0; i < lines; i++) {
         const depositnum = refund.getSublistText({
           sublistId: 'apply',
@@ -38,6 +42,8 @@ define(['N/record', 'N/search', 'N/log'], (record, search, log) => {
           fieldId: 'amount',
           line: i
         })
+        // Look up the fields on each deposit application to find the linked
+        // sales order and total sales of the order.
         const order = search.lookupFields({
           type: search.Type.DEPOSIT_APPLICATION,
           id: depositnum,
@@ -51,6 +57,9 @@ define(['N/record', 'N/search', 'N/log'], (record, search, log) => {
           columns: ['total']
         })
         const soTotal = soTotalPaid.total
+        // Load the saved search to get current balance of deposits and gift 
+        // certificates paid toward the sales order, less the amount of any 
+        // refunds applied.
         const mySearch = search.load({
           id: 'customsearch_sobalancedue'
         })
@@ -71,6 +80,8 @@ define(['N/record', 'N/search', 'N/log'], (record, search, log) => {
           values: soFullTextTranID
         })
         mySearch.filters.push(entityFilter, soIdFilter)
+        // Load each related sales order and set the new values for total paid
+        // and remaining balance amounts. 
         mySearch.run().each((soresults) => {
           const soTextID = soresults.getValue({
             name: 'formulatext',
