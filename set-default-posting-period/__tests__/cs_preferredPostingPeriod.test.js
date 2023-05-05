@@ -1,3 +1,4 @@
+// import script and modules used
 import script from '../src/FileCabinet/SuiteScripts/cs_preferredPostingPeriod'
 
 import CurrentRecord from 'N/currentRecord/instance'
@@ -23,13 +24,14 @@ const context = {}
 describe('Set default posting period test', () => {
   it('Should test pageInit function', () => {
     // given
+    // Mock context mode and CurrentRecord value
     context.mode = 'copy'
-    context.currentRecord = CurrentRecord
-    CurrentRecord.setValue.mockReturnValue(CurrentRecord)
+    context.currentRecord = CurrentRecord // represents CurrentRecord obj
+    CurrentRecord.setValue.mockReturnValue(CurrentRecord) 
 
-    search.load.mockReturnValue(Search)
-    Search.run.mockReturnValue(ResultSet)
-    ResultSet.getRange.mockReturnValue([Result])
+    search.load.mockReturnValue(Search) // represents Search obj
+    Search.run.mockReturnValue(ResultSet) // represents ResultSet obj
+    ResultSet.getRange.mockReturnValue([Result]) // represents arr of Result obj
 
     // when 
     script.pageInit(context)
@@ -58,12 +60,15 @@ describe('Set default posting period test', () => {
     script.pageInit(context)
 
     // then
+    // Error will log because Result.id value is not defined
     expect(log.error).toHaveBeenCalled()
   })
   it('Should test fieldChanged function', () => {
     // given
     context.fieldId = 'custbody_preferred_posting_period'
     context.currentRecord = CurrentRecord
+    
+    // Mock posting period value of the record
     const prefPostPeriod = 5
     CurrentRecord.getValue.mockImplementation(options => 
       options.fieldId === 'custbody_preferred_posting_period' && 
