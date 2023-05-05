@@ -1,3 +1,4 @@
+// import script and modules used
 import script from '../src/FileCabinet/SuiteScripts/ue_set_custom_fields'
 
 import record from 'N/record'
@@ -27,6 +28,7 @@ const scriptContext = {
   }
 }
 
+// enums used 
 search.Summary = {
   GROUP: 'GROUP',
   SUM: 'SUM'
@@ -35,10 +37,12 @@ search.Summary = {
 describe('UserEventScript Set Custom Fields test', () => {
   it('Should test afterSubmit function', () => {
     // given
+    // Mock new record ID
     scriptContext.newRecord = Record
     const soID = 12345
     Record.id = soID
 
+    // Mock loaded record field values
     record.load.mockReturnValue(Record)
     const soTranId = '25'
     const soTotal = '550'
@@ -50,12 +54,13 @@ describe('UserEventScript Set Custom Fields test', () => {
       if (options.fieldId === 'tranid') return soTranId
     })
 
-    search.load.mockReturnValue(Search) 
-    search.createFilter.mockReturnValue(Filter)
+    search.load.mockReturnValue(Search) // represents Search object
+    search.createFilter.mockReturnValue(Filter) // represents Filter object
     Search.filters = []
-    Search.run.mockReturnValue(ResultSet)
+    Search.run.mockReturnValue(ResultSet) // represents ResultSet object
         
     ResultSet.each.mockImplementation((soresults) => soresults(Result))  
+    // Mock Result values 
     const soTextID = 'Order #' + soTranId 
     const totalPaid = '200'
     Result.getValue.mockImplementation(options => {
