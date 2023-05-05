@@ -1,6 +1,7 @@
 # Summary 
 This customization project is composed of 4 user event scripts that are designed to track the total amount of deposits and refunds on sales orders. This can be useful for tracking layaways or building other types of customizations that require the total the amount of customer deposits, refunds on deposits, and gift certificates that have been applied to a sales order balance before the order is invoiced.
 
+For more information about this customization project, see [Track Customer Deposit Balances](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_157141180023.html).
 # Key Concepts
 This sample demonstrates the following concepts:
 
@@ -28,7 +29,14 @@ This sample defines and uses the following helper method in the handle refund sc
 
 * `UpdateSalesOrder(refId)` - This function updates the sales order if a refund has been issued.
 
-## Test the Solution
+# Customization Details 
+This customization for this use case includes:
+* A custom field (Amount Deposited) to store the calculated total amount of deposits made on the sales order
+* A custom field (Balance Remaining) to store the balance remaining on the sales order
+* A saved search (Deposit Balance on Sales Order) to determine the balance of customer deposits
+* Four user event scripts triggered on the beforeSubmit and afterSubmit entry points
+
+# Test the Solution
 After you create the script records and deploy your scripts, you can test your solution.
 
 When these scripts execute on sales orders, customer deposits, customer refunds, or deposit applications, the two custom fields, Amount Deposited and Balance Remaining, are updated on the sales order.
