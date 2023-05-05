@@ -14,6 +14,7 @@ define(['N/ui/serverWidget', 'N/log'], (serverWidget, log) => {
    *  of the record) in read-only mode.
    */
   function beforeLoad (context) {
+    // helper function executes if invoice is in Edit mode
     if (context.type === context.UserEventType.EDIT) {
       hideColumnField(context.form, 'item', 'item')
     }
@@ -25,6 +26,7 @@ define(['N/ui/serverWidget', 'N/log'], (serverWidget, log) => {
    */
   function hideColumnField (formObj, sublistId, fieldId) {
     try {
+      // retrieve sublist field 
       const formSublist = formObj.getSublist({
         id: sublistId
       })
@@ -32,6 +34,7 @@ define(['N/ui/serverWidget', 'N/log'], (serverWidget, log) => {
         const formField = formSublist.getField({
           id: fieldId
         })
+        // sublist field is hidden if sublist field is defined
         if (formField !== 'undefined' && formField !== null) {
           formField.updateDisplayType({
             displayType: serverWidget.FieldDisplayType.HIDDEN
