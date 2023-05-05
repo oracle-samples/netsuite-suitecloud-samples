@@ -1,3 +1,4 @@
+// import script and modules used 
 import script from '../src/FileCabinet/SuiteScripts/ue_update_custom_fields'
 
 import record from 'N/record' 
@@ -29,6 +30,7 @@ const scriptContext = {
   }
 }
 
+// enums used 
 record.Type = {
   SALES_ORDER: 'SALES_ORDER'
 }
@@ -44,11 +46,13 @@ describe('UserEventScript Update Custom Field test', () => {
     scriptContext.newRecord = Record
     scriptContext.type = scriptContext.UserEventType.DELETE
 
+    // Mock sales order value for new record
     const soID = 55
     Record.getValue.mockImplementation(options => 
       options.fieldId === 'salesorder' && soID)
         
-    record.load.mockReturnValue(Record)
+    record.load.mockReturnValue(Record) // represents Record object
+    // Mock status field on loaded record
     const status = 'Submitted'
     Record.getValue.mockImplementation(options => 
       options.fieldId === 'status' && status)
@@ -65,6 +69,8 @@ describe('UserEventScript Update Custom Field test', () => {
     // given
     scriptContext.type = scriptContext.UserEventType.CREATE
     scriptContext.newRecord = Record
+    
+    // Mock field values on new record
     const soID = '22'
     const soTranId = 'Order #' + 17
     Record.getValue.mockImplementation(options => {
@@ -76,10 +82,10 @@ describe('UserEventScript Update Custom Field test', () => {
       }
     })
 
-    search.load.mockReturnValue(Search)
+    search.load.mockReturnValue(Search) // represents Search obj
     Search.filters = []
-    search.createFilter.mockReturnValue(Filter)
-    Search.run.mockReturnValue(ResultSet)
+    search.createFilter.mockReturnValue(Filter) // represents Filter obj
+    Search.run.mockReturnValue(ResultSet) // represents ResultSet obj
     ResultSet.each.mockImplementation((soresults) => soresults(Result))
 
     const soTextID = 'Order #' + 17
