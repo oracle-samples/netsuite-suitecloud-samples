@@ -1,3 +1,4 @@
+// import script and modules used 
 import script from '../src/FileCabinet/SuiteScripts/cs_defaultSublistValues'
 
 import CurrentRecord from 'N/currentRecord/instance'
@@ -21,6 +22,7 @@ search.Type = {
 describe('Set default sublist values test', () => {
   it('Should return empty vendorId', () => {
     // given 
+    // Mock 'entity' value empty. Script should not execute
     scriptContext.sublistId = 'item'
     scriptContext.currentRecord = CurrentRecord
     CurrentRecord.getValue.mockImplementation(options => {
@@ -38,6 +40,7 @@ describe('Set default sublist values test', () => {
   })
   it('Should lookup and set field values', () => {
     // given
+    // Mock entity field 
     scriptContext.sublistId = 'expense'
     CurrentRecord.getValue.mockImplementation(options => {
       if (options.fieldId === 'entity') {
@@ -45,6 +48,7 @@ describe('Set default sublist values test', () => {
       }
     })
 
+    // Mock return object of fieldLookup
     const vendorLookup = {
       custentity_custom_department: 
         [{
