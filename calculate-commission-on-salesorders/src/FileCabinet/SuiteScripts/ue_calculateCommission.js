@@ -15,6 +15,7 @@ define(['N/record', 'N/log', 'N/error'], (record, log, error) => {
   function afterSubmit (scriptContext) {
     const stMethodName = 'afterSubmit_calculateCommission'
     try {
+      // Script should only execute when user creates or edits a sales order.
       if ((scriptContext.type !== scriptContext.UserEventType.CREATE) &&
         (scriptContext.type !== scriptContext.UserEventType.EDIT)) {
         return
