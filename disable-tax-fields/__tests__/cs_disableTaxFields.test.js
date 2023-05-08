@@ -28,17 +28,19 @@ describe('Disable tax fields client script test', () => {
     CurrentRecord.type = 'salesorder'
     scriptContext.mode = 'create'
 
-    runtime.getCurrentScript.mockReturnValue(Script)
+    runtime.getCurrentScript.mockReturnValue(Script) // returns Script obj
+    // Mock allow list script parameter value.
     Script.getParameter.mockImplementation(options => {
       if (options.name === 'custscript_tax_allowlist') {
         return 'role'
       }
     })
 
-    runtime.getCurrentUser.mockReturnValue(User)
-    User.role = 'admin'
+    runtime.getCurrentUser.mockReturnValue(User) // returns User obj
+    // Mock User.role property value
+    User.role = 'admin' 
 
-    CurrentRecord.getField.mockReturnValue(Field)
+    CurrentRecord.getField.mockReturnValue(Field) // returns Field obj
 
     // when
     script.pageInit(scriptContext)
@@ -56,6 +58,8 @@ describe('Disable tax fields client script test', () => {
     scriptContext.mode = 'create'
 
     runtime.getCurrentScript.mockReturnValue(Script)
+    
+    // Mock empty script parameter value
     Script.getParameter.mockImplementation(options => {
       if (options.name === 'custscript_tax_allowlist') {
         return ''
@@ -83,6 +87,7 @@ describe('Disable tax fields client script test', () => {
         }
       })
 
+      // User role is not defined, error will occur
       log.error = jest.fn()
 
       // when    
