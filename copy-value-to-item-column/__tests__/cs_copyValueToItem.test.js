@@ -46,9 +46,9 @@ describe('Copy to a Value to Item test', () => {
 
     CurrentRecord.getCurrentSublistText.mockReturnValue(itemName)
 
-    search.create.mockReturnValue(Search)
-    Search.run.mockReturnValue(ResultSet)
-    ResultSet.getRange.mockReturnValue([Result])
+    search.create.mockReturnValue(Search) // returns Search obj
+    Search.run.mockReturnValue(ResultSet) // returns ResultSet obj
+    ResultSet.getRange.mockReturnValue([Result]) // returns arr Result obj
 
     Search.columns = []
     Result.getValue.mockReturnValue([704875])
