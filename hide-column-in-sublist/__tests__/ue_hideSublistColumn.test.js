@@ -43,10 +43,10 @@ describe('Hide a sublist column UES test', () => {
     context.type = context.UserEventType.EDIT
     context.form = Form
 
-    Form.getSublist.mockReturnValue(Sublist)
-    Sublist.getField.mockReturnValue(Field)
+    Form.getSublist.mockReturnValue(Sublist) // returns Sublist obj
+    Sublist.getField.mockReturnValue(Field) // returns Field obj
 
-    Field.updateDisplayType.mockReturnValue(Field)
+    Field.updateDisplayType.mockReturnValue(Field) // returns Field obj
     
     // enums used 
     serverWidget.FieldDisplayType = {
