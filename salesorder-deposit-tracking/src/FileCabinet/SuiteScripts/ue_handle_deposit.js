@@ -33,7 +33,7 @@ define(['N/record', 'N/search', 'N/log'], (record, search, log) => {
     const soFullTextTranID = cusDeposit.getText({
       fieldId: 'salesorder'
     })
-    // Load the saved search you created and adds filters to find the sales 
+    // Loads the saved search you created and adds filters to find the sales 
     // order related to the deposit application along with the values for its 
     // current total deposited.
     const mySearch = search.load({
