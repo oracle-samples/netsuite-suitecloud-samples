@@ -1,3 +1,4 @@
+// import script and modules used
 import script from '../src/FileCabinet/SuiteScripts/ue_hideSublistColumn'
 
 import serverWidget from 'N/ui/serverWidget'
@@ -25,6 +26,7 @@ const context = {
 describe('Hide a sublist column UES test', () => {
   it('Should test beforeLoad function parameters', () => {
     // given
+    // type set to view mode, helper function should not execute
     context.type = context.UserEventType.VIEW
 
     // when
@@ -37,13 +39,14 @@ describe('Hide a sublist column UES test', () => {
 
   it('Should test hideColumnField function', () => {
     // given 
+    // type set to edit, helper function should execute
     context.type = context.UserEventType.EDIT
     context.form = Form
 
-    Form.getSublist.mockReturnValue(Sublist)
-    Sublist.getField.mockReturnValue(Field)
+    Form.getSublist.mockReturnValue(Sublist) // returns Sublist obj
+    Sublist.getField.mockReturnValue(Field) // returns Field obj
 
-    Field.updateDisplayType.mockReturnValue(Field)
+    Field.updateDisplayType.mockReturnValue(Field) // returns Field obj
     
     // enums used 
     serverWidget.FieldDisplayType = {

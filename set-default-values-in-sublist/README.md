@@ -1,6 +1,8 @@
 # Summary
 This script populates the Department and Class sublist columns when a field in one of those sublists is changed. If a different sublist field is changed, or if a field that’s not on a sublist is changed, no sublist column values are populated.
 
+For more information about this customization project, see [Set Default Values in a Sublist](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_157375587585.html).
+
 # Key Concepts
 This sample demonstrates the following concepts:
 
@@ -22,7 +24,12 @@ This sample uses a client script type with the following entry points:
 
 * `fieldChanged` - Defines the function that is executed when a field is changed by a user or client call.
 
-## Test the Solution
+# Customization Details
+The customization for this use case includes:
+* Two custom fields (Department and Class) to hold department and class information for the vendor
+* A client script triggered on the fieldChanged entry point
+
+# Test the Solution
 
 After you create the script record and deploy your script, you can test your solution by creating a new vendor record and verifying the values in the Department and Class sublist columns.
 

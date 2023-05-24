@@ -15,6 +15,7 @@ define(['N/record', 'N/log', 'N/error'], (record, log, error) => {
   function afterSubmit (scriptContext) {
     const stMethodName = 'afterSubmit_calculateCommission'
     try {
+      // Script should only execute when user creates or edits a sales order.
       if ((scriptContext.type !== scriptContext.UserEventType.CREATE) &&
         (scriptContext.type !== scriptContext.UserEventType.EDIT)) {
         return
@@ -26,12 +27,16 @@ define(['N/record', 'N/log', 'N/error'], (record, log, error) => {
       let flCommissionAmount = null
       let flQuantity = 0.00
       const recSalesOrder = scriptContext.newRecord
+      
+      // retrieve the subtotal & number of items on the sales order
       const flSubtotal = parseFloat(recSalesOrder.getValue({
         fieldId: 'subtotal'
       }))
       const numItems = recSalesOrder.getLineCount({
         sublistId: 'item'
       })
+      
+      // retrieve values of MSRP, quanty, itemType of each item 
       for (let intLinenum = 0; intLinenum < numItems; intLinenum++) {
         flMSRPAmt = parseFloat(recSalesOrder.getSublistValue({
           sublistId: 'item',
@@ -48,11 +53,13 @@ define(['N/record', 'N/log', 'N/error'], (record, log, error) => {
           fieldId: 'itemtype',
           line: intLinenum
         })
+        // calculate MSRP for items based on values retrieved
         if ((stItemType !== 'Discount' && stItemType !== 'Subtotal') &&
          (stItemType !== 'Markup')) {
           flMSRPTotalAmt = flMSRPTotalAmt + (flMSRPAmt * flQuantity)
         }
       }
+      // calculate commission amount
       flNetDistributorCost = flMSRPTotalAmt * 0.5
       if (flSubtotal === flNetDistributorCost) {
         flCommissionAmount = flSubtotal * 0.10
@@ -72,6 +79,7 @@ define(['N/record', 'N/log', 'N/error'], (record, log, error) => {
         type: record.Type.SALES_ORDER,
         id: thisSalesOrderID
       })
+      // set commision amount on sales order & save the record
       updateSalesOrder.setValue({
         fieldId: 'custbody_commission_amount',
         value: flCommissionAmount

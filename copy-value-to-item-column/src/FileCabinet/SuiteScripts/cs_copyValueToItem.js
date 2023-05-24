@@ -31,6 +31,7 @@ define(['N/search'], (search) => {
             'upccode', 'itemid'
           ]
         }).run()
+        // Set the UPC code text to the invoice
         const result = itemSearch.getRange(0, 1)
         const itemName = result[0].getValue(itemSearch.columns[1])
         recInvoice.setCurrentSublistText({

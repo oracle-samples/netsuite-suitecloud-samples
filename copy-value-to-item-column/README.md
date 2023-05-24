@@ -1,5 +1,5 @@
 # Summary
-This script copies the value stored in the custom Billing Item field to the standard Item field when the Billing Item field value is selected or changed.
+This script copies the value stored in the custom Billing Item field to the standard Item field when the Billing Item field value is selected or changed. For more information about this customization project, see [Copy a Value to the Item Column](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_157365998080.html).
 
 # Key Concepts
 This sample demonstrates the following concepts:
@@ -20,6 +20,14 @@ This sample loads and uses the following SuiteScript modules:
 This sample uses a client script type with the following entry points:
 
 * `fieldChanged` - Defines the function that is executed when a field is changed by a user or client call.
+
+# Customization Details
+The customization for this use case includes:
+* A custom field (Billing Item) to select an item by UPC code
+* A custom list (Billing Items) to store products with UPC codes
+* An item record to test the implementation of UPC code selection
+* A custom form to be used as a custom billing item invoice
+* A client script triggered on the fieldChanged entry point
 
 # Test the Solution
 1. Go to Transactions > Sales > Create Invoices (Administrator) to create a new invoice.

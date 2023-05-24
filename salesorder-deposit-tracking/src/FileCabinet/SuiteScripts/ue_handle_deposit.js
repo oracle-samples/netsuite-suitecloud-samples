@@ -13,6 +13,8 @@ define(['N/record', 'N/search', 'N/log'], (record, search, log) => {
    * (previous state of the record) in read-only mode.
    */
   function afterSubmit (scriptContext) {
+    // Load the previous version of the deposit application in case it has been 
+    // deleted so that it can get the values of the related customer and deposit
     const contextDepApp = scriptContext.oldRecord
     const soEntity = contextDepApp.getValue({
       fieldId: 'customer'
@@ -31,6 +33,9 @@ define(['N/record', 'N/search', 'N/log'], (record, search, log) => {
     const soFullTextTranID = cusDeposit.getText({
       fieldId: 'salesorder'
     })
+    // Loads the saved search you created and adds filters to find the sales 
+    // order related to the deposit application along with the values for its 
+    // current total deposited.
     const mySearch = search.load({
       id: 'customsearch_sobalancedue'
     })
@@ -49,6 +54,8 @@ define(['N/record', 'N/search', 'N/log'], (record, search, log) => {
       values: soFullTextTranID
     })
     mySearch.filters.push(entityFilter, soIdFilter)
+    // Run the saved search created to find the sales order related to the 
+    // deposit application along with the values for its current total deposited
     mySearch.run().each((soresults) => {
       const soTextID = soresults.getValue({
         name: 'formulatext',
@@ -59,6 +66,9 @@ define(['N/record', 'N/search', 'N/log'], (record, search, log) => {
           name: 'formulacurrency',
           summary: search.Summary.SUM
         })
+        // Load the sales order related to the deposit application and set the 
+        // values for the deposit paid and new remaining balance based on the 
+        // values returned from the saved search.
         const salesorder = record.load({
           type: record.Type.SALES_ORDER,
           id: orderId,

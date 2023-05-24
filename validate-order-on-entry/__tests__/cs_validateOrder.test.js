@@ -1,3 +1,4 @@
+// import script and modules used
 import script from '../src/FileCabinet/SuiteScripts/cs_validateOrder'
 
 import log from 'N/log'
@@ -19,6 +20,7 @@ const scriptContext = {}
 describe('Validate order test on entry test', () => {
   it('Should test validateLine function parameters', () => {
     // given
+    // incorrect parameter set, script will not execute
     scriptContext.newRecord = CurrentRecord 
 
     // when
@@ -27,21 +29,25 @@ describe('Validate order test on entry test', () => {
     // then
     expect(CurrentRecord.getCurrentSublistValue).not.toHaveBeenCalled()
   }) 
-  it('Should test validateLine function', () => {
+  it('Should test complete validateLine function', () => {
     // given
     scriptContext.currentRecord = CurrentRecord
     scriptContext.sublistId = 'item'
     
+    // Mock custom case/pallet and quantity sublist field
     const casePerPallet = 10
     const quantity = 25
 
     CurrentRecord.getCurrentSublistValue.mockImplementation(options => {
       if (options.sublistId === 'item' && 
-          options.fieldId === 'custcol_cases_per_pallet') return casePerPallet
+          options.fieldId === 'custcol_cases_per_pallet') { 
+        return casePerPallet 
+      } // returns 10
       if (options.sublistId === 'item' && 
-          options.fieldId === 'quantity') return quantity
+          options.fieldId === 'quantity') return quantity // returns 25
     })
 
+    // Mocks alert() call
     global.alert = jest.fn()
 
     // when
@@ -51,18 +57,23 @@ describe('Validate order test on entry test', () => {
     expect(CurrentRecord.getCurrentSublistValue).toHaveBeenCalledTimes(2)
     expect(global.alert).toHaveBeenCalled()
   })
-  it('Should test validateLine - line 24 - quantity%casePerPallet=0, ', () => {
+  it('Should test quantity % casePerPallet = 0', () => {
     // given
     scriptContext.currentRecord = CurrentRecord
     scriptContext.sublistId = 'item'
+    
+    // Mock casePerPallet and quantity sublist field values
+    // Setting values to be divisible 
     const casePerPallet = 10
     const quantity = 20
-
+    
     CurrentRecord.getCurrentSublistValue.mockImplementation(options => {
       if (options.sublistId === 'item' && 
-          options.fieldId === 'custcol_cases_per_pallet') return casePerPallet
+          options.fieldId === 'custcol_cases_per_pallet') {
+        return casePerPallet // returns 10
+      }
       if (options.sublistId === 'item' && 
-          options.fieldId === 'quantity') return quantity
+          options.fieldId === 'quantity') return quantity // returns 20
     })
 
     global.alert = jest.fn()
@@ -74,24 +85,29 @@ describe('Validate order test on entry test', () => {
     expect(CurrentRecord.getCurrentSublistValue).toHaveBeenCalledTimes(2)
     expect(global.alert).not.toHaveBeenCalled()
   })
-  it('Should test saveRecord - line 62 - weightParam < totalWeight', () => {
+  it('Should test saveRecord - weightParam < totalWeight', () => {
     // given
     const weightParam = 22
     runtime.getCurrentScript.mockReturnValue(Script)
     Script.getParameter.mockImplementation(options => 
-      options.name === 'custscript_max_weight' && weightParam)
+      options.name === 'custscript_max_weight' && weightParam) // returns 22
     scriptContext.currentRecord = CurrentRecord
 
+    // Mock weightParam to be less than totalWeight
+    // TotalWeight = (itemWeight * quantity) + lineWeight
+    // TotalWeight = 102 and WeightParam = 22
     const lineCount = 2
     const itemWeight = 20
     const quantity = 5
     CurrentRecord.getLineCount.mockImplementation(options => 
-      options.sublistId === 'item' && lineCount)
+      options.sublistId === 'item' && lineCount) // returns 2
 
     CurrentRecord.getSublistValue.mockImplementation(options => {
+      // returns 20
       if (options.sublistId === 'item' && 
           options.fieldId === 'custcol_item_weight' && 
          (options.line === 0 || options.line === 1)) return itemWeight
+      // returns 5
       if (options.sublistId === 'item' && 
           options.fieldId === 'quantity' && 
          (options.line === 0 || options.line === 1)) return quantity
@@ -108,14 +124,18 @@ describe('Validate order test on entry test', () => {
     expect(CurrentRecord.getSublistValue).toHaveBeenCalledTimes(4)
     expect(global.alert).toHaveBeenCalled()
   })
-  it('Should test saveRecord - line 62 - weightParam > totalWeight', () => {
+  it('Should test saveRecord - weightParam > totalWeight', () => {
     // given
+    // Mock weight script parameter
     const weightParam = 30
     runtime.getCurrentScript.mockReturnValue(Script)
     Script.getParameter.mockImplementation(options => 
       options.name === 'custscript_max_weight' && weightParam)
     scriptContext.currentRecord = CurrentRecord
-
+    
+    // Mock weightParam to be larger than totalWeight
+    // TotalWeight = (itemWeight * quantity) + lineWeight
+    // TotalWeight = 12 and WeightParam = 30
     const lineCount = 2
     const itemWeight = 5
     const quantity = 2
@@ -142,6 +162,7 @@ describe('Validate order test on entry test', () => {
   })
   it('Should test saveRecord function - line 36 - empty weightParam', () => {
     // given
+    // Mock empty weightparam 
     runtime.getCurrentScript.mockReturnValue(Script)
     const weightParam = undefined
     Script.getParameter.mockImplementation(options => 

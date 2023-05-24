@@ -15,6 +15,7 @@ define(['N/record', 'N/search', 'N/log'], (record, search, log) => {
   function afterSubmit (scriptContext) {
     const contextOrder = scriptContext.newRecord
     const soID = contextOrder.id
+    // load the new record and retrieve the values from the sales order 
     const salesorder = record.load({
       type: record.Type.SALES_ORDER,
       id: soID
@@ -47,6 +48,8 @@ define(['N/record', 'N/search', 'N/log'], (record, search, log) => {
       values: soFullTextTranID
     })
     mySearch.filters.push(entityFilter, soIdFilter)
+    // Calculate the balance remaining on the sales order using the total 
+    // current value of the sales order and the total paid from the search.
     mySearch.run().each((soresults) => {
       const soTextID = soresults.getValue({
         name: 'formulatext',
@@ -57,6 +60,8 @@ define(['N/record', 'N/search', 'N/log'], (record, search, log) => {
           name: 'formulacurrency',
           summary: search.Summary.SUM
         })
+        // Set the custom fields with corresponding values and save the updated
+        // sales order. The custom fields are populated with values on save.
         const remainingBalanceOnOrder = soTotal - totalPaid
         salesorder.setValue({
           fieldId: 'custbody_total_deposit_paid',

@@ -1,6 +1,8 @@
 # Summary
 This script converts the transaction total on a purchase order to a user-specific currency rather than use the currency associated with the vendor. The converted purchase order total is stored in a custom field on the purchase order record so that it can be used for reporting without changing the standard Total field. 
 
+For more information about this customization project, see [Set Purchase Order Exchange Rate](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_157176640777.html).
+
 # Key Concepts
 This sample demonstrates the following concepts:
 
@@ -24,7 +26,14 @@ This sample uses a client script type with the following entry points:
 
 * `saveRecord` - Defines the function that is executed when a record is saved (after the submit button is pressed but before the form is submitted).
 
-## Test the Solution
+# Customization Details
+This customization for this use case includes:
+* A custom field (Custom Currency PO Amount) to store the purchase amount in the currency of the person who created the purchase order.
+* A custom field (Custom Currency Exchange Rate) to store the exchange rate between the transaction currency and the custom currency.
+* A script parameter (Custom Currency) to store the currency set by the user.
+* A client script triggered on the saveRecord entry point.
+
+# Test the Solution
 
 1. Go to Transactions > Purchases > Enter Purchase Orders to create a new purchase order.
 2. In the Custom Form field, select Standard Purchase Order.

@@ -3,6 +3,8 @@ This customization calculates a custom commission amount when a sales order is s
 
 While NetSuite includes an Employee Commissions feature, this customization calculates and sets a simple custom commission amount in a custom field without using the feature. For more information about the more robust Employee Commissions feature, which can calculate commission for employees with different schedules and methods of calculation, see [Commissions](https://system.netsuite.com/app/help/helpcenter.nl?fid=chapter_N1122333.html).
 
+For more information about this customization project, see [Calculate Commission on Sales Orders](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_157227646073.html).
+
 # Key Concepts
 This sample demonstrates the following concepts:
 
@@ -22,6 +24,12 @@ This sample loads and uses the following SuiteScript modules:
 This sample uses a user event script type with the following entry points:
 
 * `afterSubmit` – Defines the function that is executed after a record is submitted. 
+
+# Customization Details
+The customization for this use case includes:
+* A custom field (MSRP) to store the MSRP for an item
+* A custom field (Custom Commission) to store the calculated commission
+* A user event script triggered on the afterSubmit entry point
 
 # Test the Solution
 1. Go to Transactions > Sales > Enter Sales Orders (Administrator) to create a new sales order.

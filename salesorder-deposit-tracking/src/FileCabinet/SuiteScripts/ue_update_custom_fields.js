@@ -11,12 +11,19 @@ define(['N/record', 'N/search', 'N/log'], (record, search, log) => {
    * @param {String} scriptContext.type The trigger type.
    */
   function beforeSubmit (scriptContext) {
+    // Retrieve the value of the sales order the customer deposit is created
+    // from. If the customer deposit is created from a sales order that is 
+    // being deleted, it updates the amount deposited and amount remaining
+    // fields on the related sales order. 
     const contextDep = scriptContext.newRecord
     const soID = contextDep.getValue({
       fieldId: 'salesorder'
     })
     if ((soID !== null) && 
     (scriptContext.type === scriptContext.UserEventType.DELETE)) {
+      // Load the sales order to check if status is billed. If status is not
+      // set to 'Billed', set the values on custom fields of the sales order
+      // based on a deposit and calculate reamining balance.
       const depAmt = contextDep.getValue({
         fieldId: 'payment'
       })
@@ -62,6 +69,8 @@ define(['N/record', 'N/search', 'N/log'], (record, search, log) => {
     })
     if (soID && ((scriptContext.type === scriptContext.UserEventType.CREATE) || 
          (scriptContext.type === scriptContext.UserEventType.EDIT))) {
+      // Load the sales order to check status. If status is set to 'Billed',
+      // the saved search will run.   
       const salesorder = record.load({
         type: record.Type.SALES_ORDER,
         id: soID
@@ -77,6 +86,9 @@ define(['N/record', 'N/search', 'N/log'], (record, search, log) => {
           fieldId: 'tranid'
         })
         const soFullTextTranID = 'Order #' + soTranId
+        // Load the saved search to match the order related to the customer 
+        // deposit to the order in the search results. The search formula finds
+        // the relationship of a customer deposit or refund to a sales order.
         const mySearch = search.load({
           id: 'customsearch_sobalancedue'
         })
@@ -96,6 +108,8 @@ define(['N/record', 'N/search', 'N/log'], (record, search, log) => {
           values: soFullTextTranID
         })
         mySearch.filters.push(entityFilter, soIdFilter)
+        // Retrieve the balances from the saved search and set the custom fields
+        // on the sales order that the customer deposit was created from.
         mySearch.run().each((soresults) => {
           const soTextID = soresults.getValue({
             name: 'formulatext',

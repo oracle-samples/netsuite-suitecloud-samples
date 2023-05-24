@@ -1,6 +1,8 @@
 # Summary
 This customization sets the custom Preferred Posting Period field with the most recent posting period from your saved search results. It then copies the value selected by the user to the standard Posting Period field.
 
+For more information about this customization project, see [Set a Default Posting Period in a Custom Field](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_157297685416.html).
+
 # Key Concepts
 This sample demonstrates the following concepts:
 
@@ -24,7 +26,14 @@ This sample uses a client script type with the following entry points:
 * `fieldChanged` - Defines the function that is executed when a field is changed by a user or client call.
 * `pageInit` - Defines the function that is executed after the page completes loading or when the form is reset.
 
-## Test the Solution
+# Customization Details
+This customization for this use case includes:
+* A custom field (Preferred Posting Period) to select an open accounting period
+* A custom form that disables the standard Posting Period and includes the custom Preferred Posting Period field
+* A saved search used to search for open accounting periods
+* A client script triggered on the pageInit and fieldChanged entry points
+
+# Test the Solution
 
 After you create the script record and deploy your script, you can test your solution by creating an invoice and confirming that the current posting period shows in the Preferred Posting Period field is copied to the standard Posting Period field.
 

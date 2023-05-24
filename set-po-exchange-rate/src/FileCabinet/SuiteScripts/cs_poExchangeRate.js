@@ -11,6 +11,7 @@ define(['N/runtime', 'N/currency', 'N/log'], (runtime, currency, log) => {
      */
   function saveRecord (context) {
     try {
+      // Retrieve currency parameter. If empty, script will end.
       const stUserCurrency = runtime.getCurrentScript().getParameter({
         name: 'custscript_custom_currency_po_amount'
       })
@@ -19,6 +20,8 @@ define(['N/runtime', 'N/currency', 'N/log'], (runtime, currency, log) => {
         throw Error(`Please enter a value for 
         Custom Currency at Home > User Preferences > Custom.`)
       }
+      // Retrieve currency value and purchase order date from the purchase order
+      // record.
       const purchaseOrder = context.currentRecord
       const stTranCurrency = purchaseOrder.getValue({
         fieldId: 'currency'
@@ -29,6 +32,8 @@ define(['N/runtime', 'N/currency', 'N/log'], (runtime, currency, log) => {
       const stTotal = purchaseOrder.getValue({
         fieldId: 'total'
       })
+      // Convert purchase order total to decimal value and calculate exchange 
+      // rate.
       const flTotalAmount = parseFloat(stTotal)
       const exchangeRate = currency.exchangeRate({
         source: stTranCurrency,
@@ -37,6 +42,8 @@ define(['N/runtime', 'N/currency', 'N/log'], (runtime, currency, log) => {
       })
       const flExchangeRate = parseFloat(exchangeRate)
       const flAmountInUserCurrency = parseFloat(flTotalAmount * flExchangeRate)
+      // Set custom fields on purchase order to display custom currency exchange
+      // rate and calculated purchase amt total with custom currency. 
       purchaseOrder.setValue({
         fieldId: 'custbody_currency_exchange_rate',
         value: flExchangeRate

@@ -1,3 +1,4 @@
+// import script and modules used
 import script from '../src/FileCabinet/SuiteScripts/ue_calculateCommission'
 import record from 'N/record'
 import Record from 'N/record/instance'
@@ -17,6 +18,7 @@ const scriptContext = {
   }
 }
 
+// enums used 
 record.Type = {
   SALES_ORDER: 'SALES_ORDER'
 }
@@ -46,10 +48,11 @@ describe('ue_calcuateCommission AfterSubmit Test', () => {
     scriptContext.newRecord = Record
 
     Record.getValue.mockImplementation(options => 
-      options.fieldId === 'subtotal' && 100) 
+      options.fieldId === 'subtotal' && 100) // returns 100 as subtotal
     Record.getLineCount.mockImplementation(options => 
       options.sublistId === 'item' && 2) // return 2 - numItems variable
 
+    // compare line items and return hypothetical values
     Record.getSublistValue.mockImplementation(options => {
       if (options.sublistId === 'item' && 
           options.fieldId === 'custcol_salesorder_msrp' &&
@@ -92,8 +95,9 @@ describe('ue_calcuateCommission AfterSubmit Test', () => {
 
     const flSubtotal = 2
     Record.getValue.mockImplementation(options => 
-      options.fieldId === 'subtotal' && flSubtotal) 
+      options.fieldId === 'subtotal' && flSubtotal) // returns 2 as subtotal
 
+    // compare line items and return hypothetical values
     const flMSRP = 1
     Record.getSublistValue.mockImplementation(options => {
       if (options.sublistId === 'item' && 

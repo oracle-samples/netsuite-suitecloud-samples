@@ -1,6 +1,8 @@
 # Summary
 This script validates an order to make sure that the number of items in the order corresponds to the number of cases of that item that can fit on a pallet (i.e., only accept orders fulfilled by full cases), and verifies that the total weight of the order does not exceed the maximum allowed weight for a single order.
 
+For more information about this customization project, see [Validate Order on Entry](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_157297763683.html).
+
 # Key Concepts
 This sample demonstrates the following concepts:
 
@@ -22,7 +24,14 @@ This sample uses a client script type with the following entry points:
 * `saveRecord` - Defines the function that is executed when a record is saved (after the submit button is pressed but before the form is submitted).
 * `validateLine` - Defines the validation function that is executed before a line is added to an inline editor sublist or editor sublist.
 
-## Test the Solution
+# Customization Details
+This customization for this use case includes:
+* A custom field (Cases per Pallet) that is used to store the number of cases of the item that are included on one pallet
+* A custom field (Item Weight) that is used to store the weight of a single item
+* A client script triggered on the validateLine and saveRecord entry points
+* A script parameter (Max Weight ) that is used to store the maximum weight for an order
+
+# Test the Solution
 
 1. Go to Transactions > Sales > Enter Sales Orders (Administrator) to create a new sales order.
 2. Fill in all required fields on the sales order with any values you want. You can use the Standard Sales Order form.

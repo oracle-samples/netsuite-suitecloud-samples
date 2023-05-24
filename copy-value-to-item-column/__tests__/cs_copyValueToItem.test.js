@@ -1,3 +1,5 @@
+// import script and modules used
+
 import script from '../src/FileCabinet/SuiteScripts/cs_copyValueToItem'
 
 import CurrentRecord from 'N/currentRecord/instance'
@@ -23,6 +25,8 @@ describe('Copy to a Value to Item test', () => {
   it('Should not copy a value to item', () => {
     // given
     context.currentRecord = CurrentRecord
+    
+    // incorrect fieldId will not execute script
     context.fieldId = 'items'
     context.sublistId = 'custcol_billing'
 
@@ -42,9 +46,9 @@ describe('Copy to a Value to Item test', () => {
 
     CurrentRecord.getCurrentSublistText.mockReturnValue(itemName)
 
-    search.create.mockReturnValue(Search)
-    Search.run.mockReturnValue(ResultSet)
-    ResultSet.getRange.mockReturnValue([Result])
+    search.create.mockReturnValue(Search) // returns Search obj
+    Search.run.mockReturnValue(ResultSet) // returns ResultSet obj
+    ResultSet.getRange.mockReturnValue([Result]) // returns arr Result obj
 
     Search.columns = []
     Result.getValue.mockReturnValue([704875])

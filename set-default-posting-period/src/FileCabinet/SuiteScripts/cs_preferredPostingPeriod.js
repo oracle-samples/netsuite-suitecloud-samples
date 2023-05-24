@@ -13,6 +13,8 @@ define(['N/search', 'N/log'], (search, log) => {
    */
   function pageInit (context) {
     try {
+      // If invoice is being created or copied, run the saved search to get
+      // list of open accounting periods available for the custom field.
       if (context.mode === 'copy' || context.mode === 'create') {
         const record = context.currentRecord
         const searchOpenAccountingPeriods = search.load({
@@ -45,6 +47,8 @@ define(['N/search', 'N/log'], (search, log) => {
    */
   function fieldChanged (context) {
     try {
+      // If the custom Posting Period field changes value, automatically set 
+      // the Posting Period field to update for consistency.
       if (context.fieldId === 'custbody_preferred_posting_period') {
         const record = context.currentRecord
         const prefPostPeriod = record.getValue({

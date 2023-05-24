@@ -1,3 +1,4 @@
+// import script and modules used
 import script from '../src/FileCabinet/SuiteScripts/ue_handle_deposit'
 
 import record from 'N/record'
@@ -30,6 +31,7 @@ const scriptContext = {
 describe('UserEventScript Handle Deposit test', () => {
   it('Should test aftersubmit function', () => {
     // given
+    // Set arbitrary values to old record and retrieve returned values.
     scriptContext.oldRecord = Record
     const depAppId = 1234
     Record.id = depAppId
@@ -43,6 +45,7 @@ describe('UserEventScript Handle Deposit test', () => {
 
     record.load.mockReturnValue(Record)
 
+    // Retrieve arbitrary values from loaded sales order.
     const orderId = 3456
     const soFullTextTranID = 7890
     Record.getValue.mockImplementation(options => 
@@ -50,9 +53,10 @@ describe('UserEventScript Handle Deposit test', () => {
     Record.getText.mockImplementation(options => 
       options.fieldId === 'salesorder' && soFullTextTranID)
 
-    search.load.mockReturnValue(Search)
+    // Set return Values for each method.
+    search.load.mockReturnValue(Search) // represents Search object
     Search.filters = []
-    Search.run.mockReturnValue(ResultSet)
+    Search.run.mockReturnValue(ResultSet) // represents ResultSet object
     ResultSet.each.mockImplementation((soresults) => soresults(Result))
 
     const soTextID = soFullTextTranID

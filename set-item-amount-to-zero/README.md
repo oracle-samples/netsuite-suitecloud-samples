@@ -1,6 +1,8 @@
 # Summary
 This script determines if the sales order being saved is a marketing order. If it is a marketing order, the script sets the Amount field on the sales order to zero (0).
 
+For more information about this customization project, see [Set the Item Amount to Zero for Marketing Orders](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_157243821278.html).
+
 # Key Concepts
 This sample demonstrates the following concepts:
 
@@ -21,7 +23,12 @@ This sample uses a user event script type with the following entry points:
 
 * `afterSubmit` – Defines the function that is executed after a record is submitted. 
 
-## Test the Solution
+# Customization Details
+The customization for this use case includes:
+* A custom field (Marketing Order) that is used to indicate a marketing order
+* A user event script triggered on the afterSubmit entry point
+
+# Test the Solution
 1. Go to Transactions > Sales > Enter Sales Orders (Administrator).
 2. Select the Standard Sales Order form and verify that the Marketing Order box field is shown on the form. This field will be included on all standard and custom sales order forms. For this tutorial, you can use the Standard Sales Order form.
 3. Add multiple items to the sales order. You do not need to adjust any field for the item unless you want to. Ensure that the Amount field for each item is not already 0.
