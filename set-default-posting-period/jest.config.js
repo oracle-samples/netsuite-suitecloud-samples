@@ -2,20 +2,5 @@ const SuiteCloudJestConfiguration = require('@oracle/suitecloud-unit-testing/jes
 
 module.exports = SuiteCloudJestConfiguration.build({
   projectFolder: 'src',
-  projectType: SuiteCloudJestConfiguration.ProjectType.ACP,
-  customStubs: [
-    {
-      module: 'N/log',
-      path: '<rootDir>/customStubs/log.js'
-    }, {
-      module: 'N/runtime',
-      path: '<rootDir>/customStubs/runtime.js'
-    }, {
-      module: 'N/currentRecord',
-      path: '<rootDir>/customStubs/currentRecord.js'
-    }, {
-      module: 'N/currentRecord/instance',
-      path: '<rootDir>/customStubs/currentRecordInstance.js'
-    }
-  ]
+  projectType: SuiteCloudJestConfiguration.ProjectType.ACP
 })

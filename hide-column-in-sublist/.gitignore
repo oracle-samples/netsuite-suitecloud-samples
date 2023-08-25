@@ -1,0 +1,12 @@
+# dependencies
+**/node_modules/**
+
+# ides
+**/.idea/**
+**/.vscode/**
+
+# test coverage folder
+**/coverage/**
+
+# suitecloud
+project.json
