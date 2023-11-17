@@ -8,18 +8,18 @@ This customization uses a script parameter to determine which roles can edit tax
 # Key Concepts
 This sample demonstrates the following concepts:
 
-* **SuiteScript 2.1** – This SuiteScript version is the latest available version and includes new language features that are not part of SuiteScript 2.0. This sample uses some SuiteScript 2.1 features, such as arrow functions. For more information, see [SuiteScript 2.1](https://system.netsuite.com/app/help/helpcenter.nl?fid=chapter_156042690639.html).
-* **Client script type** - Client scripts are scripts that are executed by predefined event triggers in the client browser. They can validate user-entered data and auto-populate fields or sublists at various form events. Scripts can be run on most standard records, custom record types, and custom NetSuite pages such as Suitelets. For more information, see SuiteScript 2.x Client Script Type.
+* **SuiteScript 2.1** – This SuiteScript version is the latest available version and includes new language features that are not part of SuiteScript 2.0. This sample uses some SuiteScript 2.1 features, such as arrow functions. For more information, see [SuiteScript 2.1](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/chapter_156042690639.html#SuiteScript-2.1).
+* **Client script type** - Client scripts are scripts that are executed by predefined event triggers in the client browser. They can validate user-entered data and auto-populate fields or sublists at various form events. Scripts can be run on most standard records, custom record types, and custom NetSuite pages such as Suitelets. For more information, see [SuiteScript 2.x Client Script Type](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_4387798404.html#SuiteScript-2.x-Client-Script-Type).
 
 # SuiteScript Version
-This sample uses SuiteScript 2.1. For more information about this SuiteScript version, see [SuiteScript 2.1](https://system.netsuite.com/app/help/helpcenter.nl?fid=chapter_156042690639.html).
+This sample uses SuiteScript 2.1. For more information about this SuiteScript version, see [SuiteScript 2.1](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/chapter_156042690639.html#SuiteScript-2.1).
 
 # Loaded Modules
 This sample loads and uses the following SuiteScript modules:
 
-* **N/currentRecord** - to access the record that is active in the current client context. This module is always a dynamic object and mode of work is always dynamic, not deferred dynamic/standard. For more information, see [N/currentRecord Module](https://system.netsuite.com/app/help/helpcenter.nl?fid=section_4625600928.html).
-* **N/runtime** - to view runtime settings for the script, the session, or the user. For more information, see [N/runtime Module](https://system.netsuite.com/app/help/helpcenter.nl?fid=section_4296359529.html).
-* **N/log** – To log errors that occur during execution. For more information, see [N/log Module](https://system.netsuite.com/app/help/helpcenter.nl?fid=section_4574548135.html).
+* **N/currentRecord** - to access the record that is active in the current client context. This module is always a dynamic object and mode of work is always dynamic, not deferred dynamic/standard. For more information, see [N/currentRecord Module](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_4625600928.html#N%2FcurrentRecord-Module).
+* **N/runtime** - to view runtime settings for the script, the session, or the user. For more information, see [N/runtime Module](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_4296359529.html#N%2Fruntime-Module).
+* **N/log** – To log errors that occur during execution. For more information, see [N/log Module](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_4574548135.html#N%2Flog-Module).
 
 # Script Type and Entry Points
 This sample uses a client script type with the following entry points:
