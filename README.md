@@ -28,7 +28,7 @@ For information about deploying the project from the IDE to your account, see:
 
 ## Documentation
 
-NetSuite's online documentation can be found in the Oracle Help Center at [docs.oracle.com](docs.oracle.com). The platform documentation can be found here: 
+NetSuite's online documentation can be found in the Oracle Help Center at [docs.oracle.com](https://docs.oracle.com/en/cloud/saas/netsuite/index.html). The platform documentation can be found here: 
 - SuiteCloud Platform Customization - https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/chapter_1529088392.html
 
 User guides in downloadable PDF format for NetSuite are listed here: https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/preface_3710621755.html 
