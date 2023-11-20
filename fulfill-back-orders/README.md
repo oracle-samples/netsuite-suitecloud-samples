@@ -13,7 +13,7 @@ The sample then checks the quantity of back ordered items on these sales order r
 
 If the quantity of back ordered items is greater than zero, the sample obtains the item fulfillment record that is associated with the sales order and updates the item quantity on that record. The item quantity is updated by adding the existing item quantity (from the item fulfillment record) to the back ordered item quantity (from the sales order).
 
-<img alt="back order before.png" class="js-lazy-loaded qa-js-lazy-loaded" src="assets/bak order before.png" loading="lazy">
+<img alt="back order before.png" class="js-lazy-loaded qa-js-lazy-loaded" src="assets/back order before.png" loading="lazy">
 
 <img alt="back order after.png" class="js-lazy-loaded qa-js-lazy-loaded" src="assets/back order after.png" loading="lazy">
 
@@ -24,19 +24,19 @@ After the item quantities are updated for a sales order record, that record move
 # Key Concepts
 This sample demonstrates the following concepts:
 
-* **SuiteScript 2.1** – This SuiteScript version is the latest available version and includes new language features that are not part of SuiteScript 2.0. This sample uses some SuiteScript 2.1 features, such as arrow functions. For more information, see [SuiteScript 2.1](https://system.netsuite.com/app/help/helpcenter.nl?fid=chapter_156042690639.html).
-* **Map/reduce script type** – This type of script is useful for processing and updating a large number of records. For more information, see [SuiteScript 2.0 Map/Reduce Script Type](https://system.netsuite.com/app/help/helpcenter.nl?fid=section_4387799161.html).
-* **SuiteQL** – You can use SuiteQL to write complex queries using a syntax that is similar to the SQL-92 specification. For more information, see [SuiteQL](https://system.netsuite.com/app/help/helpcenter.nl?fid=section_156257770590.html).
-* **Dynamic mode for records** – This sample loads records in dynamic mode. In this mode, the record's body fields and sublist line items are sourced, calculated, and validated in real time. For more information, see [SuiteScript 2.0 - Standard and Dynamic Modes](https://system.netsuite.com/app/help/helpcenter.nl?fid=section_1524156901.html).
+* **SuiteScript 2.1** – This SuiteScript version is the latest available version and includes new language features that are not part of SuiteScript 2.0. This sample uses some SuiteScript 2.1 features, such as arrow functions. For more information, see [SuiteScript 2.1](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/chapter_156042690639.html#SuiteScript-2.1).
+* **Map/reduce script type** – This type of script is useful for processing and updating a large number of records. For more information, see [SuiteScript 2.x Map/Reduce Script Type](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_4387799161.html#SuiteScript-2.x-Map%2FReduce-Script-Type).
+* **SuiteQL** – You can use SuiteQL to write complex queries using a syntax that is similar to the SQL-92 specification. For more information, see [SuiteQL](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_156257770590.html#SuiteQL).
+* **Dynamic mode for records** – This sample loads records in dynamic mode. In this mode, the record's body fields and sublist line items are sourced, calculated, and validated in real time. For more information, see [SuiteScript 2.x - Standard and Dynamic Modes](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_1524156901.html#SuiteScript-2.x-Standard-and-Dynamic-Modes).
 
 # SuiteScript Version
-This sample uses SuiteScript 2.1. For more information about this SuiteScript version, see [SuiteScript 2.1](https://system.netsuite.com/app/help/helpcenter.nl?fid=chapter_156042690639.html).
+This sample uses SuiteScript 2.1. For more information about this SuiteScript version, see [SuiteScript 2.1](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/chapter_156042690639.html#SuiteScript-2.1).
 
 # Loaded Modules
 This sample loads and uses the following SuiteScript modules:
 
-* **N/record** – To load and work with records. For more information, see [N/record Module](https://system.netsuite.com/app/help/helpcenter.nl?fid=section_4267255811.html).
-* **N/log** – To log errors that occur during execution. For more information, see [N/log Module](https://system.netsuite.com/app/help/helpcenter.nl?fid=section_4574548135.html).
+* **N/record** – To load and work with records. For more information, see [N/record Module](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_4267255811.html#N%2Frecord-Module).
+* **N/log** – To log errors that occur during execution. For more information, see [N/log Module](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_4574548135.html#N%2Flog-Module).
 
 # Script Type and Entry Points
 This sample uses a map/reduce script type with the following entry points:
