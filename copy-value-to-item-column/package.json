@@ -2,12 +2,14 @@
   "name": "copy-a-value-to-the-item-column",
   "version": "1.0.0",
   "scripts": {
-    "test": "jest --testPathPattern=__tests__ --coverage --collectCoverageFrom=src/FileCabinet/SuiteScripts/*"
+    "test": "jest --testPathPattern=__tests__ --coverage --collectCoverageFrom=src/FileCabinet/SuiteScripts/*",
+    "lint": "eslint --fix src __tests__"
   },
   "devDependencies": {
-    "@oracle/suitecloud-unit-testing": "^1.2.0",
+    "@oracle/suitecloud-unit-testing": "^1.4.1",
     "eslint": "^8.26.0",
-    "jest": "^27.4.7"
+    "jest": "^27.4.7",
+    "prettier": "^2.8.8"
   },
   "dependencies": {
     "eslint-config-standard": "^14.1.1",
@@ -15,8 +17,7 @@
     "eslint-plugin-node": "^11.0.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
-    "standard": "*",
-    "suitecloud-unit-testing-stubs": "^1.0.2"
+    "standard": "*"
   },
   "main": "jest.config.js",
   "author": "",
