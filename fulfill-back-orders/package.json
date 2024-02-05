@@ -2,19 +2,20 @@
   "name": "updatebackfillorders",
   "version": "1.0.0",
   "scripts": {
-    "test": "jest"
+    "test": "jest --testPathPattern=__tests__ --coverage --collectCoverageFrom=src/FileCabinet/SuiteScripts/*",
+    "lint": "eslint --fix src __tests__"
   },
   "devDependencies": {
     "@oracle/suitecloud-unit-testing": "^1.4.1",
     "N": "^0.1.0",
-    "eslint": "^6.8.0",
+    "eslint": "^8.27.0",
     "eslint-config-standard": "^14.1.1",
     "eslint-plugin-import": "^2.20.1",
     "eslint-plugin-node": "^11.0.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
-    "jest": "^29.4.3",
-    "standard": "^14.3.4"
+    "jest": "^27.4.7",
+    "standard": "*"
   },
   "dependencies": {
     "@jest/globals": "^26.5.3"
