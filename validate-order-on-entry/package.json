@@ -1,13 +1,15 @@
 {
-  "name": "suitecloud-project",
+  "name": "validate-order-on-entry",
   "version": "1.0.0",
   "scripts": {
-    "test": "jest --testPathPattern=__tests__ --coverage --collectCoverageFrom=src/FileCabinet/SuiteScripts/*"
+    "test": "jest --testPathPattern=__tests__ --coverage --collectCoverageFrom=src/FileCabinet/SuiteScripts/*",
+    "lint": "eslint --fix src __tests__"
   },
   "devDependencies": {
-    "@oracle/suitecloud-unit-testing": "^1.2.0",
-    "eslint": "^7.32.0",
-    "jest": "^27.4.7"
+    "@oracle/suitecloud-unit-testing": "^1.4.1",
+    "eslint": "^8.7.0",
+    "jest": "^27.5.1",
+    "prettier": "^2.5.1"
   },
   "dependencies": {
     "eslint-config-standard": "^14.1.1",
@@ -17,5 +19,8 @@
     "eslint-plugin-standard": "^4.0.1",
     "standard": "*",
     "suitecloud-unit-testing-stubs": "^1.0.2"
-  }
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }

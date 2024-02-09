@@ -33,7 +33,7 @@ describe('UserEventScript - Add a custom button to form', () => {
     scriptContext.newRecord = Record
     scriptContext.form = Form
 
-    // set status to determine if script should set button link
+    // set status to determine if script should set button link 
     const status = 'Billed'
     Record.getValue.mockImplementation(options => 
       options.fieldId === 'status' && status)
