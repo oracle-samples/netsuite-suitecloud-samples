@@ -26,6 +26,8 @@ For information about deploying the project from the IDE to your account, see:
 
 [Deploying a SuiteCloud Project to Your NetSuite Account with SuiteCloud Extension for Visual Studio Code](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/section_160147342366.html)
 
+This project utilizes a custom set of configurable JavaScript linting rules to automatically fix and format your code. You can optionally install ESLint into your local environment to receive code suggestions and find potential issues. For more information, see [ESLint](https://eslint.org/).
+
 ## Documentation
 
 NetSuite's online documentation can be found in the Oracle Help Center at [docs.oracle.com](https://docs.oracle.com/en/cloud/saas/netsuite/index.html). The platform documentation can be found here: 
