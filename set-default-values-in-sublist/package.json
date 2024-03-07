@@ -1,16 +1,14 @@
 {
-    "name": "suitecloud-project",
+    "name": "set-default-values-in-sublist",
     "version": "1.0.0",
-    "main": "suitecloud.config.js",
     "scripts": {
       "test": "jest --testPathPattern=__tests__ --coverage --collectCoverageFrom=src/FileCabinet/SuiteScripts/*",
       "lint": "eslint --fix src __tests__"
     },
     "devDependencies": {
       "@oracle/suitecloud-unit-testing": "^1.4.1",
-      "@types/jest": "29.5.3",
-      "eslint": "^8.27.0",
-      "jest": "^27.4.7",
+      "eslint": "^8.7.0",
+      "jest": "^27.5.1",
       "prettier": "^2.5.1"
     },
     "dependencies": {
@@ -20,5 +18,8 @@
       "eslint-plugin-promise": "^4.2.1",
       "eslint-plugin-standard": "^4.0.1",
       "standard": "*"
-    }
+    },
+    "author": "",
+    "license": "ISC",
+    "description": ""
   }

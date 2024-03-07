@@ -3,7 +3,6 @@
 
 # ides
 **/.idea/**
-**/.vscode/**
 
 # test coverage folder
 **/coverage/**
