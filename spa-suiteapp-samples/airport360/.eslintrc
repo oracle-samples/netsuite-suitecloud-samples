@@ -1,0 +1,61 @@
+{
+	"root": true,
+	"parser": "@typescript-eslint/parser",
+	"plugins": [
+		"jasmine",
+		"import",
+		"react",
+		"@typescript-eslint"
+	],
+	"extends": [
+	  "eslint:recommended",
+	  "prettier",
+		"plugin:@typescript-eslint/eslint-recommended",
+		"plugin:@typescript-eslint/recommended"
+	],
+	"rules": {
+	  "no-var": 2,
+	  "no-multi-str": 2,
+	  "no-prototype-builtins": 0,
+	  "no-duplicate-imports": 2,
+	  "no-self-compare": 2,
+	  "no-template-curly-in-string": 2,
+	  "no-unused-private-class-members": 2,
+	  "curly": 2,
+	  "camelcase": [2, {"properties": "never"}],
+	  "no-extend-native": 2,
+	  "max-depth": 2,
+	  "dot-notation": 2,
+	  "eqeqeq": 2,
+	  "comma-dangle": [2, "only-multiline"],
+	  "no-constant-condition": [2, { "checkLoops": false }],
+	  "no-unused-vars": [2, { "args": "none", "varsIgnorePattern": "^_" , "argsIgnorePattern": "^_"}],
+
+	  "jasmine/no-focused-tests": 2,
+	  "jasmine/no-disabled-tests": 1,
+	  "jasmine/no-spec-dupes": [1, "branch"],
+	  "jasmine/no-suite-dupes": [1, "branch"],
+	  "jasmine/missing-expect": [0, "expect()"],
+	  "jasmine/valid-expect": 2,
+
+	  "react/jsx-uses-vars": 2
+	},
+	"env": {
+		"es6": true,
+		"amd": true,
+		"node": true,
+		"browser": true,
+		"jasmine": true
+	},
+	"parserOptions": {
+		"ecmaVersion": 2022,
+		"sourceType": "module",
+		"ecmaFeatures": {
+			"jsx": true
+		}
+	},
+	"globals": {
+		"nlapi": true,
+		"Prism": true
+	}
+}

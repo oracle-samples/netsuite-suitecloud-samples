@@ -1,0 +1,17 @@
+{
+    "preset": "jest-puppeteer",
+    "testEnvironment": "node",
+    "verbose": true,
+    "transform": {
+    "^.+\\.ts?$": "ts-jest"
+    },
+    "globalSetup": "./setup/setup.ts",
+    "globalTeardown": "./setup/teardown.ts",
+    "transformIgnorePatterns":
+    [
+    "node_modules"
+    ],
+    "globals": {
+    "baseUrl": "https://dominguezare5e2a-runbox-nsn-deuf1-001.eng.netsuite.com/"
+    }
+    }

@@ -1,0 +1,14 @@
+<singlepageapp scriptid="custspa_helloworldjs">
+  <name>UIF Sample - HelloWorld JS</name>
+  <description>This is a sample SuiteApp using the UIF framework</description>
+  <url>helloworld</url>
+  <folder>[/SuiteApps/com.netsuite.uifhwjs/helloworld/]</folder>
+  <clientscriptfile>[/SuiteApps/com.netsuite.uifhwjs/helloworld/SpaClient.js]</clientscriptfile>
+  <serverscriptfile>[/SuiteApps/com.netsuite.uifhwjs/helloworld/SpaServer.js]</serverscriptfile>
+  <assetsfolder>[/SuiteApps/com.netsuite.uifhwjs/helloworld/assets/]</assetsfolder>
+  <loglevel>ERROR</loglevel>
+  <audienceallroles>F</audienceallroles>
+  <audienceroles></audienceroles>
+  <executeas></executeas>
+  <usesuif>T</usesuif>
+</singlepageapp>

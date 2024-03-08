@@ -1,0 +1,19 @@
+<singlepageapp scriptid="custspa_airport360">
+  <name>UIF Sample - Airport SPA</name>
+  <description>This is a sample SuiteApp using the UIF framework written in TypeScript.</description>
+  <url>airport</url>
+  <folder>[/SuiteApps/com.netsuite.airport360/airport/]</folder>
+  <clientscriptfile>[/SuiteApps/com.netsuite.airport360/airport/SpaClient.js]</clientscriptfile>
+  <serverscriptfile>[/SuiteApps/com.netsuite.airport360/airport/SpaServer.js]</serverscriptfile>
+  <assetsfolder>[/SuiteApps/com.netsuite.airport360/airport/assets/]</assetsfolder>
+  <loglevel>ERROR</loglevel>
+  <audienceallroles>F</audienceallroles>
+  <audienceroles></audienceroles>
+  <executeas></executeas>
+    <links>
+    <link>
+      <linkcategory>BASICLISTSRELATIONSHIPS</linkcategory>
+      <linklabel translate="T">[scriptid=custcollection_center_link.default_string]</linklabel>
+    </link>
+  </links>
+</singlepageapp>
