@@ -1,0 +1,24 @@
+<customlist scriptid="customlist_item360_pcpart_category">
+    <description>PC part categories</description>
+    <name>Category</name>
+    <customvalues>
+        <customvalue scriptid="val_pcpart_category_notebook">
+            <value>Notebook</value>
+        </customvalue>
+        <customvalue scriptid="val_pcpart_category_graphiccard">
+            <value>Graphic Card</value>
+        </customvalue>
+        <customvalue scriptid="val_pcpart_category_processor">
+            <value>Processor</value>
+        </customvalue>
+        <customvalue scriptid="val_pcpart_category_peripherals">
+            <value>Peripherals</value>
+        </customvalue>
+        <customvalue scriptid="val_pcpart_category_monitor">
+            <value>Monitor</value>
+        </customvalue>
+        <customvalue scriptid="val_pcpart_category_other">
+            <value>Other</value>
+        </customvalue>
+    </customvalues>
+</customlist>

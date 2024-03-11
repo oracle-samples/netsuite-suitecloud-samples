@@ -1,0 +1,10 @@
+<translationcollection scriptid="custcollection_center_link">
+  <name>Translation Collection for center links</name>
+  <defaultlanguage>en-US</defaultlanguage>
+  <strings>
+    <string scriptid="default_string">
+      <defaulttranslation>Airport App</defaulttranslation>
+      <description>The default translation of the center link</description>
+    </string>
+  </strings>
+</translationcollection>

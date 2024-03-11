@@ -1,0 +1,61 @@
+<customrecordtype scriptid="customrecord_item360_vendor">
+    <accesstype>NONENEEDED</accesstype>
+    <recordname>Vendor</recordname>
+    <customrecordcustomfields>
+        <customrecordcustomfield scriptid="custrecord_vendor_id">
+            <label>ID</label>
+            <fieldtype>INTEGER</fieldtype>
+        </customrecordcustomfield>
+        <customrecordcustomfield scriptid="custrecord_vendor_description">
+            <label>Description</label>
+            <fieldtype>TEXT</fieldtype>
+        </customrecordcustomfield>
+    </customrecordcustomfields>
+    <instances>
+        <instance scriptid="val_vendor_dell">
+            <name>Dell</name>
+            <custrecord_vendor_id>1</custrecord_vendor_id>
+            <custrecord_vendor_description>Producer of notebooks</custrecord_vendor_description>
+        </instance>
+        <instance scriptid="val_vendor_apple">
+            <name>Apple</name>
+            <custrecord_vendor_id>2</custrecord_vendor_id>
+            <custrecord_vendor_description>Number one in IT tech</custrecord_vendor_description>
+        </instance>
+        <instance scriptid="val_vendor_lenovo">
+            <name>Lenovo</name>
+            <custrecord_vendor_id>3</custrecord_vendor_id>
+            <custrecord_vendor_description>Another computer producer</custrecord_vendor_description>
+        </instance>
+        <instance scriptid="val_vendor_logitech">
+            <name>Logitech</name>
+            <custrecord_vendor_id>4</custrecord_vendor_id>
+            <custrecord_vendor_description>Keyboards and mice</custrecord_vendor_description>
+        </instance>
+        <instance scriptid="val_vendor_samsung">
+            <name>Samsung</name>
+            <custrecord_vendor_id>5</custrecord_vendor_id>
+            <custrecord_vendor_description>Producer of all kind pc items</custrecord_vendor_description>
+        </instance>
+        <instance scriptid="val_vendor_intel">
+            <name>Intel</name>
+            <custrecord_vendor_id>6</custrecord_vendor_id>
+            <custrecord_vendor_description>Well known producer of processors</custrecord_vendor_description>
+        </instance>
+        <instance scriptid="val_vendor_amd">
+            <name>AMD</name>
+            <custrecord_vendor_id>7</custrecord_vendor_id>
+            <custrecord_vendor_description>Produces all kinds of processors</custrecord_vendor_description>
+        </instance>
+        <instance scriptid="val_vendor_nvidia">
+            <name>Nvidia</name>
+            <custrecord_vendor_id>8</custrecord_vendor_id>
+            <custrecord_vendor_description>Producer of GPUs</custrecord_vendor_description>
+        </instance>
+        <instance scriptid="val_vendor_other">
+            <name>Other</name>
+            <custrecord_vendor_id>9999</custrecord_vendor_id>
+            <custrecord_vendor_description>Other vendors</custrecord_vendor_description>
+        </instance>
+    </instances>
+</customrecordtype>

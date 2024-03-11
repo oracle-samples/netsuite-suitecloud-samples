@@ -1,0 +1,11 @@
+<deploy>
+    <files>
+        <path>~/FileCabinet/SuiteApps/com.netsuite.uifitem360/*</path>
+    </files>
+    <objects>
+        <path>~/Objects/*</path>
+    </objects>
+    <translationimports>
+        <path>~/Translations/*</path>
+    </translationimports>
+</deploy>
