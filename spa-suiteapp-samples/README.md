@@ -7,8 +7,8 @@ These samples use the SPA SuiteApp project template that contains a TypeScript c
 Each sample SuiteApp contains `ESLint` and `Prettier` configuration files, and you can configure them using the `inspect` and `lint` npm scripts available in each SuiteApp. Using both is highly recommended to ensure adherence to coding standards.
 
 ## Availability
-The Single Page Application feature in NetSuite is available by request only. This feature requires the use of SuiteCloud Development Framework (SDF) SuiteApp projects and SuiteScript 2.1. For information about the requirements to use this feature and how to request for access, see [Single Page Application](https://system.netsuite.com/app/help/helpcenter.nl?fid=SinglePageApplication.pdf).
-<!--Replace SPA PDF link with help center link once it is published-->
+The Single Page Application feature in NetSuite is available by request only. This feature requires the use of SuiteCloud Development Framework (SDF) SuiteApp projects and SuiteScript 2.1. For information about the requirements to use this feature and how to request for access, see [Single Page Application](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/article_161244635803.html#Single-Page-Applications).
+
 
 ## Environment Setup
 
@@ -77,7 +77,6 @@ SuiteApps written in Javascript are marked with `(JS)` at the end of the descrip
 1. Open the single page application in your NetSuite account by going to `Customization > Scripting > Single Page Applications`.
 
 ## Links
-<!--Replace SPA PDF with link to SPA help topic. Removed link to UIF because not everyone has access to it.-->
-- [Single Page Application](https://system.netsuite.com/app/help/helpcenter.nl?fid=SinglePageApplication.pdf)
+- [Single Page Application](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/article_161244635803.html#Single-Page-Applications)
 - [SuiteCloud CLI](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/chapter_1558708800.html#SuiteCloud-CLI-for-Node.js-Guide)
 - [SuiteCloud Development Framework](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/book_4702638251.html#SuiteCloud-Development-Framework)
