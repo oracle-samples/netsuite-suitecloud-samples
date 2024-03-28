@@ -1,0 +1,122 @@
+<!-- Do not modify the contents of the SDF XML definition structure located under "CDATA" section of this XML, as this may corrupt the Workbook/Dataset data when you deploy the modified object to your NetSuite account. !-->
+<workbook scriptid="custworkbook_nscs_mr_create">
+  <name translate="T">[scriptid=custcollectiontranslations_workbook_206_29f9bef585784716971.workbook_name_27_1]</name>
+  <dependencies>
+    <dependency>[scriptid=custdataset205]</dependency>
+    <dependency>[scriptid=custcollectiontranslations_tableview_1344_a442105ecd334113a.tableview_name_27_3]</dependency>
+  </dependencies>
+  <definition><![CDATA[<root>
+<Workbook>
+  <_T_>workbook</_T_>
+  <id type="null"/>
+  <scriptId type="null"/>
+  <applicationId type="null"/>
+  <version>1.1.1</version>
+  <name>
+    <translationScriptId>custcollectiontranslations_workbook_206_29f9bef585784716971.workbook_name_27_1</translationScriptId>
+  </name>
+  <audience>
+    <AudienceItems type="array"/>
+    <isPublic type="boolean">false</isPublic>
+  </audience>
+  <ownerId>-5</ownerId>
+  <description type="null"/>
+  <dataViewIDs type="array">
+    <_ITEM_>custview1344_17023980303402369204</_ITEM_>
+  </dataViewIDs>
+  <pivotIDs type="array"/>
+  <chartIDs type="array"/>
+</Workbook>
+<pivots type="array"/>
+<charts type="array"/>
+<dataViews type="array">
+  <_ITEM_>
+    <_T_>dataView</_T_>
+    <id type="null"/>
+    <scriptId>custview1344_17023980303402369204</scriptId>
+    <applicationId type="null"/>
+    <version>1.2021.2</version>
+    <name>
+      <translationScriptId>custcollectiontranslations_tableview_1344_a442105ecd334113a.tableview_name_27_3</translationScriptId>
+    </name>
+    <workbook>custworkbook_nscs_mr_create</workbook>
+    <datasets type="array">
+      <_ITEM_>custdataset205</_ITEM_>
+    </datasets>
+    <columns type="array">
+      <_ITEM_>
+        <datasetScriptId>custdataset205</datasetScriptId>
+        <dataSetColumnId>2</dataSetColumnId>
+        <targetFieldContext>
+          <name>IDENTIFIER</name>
+        </targetFieldContext>
+        <sorting type="null"/>
+        <criterion type="null"/>
+        <customLabel type="null"/>
+        <fieldStateName>raw</fieldStateName>
+        <conditionalFormat type="array"/>
+        <width type="null"/>
+      </_ITEM_>
+      <_ITEM_>
+        <datasetScriptId>custdataset205</datasetScriptId>
+        <dataSetColumnId>3</dataSetColumnId>
+        <targetFieldContext>
+          <name>IDENTIFIER</name>
+        </targetFieldContext>
+        <sorting type="null"/>
+        <criterion type="null"/>
+        <customLabel type="null"/>
+        <fieldStateName>raw</fieldStateName>
+        <conditionalFormat type="array"/>
+        <width type="null"/>
+      </_ITEM_>
+      <_ITEM_>
+        <datasetScriptId>custdataset205</datasetScriptId>
+        <dataSetColumnId>4</dataSetColumnId>
+        <targetFieldContext>
+          <name>IDENTIFIER</name>
+        </targetFieldContext>
+        <sorting type="null"/>
+        <criterion type="null"/>
+        <customLabel type="null"/>
+        <fieldStateName>raw</fieldStateName>
+        <conditionalFormat type="array"/>
+        <width type="null"/>
+      </_ITEM_>
+      <_ITEM_>
+        <datasetScriptId>custdataset205</datasetScriptId>
+        <dataSetColumnId>5</dataSetColumnId>
+        <targetFieldContext>
+          <name>IDENTIFIER</name>
+        </targetFieldContext>
+        <sorting type="null"/>
+        <criterion type="null"/>
+        <customLabel type="null"/>
+        <fieldStateName>raw</fieldStateName>
+        <conditionalFormat type="array"/>
+        <width type="null"/>
+      </_ITEM_>
+      <_ITEM_>
+        <datasetScriptId>custdataset205</datasetScriptId>
+        <dataSetColumnId>6</dataSetColumnId>
+        <targetFieldContext>
+          <name>UNCONSOLIDATED</name>
+        </targetFieldContext>
+        <sorting type="null"/>
+        <criterion type="null"/>
+        <customLabel type="null"/>
+        <fieldStateName>unconsolidated</fieldStateName>
+        <conditionalFormat type="array"/>
+        <width type="null"/>
+      </_ITEM_>
+    </columns>
+    <order>0</order>
+  </_ITEM_>
+</dataViews>
+<datasetLinks type="array"/>
+</root>]]></definition>
+  <tables>
+    <table scriptid="custview1344_17023980303402369204">
+    </table>
+  </tables>
+</workbook>

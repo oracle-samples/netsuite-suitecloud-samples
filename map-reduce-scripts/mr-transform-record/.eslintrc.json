@@ -1,0 +1,40 @@
+{
+    "env": {
+        "browser": true,
+        "es6": true,
+        "amd": true,
+        "jest": true
+    },
+    "extends": [
+        "standard"
+    ],
+    "globals": {
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly"
+    },
+    "parserOptions": {
+        "ecmaVersion": 2018
+    },
+    "rules": {
+        "prefer-const": ["error", {
+            "destructuring": "any",
+            "ignoreReadBeforeAssign": false
+        }],
+        "no-trailing-spaces": "off",
+        "no-var": "error",
+        "no-duplicate-imports": "error",
+        "no-label-var": "error",
+        "no-unsafe-finally": "error",
+        "require-jsdoc": "warn",
+        "indent": "warn",
+        "no-unused-vars": "error",
+        "quotes": "error",
+        "no-undef-init": "error",
+        "max-len": ["error", { "code": 80, "tabWidth": 4 }],
+        "prefer-arrow-callback": "error",
+        "max-lines": ["error", 500],
+        "function-call-argument-newline": ["error", "never"],
+        "array-element-newline": ["error", "never"],
+        "vars-on-top": "error"
+    }
+}
