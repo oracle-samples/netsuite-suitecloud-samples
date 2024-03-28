@@ -1,0 +1,300 @@
+<customrecordtype scriptid="customrecord_item360_pcpart">
+    <accesstype>NONENEEDED</accesstype>
+    <recordname>PC Part</recordname>
+    <customrecordcustomfields>
+        <customrecordcustomfield scriptid="custrecord_pcpart_id">
+            <label>ID</label>
+            <fieldtype>INTEGER</fieldtype>
+        </customrecordcustomfield>
+        <customrecordcustomfield scriptid="custrecord_pcpart_description">
+            <label>Description</label>
+            <fieldtype>TEXT</fieldtype>
+        </customrecordcustomfield>
+        <customrecordcustomfield scriptid="custrecord_pcpart_category">
+            <label>Category</label>
+            <fieldtype>SELECT</fieldtype>
+            <selectrecordtype>[scriptid=customlist_item360_pcpart_category]</selectrecordtype>
+            <defaultselection>[scriptid=customlist_item360_pcpart_category.val_pcpart_category_other]</defaultselection>
+        </customrecordcustomfield>
+        <customrecordcustomfield scriptid="custrecord_pcpart_vendor">
+            <label>Vendor</label>
+            <fieldtype>SELECT</fieldtype>
+            <selectrecordtype>[scriptid=customrecord_item360_vendor]</selectrecordtype>
+            <defaultselection>[scriptid=customrecord_item360_vendor.val_vendor_other]</defaultselection>
+        </customrecordcustomfield>
+        <customrecordcustomfield scriptid="custrecord_pcpart_price">
+            <label>Price</label>
+            <fieldtype>CURRENCY</fieldtype>
+        </customrecordcustomfield>
+        <customrecordcustomfield scriptid="custrecord_pcpart_soldquantity">
+            <label>Sold Quantity</label>
+            <fieldtype>INTEGER</fieldtype>
+        </customrecordcustomfield>
+        <customrecordcustomfield scriptid="custrecord_pcpart_release">
+            <label>Release</label>
+            <fieldtype>DATE</fieldtype>
+        </customrecordcustomfield>
+        <customrecordcustomfield scriptid="custrecord_pcpart_weight">
+            <label>Weight</label>
+            <fieldtype>FLOAT</fieldtype>
+        </customrecordcustomfield>
+        <customrecordcustomfield scriptid="custrecord_pcpart_instock">
+            <label>In Stock</label>
+            <fieldtype>CHECKBOX</fieldtype>
+        </customrecordcustomfield>
+    </customrecordcustomfields>
+    <instances>
+        <instance scriptid="val_pcpart_0001">
+            <name>Dell 7560</name>
+            <custrecord_pcpart_id>1</custrecord_pcpart_id>
+            <custrecord_pcpart_description>Extremely powerful notebook</custrecord_pcpart_description>
+            <custrecord_pcpart_category>[scriptid=customlist_item360_pcpart_category.val_pcpart_category_notebook]</custrecord_pcpart_category>
+            <custrecord_pcpart_vendor>[scriptid=customrecord_item360_vendor.val_vendor_dell]</custrecord_pcpart_vendor>
+            <custrecord_pcpart_price>1250</custrecord_pcpart_price>
+            <custrecord_pcpart_soldquantity>123</custrecord_pcpart_soldquantity>
+            <custrecord_pcpart_release>2020-05-29</custrecord_pcpart_release>
+            <custrecord_pcpart_weight>2.56</custrecord_pcpart_weight>
+            <custrecord_pcpart_instock>T</custrecord_pcpart_instock>
+        </instance>
+        <instance scriptid="val_pcpart_0002">
+            <name>MacBook</name>
+            <custrecord_pcpart_id>2</custrecord_pcpart_id>
+            <custrecord_pcpart_description>Apples best notebook</custrecord_pcpart_description>
+            <custrecord_pcpart_category>[scriptid=customlist_item360_pcpart_category.val_pcpart_category_notebook]</custrecord_pcpart_category>
+            <custrecord_pcpart_vendor>[scriptid=customrecord_item360_vendor.val_vendor_apple]</custrecord_pcpart_vendor>
+            <custrecord_pcpart_price>3000</custrecord_pcpart_price>
+            <custrecord_pcpart_soldquantity>42</custrecord_pcpart_soldquantity>
+            <custrecord_pcpart_release>2022-07-05</custrecord_pcpart_release>
+            <custrecord_pcpart_weight>2.1</custrecord_pcpart_weight>
+            <custrecord_pcpart_instock>T</custrecord_pcpart_instock>
+        </instance>
+        <instance scriptid="val_pcpart_0003">
+            <name>Lenovo ThinkPad</name>
+            <custrecord_pcpart_id>3</custrecord_pcpart_id>
+            <custrecord_pcpart_description>Classic ThinkPad from Lenovo</custrecord_pcpart_description>
+            <custrecord_pcpart_category>[scriptid=customlist_item360_pcpart_category.val_pcpart_category_notebook]</custrecord_pcpart_category>
+            <custrecord_pcpart_vendor>[scriptid=customrecord_item360_vendor.val_vendor_lenovo]</custrecord_pcpart_vendor>
+            <custrecord_pcpart_price>2345</custrecord_pcpart_price>
+            <custrecord_pcpart_soldquantity>56</custrecord_pcpart_soldquantity>
+            <custrecord_pcpart_release>2022-04-15</custrecord_pcpart_release>
+            <custrecord_pcpart_weight>2.7</custrecord_pcpart_weight>
+            <custrecord_pcpart_instock>F</custrecord_pcpart_instock>
+        </instance>
+        <instance scriptid="val_pcpart_0004">
+            <name>Intel Core i9</name>
+            <custrecord_pcpart_id>4</custrecord_pcpart_id>
+            <custrecord_pcpart_description>Most recent Intel processor</custrecord_pcpart_description>
+            <custrecord_pcpart_category>[scriptid=customlist_item360_pcpart_category.val_pcpart_category_processor]</custrecord_pcpart_category>
+            <custrecord_pcpart_vendor>[scriptid=customrecord_item360_vendor.val_vendor_intel]</custrecord_pcpart_vendor>
+            <custrecord_pcpart_price>234</custrecord_pcpart_price>
+            <custrecord_pcpart_soldquantity>250</custrecord_pcpart_soldquantity>
+            <custrecord_pcpart_release>2023-01-25</custrecord_pcpart_release>
+            <custrecord_pcpart_weight>0.1</custrecord_pcpart_weight>
+            <custrecord_pcpart_instock>T</custrecord_pcpart_instock>
+        </instance>
+        <instance scriptid="val_pcpart_0005">
+            <name>Intel Core i7</name>
+            <custrecord_pcpart_id>5</custrecord_pcpart_id>
+            <custrecord_pcpart_description>One of latest Intel processor</custrecord_pcpart_description>
+            <custrecord_pcpart_category>[scriptid=customlist_item360_pcpart_category.val_pcpart_category_processor]</custrecord_pcpart_category>
+            <custrecord_pcpart_vendor>[scriptid=customrecord_item360_vendor.val_vendor_intel]</custrecord_pcpart_vendor>
+            <custrecord_pcpart_price>210</custrecord_pcpart_price>
+            <custrecord_pcpart_soldquantity>324</custrecord_pcpart_soldquantity>
+            <custrecord_pcpart_release>2022-03-06</custrecord_pcpart_release>
+            <custrecord_pcpart_weight>0.1</custrecord_pcpart_weight>
+            <custrecord_pcpart_instock>T</custrecord_pcpart_instock>
+        </instance>
+        <instance scriptid="val_pcpart_0006">
+            <name>Intel Core i5</name>
+            <custrecord_pcpart_id>6</custrecord_pcpart_id>
+            <custrecord_pcpart_description>Older Intel processor</custrecord_pcpart_description>
+            <custrecord_pcpart_category>[scriptid=customlist_item360_pcpart_category.val_pcpart_category_processor]</custrecord_pcpart_category>
+            <custrecord_pcpart_vendor>[scriptid=customrecord_item360_vendor.val_vendor_intel]</custrecord_pcpart_vendor>
+            <custrecord_pcpart_price>120</custrecord_pcpart_price>
+            <custrecord_pcpart_soldquantity>451</custrecord_pcpart_soldquantity>
+            <custrecord_pcpart_release>2021-04-26</custrecord_pcpart_release>
+            <custrecord_pcpart_weight>0.1</custrecord_pcpart_weight>
+            <custrecord_pcpart_instock>F</custrecord_pcpart_instock>
+        </instance>
+        <instance scriptid="val_pcpart_0007">
+            <name>AMD Ryzen 9</name>
+            <custrecord_pcpart_id>7</custrecord_pcpart_id>
+            <custrecord_pcpart_description>Newest AMD processor</custrecord_pcpart_description>
+            <custrecord_pcpart_category>[scriptid=customlist_item360_pcpart_category.val_pcpart_category_processor]</custrecord_pcpart_category>
+            <custrecord_pcpart_vendor>[scriptid=customrecord_item360_vendor.val_vendor_amd]</custrecord_pcpart_vendor>
+            <custrecord_pcpart_price>199</custrecord_pcpart_price>
+            <custrecord_pcpart_soldquantity>356</custrecord_pcpart_soldquantity>
+            <custrecord_pcpart_release>2023-02-12</custrecord_pcpart_release>
+            <custrecord_pcpart_weight>0.15</custrecord_pcpart_weight>
+            <custrecord_pcpart_instock>T</custrecord_pcpart_instock>
+        </instance>
+        <instance scriptid="val_pcpart_0008">
+            <name>AMD Ryzen 7</name>
+            <custrecord_pcpart_id>8</custrecord_pcpart_id>
+            <custrecord_pcpart_description>Well known AMD processor</custrecord_pcpart_description>
+            <custrecord_pcpart_category>[scriptid=customlist_item360_pcpart_category.val_pcpart_category_processor]</custrecord_pcpart_category>
+            <custrecord_pcpart_vendor>[scriptid=customrecord_item360_vendor.val_vendor_amd]</custrecord_pcpart_vendor>
+            <custrecord_pcpart_price>149</custrecord_pcpart_price>
+            <custrecord_pcpart_soldquantity>412</custrecord_pcpart_soldquantity>
+            <custrecord_pcpart_release>2022-04-20</custrecord_pcpart_release>
+            <custrecord_pcpart_weight>0.15</custrecord_pcpart_weight>
+            <custrecord_pcpart_instock>F</custrecord_pcpart_instock>
+        </instance>
+        <instance scriptid="val_pcpart_0009">
+            <name>AMD Ryzen 5</name>
+            <custrecord_pcpart_id>9</custrecord_pcpart_id>
+            <custrecord_pcpart_description>Older AMD processor</custrecord_pcpart_description>
+            <custrecord_pcpart_category>[scriptid=customlist_item360_pcpart_category.val_pcpart_category_processor]</custrecord_pcpart_category>
+            <custrecord_pcpart_vendor>[scriptid=customrecord_item360_vendor.val_vendor_amd]</custrecord_pcpart_vendor>
+            <custrecord_pcpart_price>119</custrecord_pcpart_price>
+            <custrecord_pcpart_soldquantity>548</custrecord_pcpart_soldquantity>
+            <custrecord_pcpart_release>2021-03-02</custrecord_pcpart_release>
+            <custrecord_pcpart_weight>0.15</custrecord_pcpart_weight>
+            <custrecord_pcpart_instock>T</custrecord_pcpart_instock>
+        </instance>
+        <instance scriptid="val_pcpart_0010">
+            <name>Intel Arc A770</name>
+            <custrecord_pcpart_id>10</custrecord_pcpart_id>
+            <custrecord_pcpart_description>Intel GPU</custrecord_pcpart_description>
+            <custrecord_pcpart_category>[scriptid=customlist_item360_pcpart_category.val_pcpart_category_graphiccard]</custrecord_pcpart_category>
+            <custrecord_pcpart_vendor>[scriptid=customrecord_item360_vendor.val_vendor_intel]</custrecord_pcpart_vendor>
+            <custrecord_pcpart_price>229</custrecord_pcpart_price>
+            <custrecord_pcpart_soldquantity>134</custrecord_pcpart_soldquantity>
+            <custrecord_pcpart_release>2022-05-12</custrecord_pcpart_release>
+            <custrecord_pcpart_weight>0.95</custrecord_pcpart_weight>
+            <custrecord_pcpart_instock>T</custrecord_pcpart_instock>
+        </instance>
+        <instance scriptid="val_pcpart_0011">
+            <name>Sapphire Pulse Radeon RX 6700</name>
+            <custrecord_pcpart_id>11</custrecord_pcpart_id>
+            <custrecord_pcpart_description>GPU from AMD</custrecord_pcpart_description>
+            <custrecord_pcpart_category>[scriptid=customlist_item360_pcpart_category.val_pcpart_category_graphiccard]</custrecord_pcpart_category>
+            <custrecord_pcpart_vendor>[scriptid=customrecord_item360_vendor.val_vendor_amd]</custrecord_pcpart_vendor>
+            <custrecord_pcpart_price>359</custrecord_pcpart_price>
+            <custrecord_pcpart_soldquantity>52</custrecord_pcpart_soldquantity>
+            <custrecord_pcpart_release>2022-07-08</custrecord_pcpart_release>
+            <custrecord_pcpart_weight>1.2</custrecord_pcpart_weight>
+            <custrecord_pcpart_instock>T</custrecord_pcpart_instock>
+        </instance>
+        <instance scriptid="val_pcpart_0012">
+            <name>GeForce RTX 4060</name>
+            <custrecord_pcpart_id>12</custrecord_pcpart_id>
+            <custrecord_pcpart_description>Powerful GPU from Nvidia</custrecord_pcpart_description>
+            <custrecord_pcpart_category>[scriptid=customlist_item360_pcpart_category.val_pcpart_category_graphiccard]</custrecord_pcpart_category>
+            <custrecord_pcpart_vendor>[scriptid=customrecord_item360_vendor.val_vendor_nvidia]</custrecord_pcpart_vendor>
+            <custrecord_pcpart_price>499</custrecord_pcpart_price>
+            <custrecord_pcpart_soldquantity>86</custrecord_pcpart_soldquantity>
+            <custrecord_pcpart_release>2022-12-12</custrecord_pcpart_release>
+            <custrecord_pcpart_weight>1.8</custrecord_pcpart_weight>
+            <custrecord_pcpart_instock>T</custrecord_pcpart_instock>
+        </instance>
+        <instance scriptid="val_pcpart_0013">
+            <name>Logitech MX Master</name>
+            <custrecord_pcpart_id>13</custrecord_pcpart_id>
+            <custrecord_pcpart_description>Classic mouse</custrecord_pcpart_description>
+            <custrecord_pcpart_category>[scriptid=customlist_item360_pcpart_category.val_pcpart_category_peripherals]</custrecord_pcpart_category>
+            <custrecord_pcpart_vendor>[scriptid=customrecord_item360_vendor.val_vendor_logitech]</custrecord_pcpart_vendor>
+            <custrecord_pcpart_price>59</custrecord_pcpart_price>
+            <custrecord_pcpart_soldquantity>125</custrecord_pcpart_soldquantity>
+            <custrecord_pcpart_release>2023-01-05</custrecord_pcpart_release>
+            <custrecord_pcpart_weight>0.2</custrecord_pcpart_weight>
+            <custrecord_pcpart_instock>T</custrecord_pcpart_instock>
+        </instance>
+        <instance scriptid="val_pcpart_0014">
+            <name>Logitech MX Vertical</name>
+            <custrecord_pcpart_id>14</custrecord_pcpart_id>
+            <custrecord_pcpart_description>Best ergonomic mouse</custrecord_pcpart_description>
+            <custrecord_pcpart_category>[scriptid=customlist_item360_pcpart_category.val_pcpart_category_peripherals]</custrecord_pcpart_category>
+            <custrecord_pcpart_vendor>[scriptid=customrecord_item360_vendor.val_vendor_logitech]</custrecord_pcpart_vendor>
+            <custrecord_pcpart_price>89</custrecord_pcpart_price>
+            <custrecord_pcpart_soldquantity>89</custrecord_pcpart_soldquantity>
+            <custrecord_pcpart_release>2023-03-12</custrecord_pcpart_release>
+            <custrecord_pcpart_weight>0.3</custrecord_pcpart_weight>
+            <custrecord_pcpart_instock>T</custrecord_pcpart_instock>
+        </instance>
+        <instance scriptid="val_pcpart_0015">
+            <name>Apple Magic Mouse</name>
+            <custrecord_pcpart_id>15</custrecord_pcpart_id>
+            <custrecord_pcpart_description>Apple mouse</custrecord_pcpart_description>
+            <custrecord_pcpart_category>[scriptid=customlist_item360_pcpart_category.val_pcpart_category_peripherals]</custrecord_pcpart_category>
+            <custrecord_pcpart_vendor>[scriptid=customrecord_item360_vendor.val_vendor_apple]</custrecord_pcpart_vendor>
+            <custrecord_pcpart_price>129</custrecord_pcpart_price>
+            <custrecord_pcpart_soldquantity>24</custrecord_pcpart_soldquantity>
+            <custrecord_pcpart_release>2022-09-10</custrecord_pcpart_release>
+            <custrecord_pcpart_weight>0.3</custrecord_pcpart_weight>
+            <custrecord_pcpart_instock>F</custrecord_pcpart_instock>
+        </instance>
+        <instance scriptid="val_pcpart_0016">
+            <name>Dell MS 116</name>
+            <custrecord_pcpart_id>16</custrecord_pcpart_id>
+            <custrecord_pcpart_description>Classic economic office mouse</custrecord_pcpart_description>
+            <custrecord_pcpart_category>[scriptid=customlist_item360_pcpart_category.val_pcpart_category_peripherals]</custrecord_pcpart_category>
+            <custrecord_pcpart_vendor>[scriptid=customrecord_item360_vendor.val_vendor_dell]</custrecord_pcpart_vendor>
+            <custrecord_pcpart_price>29</custrecord_pcpart_price>
+            <custrecord_pcpart_soldquantity>456</custrecord_pcpart_soldquantity>
+            <custrecord_pcpart_release>2021-08-23</custrecord_pcpart_release>
+            <custrecord_pcpart_weight>0.1</custrecord_pcpart_weight>
+            <custrecord_pcpart_instock>T</custrecord_pcpart_instock>
+        </instance>
+        <instance scriptid="val_pcpart_0017">
+            <name>Logitec MX Keys S</name>
+            <custrecord_pcpart_id>17</custrecord_pcpart_id>
+            <custrecord_pcpart_description>Quiet, soft and small keyboard</custrecord_pcpart_description>
+            <custrecord_pcpart_category>[scriptid=customlist_item360_pcpart_category.val_pcpart_category_peripherals]</custrecord_pcpart_category>
+            <custrecord_pcpart_vendor>[scriptid=customrecord_item360_vendor.val_vendor_logitech]</custrecord_pcpart_vendor>
+            <custrecord_pcpart_price>59</custrecord_pcpart_price>
+            <custrecord_pcpart_soldquantity>148</custrecord_pcpart_soldquantity>
+            <custrecord_pcpart_release>2022-07-15</custrecord_pcpart_release>
+            <custrecord_pcpart_weight>0.4</custrecord_pcpart_weight>
+            <custrecord_pcpart_instock>T</custrecord_pcpart_instock>
+        </instance>
+        <instance scriptid="val_pcpart_0018">
+            <name>Dell KB-216</name>
+            <custrecord_pcpart_id>18</custrecord_pcpart_id>
+            <custrecord_pcpart_description>Classic office keyboard</custrecord_pcpart_description>
+            <custrecord_pcpart_category>[scriptid=customlist_item360_pcpart_category.val_pcpart_category_peripherals]</custrecord_pcpart_category>
+            <custrecord_pcpart_vendor>[scriptid=customrecord_item360_vendor.val_vendor_dell]</custrecord_pcpart_vendor>
+            <custrecord_pcpart_price>39</custrecord_pcpart_price>
+            <custrecord_pcpart_soldquantity>256</custrecord_pcpart_soldquantity>
+            <custrecord_pcpart_release>2021-11-12</custrecord_pcpart_release>
+            <custrecord_pcpart_weight>0.2</custrecord_pcpart_weight>
+            <custrecord_pcpart_instock>T</custrecord_pcpart_instock>
+        </instance>
+        <instance scriptid="val_pcpart_0019">
+            <name>Apple Magic Keyboard</name>
+            <custrecord_pcpart_id>19</custrecord_pcpart_id>
+            <custrecord_pcpart_description>Apple keyboard</custrecord_pcpart_description>
+            <custrecord_pcpart_category>[scriptid=customlist_item360_pcpart_category.val_pcpart_category_peripherals]</custrecord_pcpart_category>
+            <custrecord_pcpart_vendor>[scriptid=customrecord_item360_vendor.val_vendor_apple]</custrecord_pcpart_vendor>
+            <custrecord_pcpart_price>129</custrecord_pcpart_price>
+            <custrecord_pcpart_soldquantity>101</custrecord_pcpart_soldquantity>
+            <custrecord_pcpart_release>2022-10-21</custrecord_pcpart_release>
+            <custrecord_pcpart_weight>0.3</custrecord_pcpart_weight>
+            <custrecord_pcpart_instock>T</custrecord_pcpart_instock>
+        </instance>
+        <instance scriptid="val_pcpart_0020">
+            <name>Datacom CAT5E UTP</name>
+            <custrecord_pcpart_id>20</custrecord_pcpart_id>
+            <custrecord_pcpart_description>20 meter long UTP cable</custrecord_pcpart_description>
+            <custrecord_pcpart_category>[scriptid=customlist_item360_pcpart_category.val_pcpart_category_other]</custrecord_pcpart_category>
+            <custrecord_pcpart_vendor>[scriptid=customrecord_item360_vendor.val_vendor_other]</custrecord_pcpart_vendor>
+            <custrecord_pcpart_price>69</custrecord_pcpart_price>
+            <custrecord_pcpart_soldquantity>22</custrecord_pcpart_soldquantity>
+            <custrecord_pcpart_release>2020-04-12</custrecord_pcpart_release>
+            <custrecord_pcpart_weight>1.5</custrecord_pcpart_weight>
+            <custrecord_pcpart_instock>T</custrecord_pcpart_instock>
+        </instance>
+        <instance scriptid="val_pcpart_0021">
+            <name>Swissten USB Micro</name>
+            <custrecord_pcpart_id>20</custrecord_pcpart_id>
+            <custrecord_pcpart_description>1 meter long micro USB cable</custrecord_pcpart_description>
+            <custrecord_pcpart_category>[scriptid=customlist_item360_pcpart_category.val_pcpart_category_other]</custrecord_pcpart_category>
+            <custrecord_pcpart_vendor>[scriptid=customrecord_item360_vendor.val_vendor_other]</custrecord_pcpart_vendor>
+            <custrecord_pcpart_price>29</custrecord_pcpart_price>
+            <custrecord_pcpart_soldquantity>55</custrecord_pcpart_soldquantity>
+            <custrecord_pcpart_release>2020-05-13</custrecord_pcpart_release>
+            <custrecord_pcpart_weight>0.2</custrecord_pcpart_weight>
+            <custrecord_pcpart_instock>T</custrecord_pcpart_instock>
+        </instance>
+    </instances>
+</customrecordtype>

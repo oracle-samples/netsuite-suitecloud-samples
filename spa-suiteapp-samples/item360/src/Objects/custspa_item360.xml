@@ -1,0 +1,14 @@
+<singlepageapp scriptid="custspa_item360">
+  <name>UIF Sample - Item 360</name>
+  <description>Item360 UIF sample SuiteApp</description>
+  <url>item360</url>
+  <folder>[/SuiteApps/com.netsuite.uifitem360/item360/]</folder>
+  <clientscriptfile>[/SuiteApps/com.netsuite.uifitem360/item360/SpaClient.js]</clientscriptfile>
+  <serverscriptfile>[/SuiteApps/com.netsuite.uifitem360/item360/SpaServer.js]</serverscriptfile>
+  <assetsfolder>[/SuiteApps/com.netsuite.uifitem360/item360/assets/]</assetsfolder>
+  <loglevel>ERROR</loglevel>
+  <audienceallroles>F</audienceallroles>
+  <audienceroles></audienceroles>
+  <executeas></executeas>
+  <usesuif>T</usesuif>
+</singlepageapp>

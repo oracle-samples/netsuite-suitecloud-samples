@@ -1,0 +1,43 @@
+{
+	"name": "helloworld-ts",
+	"version": "1.0.0",
+	"description": "Hello World UIF SuiteApp - TS",
+	"devDependencies": {
+		"@hitc/netsuite-types": "^2023.2.2",
+		"@typescript-eslint/eslint-plugin": "^5.50.0",
+		"@typescript-eslint/parser": "^5.50.0",
+		"cross-env": "^7.0.3",
+		"eslint": "^8.24.0",
+		"eslint-config-prettier": "^8.5.0",
+		"eslint-plugin-import": "^2.26.0",
+		"eslint-plugin-jasmine": "^4.1.0",
+		"eslint-plugin-react": "^7.31.0",
+		"fast-xml-parser": "^4.0.0",
+		"jest": "^29.6.4",
+		"jest-puppeteer": "^9.0.0",
+		"prettier": "^2.8.1",
+		"puppeteer": "^21.1.0",
+		"ts-jest": "^29.1.1",
+		"@rollup/plugin-terser": "^0.4.0",
+		"gulp": "^4.0.0",
+		"gulp-typescript": "^5.0.0",
+		"rollup": "^3.26.0",
+		"typescript": "^5.1.0"
+	},
+	"scripts": {
+		"clean": "gulp clean",
+		"build": "gulp build",
+		"bundle": "gulp bundle",
+		"deploy": "npm run bundle && suitecloud project:deploy",
+		"inspect": "npm run eslint-inspect && npm run prettier-inspect",
+		"lint": "npm run eslint-fix && npm run prettier-fix",
+		"eslint-inspect": "eslint src/SuiteApps",
+		"eslint-fix": "eslint --fix src/SuiteApps",
+		"prettier-inspect": "prettier --check .",
+		"prettier-fix": "prettier --write .",
+		"test_e2e": "jest -c test/e2e/jest.config.json",
+		"test_unit": "jest",
+		"test_unit_coverage": "jest --coverage --collectCoverageFrom=\"./src/SuiteApps/**\"",
+		"test": "npm run test_e2e && npm run test_unit"
+	}
+}

@@ -1,0 +1,15 @@
+<manifest projecttype="SUITEAPP">
+  <publisherid>com.netsuite</publisherid>
+  <projectid>airport360</projectid>
+  <projectname>UIF Sample - Airport 360</projectname>
+  <projectversion>1.0.0</projectversion>
+  <frameworkversion>1.0</frameworkversion>
+  <dependencies>
+    <features>
+      <feature required="true">CUSTOMSEGMENTS</feature>
+      <feature required="true">SERVERSIDESCRIPTING</feature>
+      <feature required="true">RESTWEBSERVICES</feature>
+      <feature required="true">OAUTH2</feature>
+    </features>
+  </dependencies>
+</manifest>

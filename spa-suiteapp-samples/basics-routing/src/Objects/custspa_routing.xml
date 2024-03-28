@@ -1,0 +1,14 @@
+<singlepageapp scriptid="custspa_routing">
+  <name>UIF Sample - Routing</name>
+  <description>This is a sample SuiteApp using the UIF framework, that demonstrates basics of routing.</description>
+  <url>routing</url>
+  <folder>[/SuiteApps/com.netsuite.uifrouting/routing/]</folder>
+  <clientscriptfile>[/SuiteApps/com.netsuite.uifrouting/routing/SpaClient.js]</clientscriptfile>
+  <serverscriptfile>[/SuiteApps/com.netsuite.uifrouting/routing/SpaServer.js]</serverscriptfile>
+  <assetsfolder>[/SuiteApps/com.netsuite.uifrouting/routing/assets/]</assetsfolder>
+  <loglevel>ERROR</loglevel>
+  <audienceallroles>F</audienceallroles>
+  <audienceroles></audienceroles>
+  <executeas></executeas>
+  <usesuif>T</usesuif>
+</singlepageapp>

@@ -1,0 +1,13 @@
+# ignore all files
+*
+
+# include all folders
+!**/
+
+# include files to format
+!src/SuiteApps/**/*
+!test/unit/**/*
+!test/e2e/__test__/**/*
+types/uif/**/*
+
+

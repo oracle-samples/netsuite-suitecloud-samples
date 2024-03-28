@@ -1,0 +1,14 @@
+<singlepageapp scriptid="custspa_statemanagement">
+  <name>UIF Sample - State Management</name>
+  <description>This is a sample SuiteApp using the UIF framework, that demonstrates basics of state management.</description>
+  <url>statemanagement</url>
+  <folder>[/SuiteApps/com.netsuite.uifstate/statemanagement/]</folder>
+  <clientscriptfile>[/SuiteApps/com.netsuite.uifstate/statemanagement/SpaClient.js]</clientscriptfile>
+  <serverscriptfile>[/SuiteApps/com.netsuite.uifstate/statemanagement/SpaServer.js]</serverscriptfile>
+  <assetsfolder>[/SuiteApps/com.netsuite.uifstate/statemanagement/assets/]</assetsfolder>
+  <loglevel>ERROR</loglevel>
+  <audienceallroles>F</audienceallroles>
+  <audienceroles></audienceroles>
+  <executeas></executeas>
+  <usesuif>T</usesuif>
+</singlepageapp>

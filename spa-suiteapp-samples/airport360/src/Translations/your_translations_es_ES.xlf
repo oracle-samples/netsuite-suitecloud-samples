@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xliff xmlns:ns1="netsuite" xmlns:ns3="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+    <file original="netsuite-database" source-language="en-US" target-language="es-ES" datatype="database">
+        <body>
+            <group ns1:collection="custcollection_center_link">
+                <trans-unit id="default_string">
+                    <source>Airport App</source>
+                    <target>App del Aeopuerto</target>
+                    <note from="developer">Spanish translation for the default string.</note>
+                </trans-unit>
+            </group>
+        </body>
+    </file>
+</xliff>
