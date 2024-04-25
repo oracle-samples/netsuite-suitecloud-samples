@@ -2,12 +2,16 @@ import {
 	ArrayDataSource,
 	Comparator,
 	ContextType,
-	Hook,
 	JSX,
 	Navigator,
 	SystemIcon,
 	Type,
+	useContext,
+	useDispatch,
+	useMemo,
+	useRef,
 	UserMessageService,
+	useState,
 } from '@uif-js/core';
 import {Button, ContentPanel, DataGrid, Field, Link, Modal, StackPanel, TextBox} from '@uif-js/component';
 import RootRoute from '../../app/RootRoute';
@@ -19,11 +23,11 @@ interface ItemsListProps {
 }
 
 function ItemsList({data}: ItemsListProps): JSX.Element {
-	const navigator = Hook.useContext<Navigator>(ContextType.ROUTER_NAVIGATION);
-	const messaging = Hook.useContext<UserMessageService>(ContextType.MESSAGING);
-	const dispatch = Hook.useDispatch();
-	const dataGridRef = Hook.useRef();
-	const parsedData = Hook.useMemo(() => {
+	const navigator = useContext<Navigator>(ContextType.ROUTER_NAVIGATION);
+	const messaging = useContext<UserMessageService>(ContextType.MESSAGING);
+	const dispatch = useDispatch();
+	const dataGridRef = useRef();
+	const parsedData = useMemo(() => {
 		return data.map((item) => {
 			return {
 				...item,
@@ -94,7 +98,7 @@ function ItemsList({data}: ItemsListProps): JSX.Element {
 			},
 		},
 	];
-	const columns = Hook.useMemo(() => [
+	const columns = useMemo(() => [
 		{
 			name: 'name',
 			label: 'Name',
@@ -143,16 +147,16 @@ function ItemsList({data}: ItemsListProps): JSX.Element {
 		},
 	]);
 
-	const textFilterRef = Hook.useRef();
+	const textFilterRef = useRef();
 	const textFilter = (
 		<Field label={'Filter by Name'} ref={textFilterRef}>
 			<TextBox.Search on={{[TextBox.Event.TEXT_ACCEPTED]: ({currentText}) => setTextFilterValue(currentText)}} />
 		</Field>
 	);
 
-	const dataGridData = Hook.useMemo(() => parsedData, [parsedData]);
-	const [textFilterValue, setTextFilterValue] = Hook.useState('');
-	const [sortedDataSource, setSortedDataSource] = Hook.useState(dataGridData);
+	const dataGridData = useMemo(() => parsedData, [parsedData]);
+	const [textFilterValue, setTextFilterValue] = useState('');
+	const [sortedDataSource, setSortedDataSource] = useState(dataGridData);
 
 	const sort = ({currentDirections}) => {
 		const direction = currentDirections[0];
@@ -165,7 +169,7 @@ function ItemsList({data}: ItemsListProps): JSX.Element {
 		}
 	};
 
-	const filteredDataSource = Hook.useMemo(() => {
+	const filteredDataSource = useMemo(() => {
 		const textFilterPhrase = textFilterValue.toLowerCase();
 		return sortedDataSource.filter(({name}) => {
 			return Type.EmptyString.is(textFilterValue) ? true : name.toLowerCase().includes(textFilterPhrase);

@@ -1,4 +1,4 @@
-import {ContextType, Hook, JSX, Navigator, SystemIcon, UserMessageService} from '@uif-js/core';
+import {ContextType, JSX, Navigator, SystemIcon, useContext, useDispatch, UserMessageService} from '@uif-js/core';
 import {ApplicationHeader, Loader, ScrollPanel, StackPanel} from '@uif-js/component';
 import * as ItemRecord from '../../data/ItemRecord';
 import RootRoute from '../../app/RootRoute';
@@ -8,9 +8,9 @@ import * as RecordPage from '../../data/RecordPage';
 
 export default function ItemRecordPage({record, saving, mode}): JSX.Element {
 	const readonly = mode === RecordPage.Mode.VIEW;
-	const navigator = Hook.useContext<Navigator>(ContextType.ROUTER_NAVIGATION);
-	const messaging = Hook.useContext<UserMessageService>(ContextType.MESSAGING);
-	const dispatch = Hook.useDispatch();
+	const navigator = useContext<Navigator>(ContextType.ROUTER_NAVIGATION);
+	const messaging = useContext<UserMessageService>(ContextType.MESSAGING);
+	const dispatch = useDispatch();
 	let actions = [];
 
 	const saveEditMode = async (id: number): Promise<void> => {

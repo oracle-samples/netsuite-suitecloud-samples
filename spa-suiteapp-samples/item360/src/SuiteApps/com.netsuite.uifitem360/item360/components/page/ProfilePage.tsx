@@ -9,7 +9,7 @@ import {
 	StackPanel,
 	Text,
 } from '@uif-js/component';
-import {Hook, JSX} from '@uif-js/core';
+import {JSX, useDispatch, useLayoutEffect} from '@uif-js/core';
 import {Action} from '../../app/Action';
 import {Item360StateProfile} from '../../app/InitialState';
 
@@ -19,8 +19,8 @@ interface ProfilePageProps {
 
 export default function ProfilePage({profile}: ProfilePageProps): JSX.Element {
 	const {loading, data} = profile;
-	const dispatch = Hook.useDispatch();
-	Hook.useLayoutEffect(() => {
+	const dispatch = useDispatch();
+	useLayoutEffect(() => {
 		dispatch(Action.profileLoad());
 	}, []);
 	return loading ? <ProfilePageSkeleton /> : <ProfilePageContent data={data} />;

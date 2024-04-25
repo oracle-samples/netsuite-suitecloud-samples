@@ -15,7 +15,7 @@ For more information, see also [SPA Build Setup](../README.md#build-setup) and [
 
 ## State Management Overview
 
-The NetSuite UI Framework (UIF) recommends following the Redux state management pattern for managing the state of an application as it grows larger. According to this approach, the application state is treated as an immutable object. A new state is created from the old one using a reducer function, which responds to dispatched actions.
+The NetSuite User Interface Framework (UIF) recommends following the Redux state management pattern for managing the state of an application as it grows larger. According to this approach, the application state is treated as an immutable object. A new state is created from the old one using a reducer function, which responds to dispatched actions.
 
 In this model, all application state is stored in the `Store` and can be modified only by dispatching an `action`. The `Store` takes the action and uses a `reducer` to modify the stored state based on the action. Afterwards, the application is re-rendered using the new state.
 
