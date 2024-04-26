@@ -3,7 +3,6 @@
 	"version": "1.0.0",
 	"description": "HelloWorld UIF SuiteApp",
 	"devDependencies": {
-		"@oracle/netsuite-uif-types": "^5.0.0",
 		"@rollup/plugin-terser": "^0.4.0",
 		"eslint": "^8.47.0",
 		"eslint-config-prettier": "^8.5.0",

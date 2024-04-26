@@ -1,5 +1,5 @@
 import {ApplicationHeader, StackPanel} from '@uif-js/component';
-import {ContextType, JSX, Navigator, SystemIcon, useContext, useDispatch, useLayoutEffect} from '@uif-js/core';
+import {ContextType, Hook, JSX, Navigator, SystemIcon} from '@uif-js/core';
 import ItemsSkeleton from '../items/ItemsSkeleton';
 import ItemsList from '../items/ItemsList';
 import RootRoute from '../../app/RootRoute';
@@ -11,10 +11,10 @@ interface ItemsPageProps {
 }
 function ItemsPage({items}: ItemsPageProps): JSX.Element {
 	const {loading, data} = items;
-	const dispatch = useDispatch();
-	const navigator = useContext<Navigator>(ContextType.ROUTER_NAVIGATION);
+	const dispatch = Hook.useDispatch();
+	const navigator = Hook.useContext<Navigator>(ContextType.ROUTER_NAVIGATION);
 
-	useLayoutEffect(() => {
+	Hook.useLayoutEffect(() => {
 		dispatch(Action.itemsLoad());
 	}, []);
 

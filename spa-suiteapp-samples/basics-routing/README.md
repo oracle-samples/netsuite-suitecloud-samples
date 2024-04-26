@@ -19,14 +19,14 @@ For more information, see also [SPA Build Setup](../README.md#build-setup) and [
 
 ## Routing Overview
 
-The NetSuite User Interface Framework (UIF) has a built-in router that can monitor and respond to URL changes. The URL is always matched against a specific set of routes that define what should get rendered when the particular route is matched. Routes can contain parameters that are passed to the rendered component as its properties. It is also possible to nest routes in order to easily create complex route hierarchies.
+The NetSuite UI Framework (UIF) has a built-in router that can monitor and respond to URL changes. The URL is always matched against a specific set of routes that define what should get rendered when the particular route is matched. Routes can contain parameters that are passed to the rendered component as its properties. It is also possible to nest routes in order to easily create complex route hierarchies.
 
 ## Route
 
 The first step when putting together a routing mechanism is to define the routes. In this sample application, there are four root pages:
 
 - `Dashboard` - home page
-- `Countries` - page that contains a list of all countries
+- `Countries` - contains a list of all countries
 - `Lists` - index page that shows available sorted lists of countries, which serve as links to individual lists
 - `NotFound` - page that serves as the 404 page when user navigates to an invalid URL
 

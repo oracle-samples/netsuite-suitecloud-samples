@@ -1,4 +1,4 @@
-import {ArrayDataSource, Date, JSX, useMemo, useState} from '@uif-js/core';
+import {ArrayDataSource, Date, Hook, JSX} from '@uif-js/core';
 import {CheckBox, DatePicker, Dropdown, Field, Text, TextArea, TextBox} from '@uif-js/component';
 import DynamicRecord from '../../data/DynamicRecord';
 import format from 'N/format';
@@ -15,8 +15,8 @@ export default function RecordField({record, fieldId, readonly}: RecordFieldProp
 	const field = record.getField({fieldId});
 	const inline = field.type === DynamicRecord.FieldType.CHECK_BOX;
 	const size = inline ? Field.Size.AUTO : Field.Size.LARGE;
-	const [valid, setValid] = useState(true);
-	const [statusMessage, setStatusMessage] = useState('');
+	const [valid, setValid] = Hook.useState(true);
+	const [statusMessage, setStatusMessage] = Hook.useState('');
 	return (
 		<Field
 			label={field.label}
@@ -207,7 +207,7 @@ function RecordFieldSelect({record, readonly, field, validSetter, statusMessageS
 	const {id, isReadOnly, isDisabled} = field;
 	const selectedValue = record.getValue(id);
 	const selectedText = record.getText(id);
-	const selectOptions = useMemo(() => {
+	const selectOptions = Hook.useMemo(() => {
 		return new ArrayDataSource(field.getSelectOptions());
 	}, []);
 	return readonly || isReadOnly ? (
@@ -241,7 +241,7 @@ function RecordFieldDate({record, readonly, field, validSetter, statusMessageSet
 	const {id, isReadOnly, isDisabled} = field;
 	const currenDateText = record.getText(id);
 	const currentDate = record.getValue(id);
-	const [currentUIFDate, currentUIFDateSetter] = useState(new Date(currentDate));
+	const [currentUIFDate, currentUIFDateSetter] = Hook.useState(new Date(currentDate));
 	const isRequired = field.isMandatory;
 	return readonly || isReadOnly ? (
 		<Text>{currenDateText}</Text>

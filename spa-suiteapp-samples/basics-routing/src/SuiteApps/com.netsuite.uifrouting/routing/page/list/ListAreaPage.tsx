@@ -1,9 +1,9 @@
 import {ApplicationHeader, Breadcrumbs, ContentPanel, DataGrid, StackPanel} from '@uif-js/component';
-import {ArrayDataSource, Decorator, Route, SystemIcon, useMemo} from '@uif-js/core';
+import {ArrayDataSource, Decorator, Hook, Route, SystemIcon} from '@uif-js/core';
 import {RootRoute} from '../../app/CountriesAppRoute';
 
 export default function CountriesPage({countries}) {
-	const columns = useMemo(() => {
+	const columns = Hook.useMemo(() => {
 		return [
 			{name: 'countryCode', label: 'Country Code', binding: 'countryCode', type: DataGrid.ColumnType.LINK},
 			{name: 'name', label: 'Name', binding: 'name', type: DataGrid.ColumnType.TEXT_BOX},
