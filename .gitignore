@@ -1,0 +1,16 @@
+project.json
+package-lock.json
+node_modules
+helloworld-js/build/*
+helloworld-js/src/FileCabinet/SuiteApps/*
+helloworld-ts/build/*
+helloworld-ts/src/FileCabinet/SuiteApps/*
+basics-state-management/build/*
+basics-state-management/src/FileCabinet/SuiteApps/*
+basics-routing/build/*
+basics-routing/src/FileCabinet/SuiteApps/*
+item360/build/*
+item360/src/FileCabinet/SuiteApps/*
+airport360/build/*
+airport360/src/FileCabinet/SuiteApps/*
+airport360/coverage/*
