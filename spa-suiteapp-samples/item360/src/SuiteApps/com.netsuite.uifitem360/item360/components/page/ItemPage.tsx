@@ -1,4 +1,4 @@
-import {Hook, JSX} from '@uif-js/core';
+import {JSX, useDispatch, useLayoutEffect} from '@uif-js/core';
 import ItemRecordPage from '../item/ItemRecordPage';
 import ItemRecordSkeleton from '../item/ItemRecordSkeleton';
 import {Action} from '../../app/Action';
@@ -14,8 +14,8 @@ interface ItemPageProps {
 export default function ItemPage({mode = RecordPage.Mode.VIEW, id, item}: ItemPageProps): JSX.Element {
 	const {loading, saving, record} = item;
 
-	const dispatch = Hook.useDispatch();
-	Hook.useLayoutEffect(() => {
+	const dispatch = useDispatch();
+	useLayoutEffect(() => {
 		if (mode === RecordPage.Mode.CREATE) {
 			dispatch(Action.itemCreate());
 		} else {

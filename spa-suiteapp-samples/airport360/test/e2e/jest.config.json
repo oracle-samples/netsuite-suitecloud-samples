@@ -12,6 +12,6 @@
     "node_modules"
     ],
     "globals": {
-    "baseUrl": "https://dominguezare5e2a-runbox-nsn-deuf1-001.eng.netsuite.com/"
+        "baseUrl": "https://<AccountID>.app.netsuite.com/"
     }
     }

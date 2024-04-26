@@ -1,10 +1,10 @@
 import {Button, Heading, StackPanel} from '@uif-js/component';
-import {Hook, SystemIcon} from '@uif-js/core';
+import {SystemIcon, useDispatch} from '@uif-js/core';
 import {Action} from '../app/Action';
 
 export default function Counter({value}) {
 	// dispatch function made available by the Store.Provider wrapper in 'CounterApp.js'
-	const dispatch = Hook.useDispatch();
+	const dispatch = useDispatch();
 
 	// Handler for the increment button
 	const incrementButtonHandler = () => {
