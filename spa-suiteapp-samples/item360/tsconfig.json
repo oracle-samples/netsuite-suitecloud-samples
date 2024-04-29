@@ -13,10 +13,11 @@
         "jsxImportSource": "@uif-js/core",
         "sourceMap": false,
         "typeRoots": [
-            "types",
-            "node_modules/@types"
+            "node_modules/@types",
+            "node_modules/@oracle/netsuite-uif-types"
         ],
         "paths": {
+            "N": ["./node_modules/@hitc/netsuite-types/N"],
             "N/*": ["./node_modules/@hitc/netsuite-types/N/*"]
         }
     },

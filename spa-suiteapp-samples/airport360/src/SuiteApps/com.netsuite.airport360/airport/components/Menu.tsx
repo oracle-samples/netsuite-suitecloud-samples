@@ -1,10 +1,10 @@
 import {NavigationDrawer} from '@uif-js/component';
 import NavigationItem from '../app/NavigationItem';
 import Route from '../app/Route';
-import {ContextType, Hook, SystemIcon} from '@uif-js/core';
+import {ContextType, SystemIcon, useContext} from '@uif-js/core';
 export default function Menu() {
 	// Get the router information
-	const location = Hook.useContext(ContextType.ROUTER_LOCATION);
+	const location = useContext(ContextType.ROUTER_LOCATION);
 	// Return NavigationDrawer whose items route to given routes
 	return (
 		<NavigationDrawer selectedValue={getCurrentNavigationItem(location)}>
