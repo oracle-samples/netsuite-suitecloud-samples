@@ -13,8 +13,8 @@
         "jsxImportSource": "@uif-js/core",
         "sourceMap": false,
         "typeRoots": [
-            "types",
-            "node_modules/@types"
+            "node_modules/@types",
+            "node_modules/@oracle/netsuite-uif-types"
         ]
     },
     "include": [

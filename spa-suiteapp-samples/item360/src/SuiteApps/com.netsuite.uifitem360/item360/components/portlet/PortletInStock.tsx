@@ -1,5 +1,5 @@
 import {Portlet, Skeleton, StackPanel} from '@uif-js/component';
-import {Hook, JSX, Style, Theme} from '@uif-js/core';
+import {JSX, Style, Theme, useStyles} from '@uif-js/core';
 import {Item360StateItems} from '../../app/InitialState';
 
 export default function PortletInStock({loading, data}: Item360StateItems): JSX.Element {
@@ -64,7 +64,7 @@ interface PortletIsOnlineNumberProps {
 }
 
 function PortletIsOnlineNumber({type, children}: PortletIsOnlineNumberProps) {
-	const style = Hook.useStyles((theme: Theme): object => {
+	const style = useStyles((theme: Theme): object => {
 		const {name, tokens} = theme;
 		switch (name) {
 			case Theme.Name.REFRESHED: {

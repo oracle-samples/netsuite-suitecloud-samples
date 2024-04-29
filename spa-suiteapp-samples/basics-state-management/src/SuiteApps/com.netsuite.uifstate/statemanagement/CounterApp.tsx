@@ -1,11 +1,11 @@
-import {Hook, Store} from '@uif-js/core';
+import {Store, useMemo, useState} from '@uif-js/core';
 import reducer from './app/Reducer.js';
 import Counter from './component/Counter.js';
 import initialState from './app/InitialState.js';
 
 export default function CounterApp() {
-	const [state, setState] = Hook.useState(initialState);
-	const store = Hook.useMemo(() => {
+	const [state, setState] = useState(initialState);
+	const store = useMemo(() => {
 		return Store.create({
 			reducer,
 			state,

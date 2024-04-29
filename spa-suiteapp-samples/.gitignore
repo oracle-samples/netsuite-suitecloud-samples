@@ -13,3 +13,4 @@ item360/build/*
 item360/src/FileCabinet/SuiteApps/*
 airport360/build/*
 airport360/src/FileCabinet/SuiteApps/*
+airport360/coverage/*

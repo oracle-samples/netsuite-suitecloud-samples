@@ -1,4 +1,4 @@
-import {Hook, JSX, Router, Store} from '@uif-js/core';
+import {JSX, Router, Store, useMemo, useState} from '@uif-js/core';
 import {StackPanel} from '@uif-js/component';
 import reducer from './app/Reducer';
 import {
@@ -19,8 +19,8 @@ import * as RecordPage from './data/RecordPage';
 import ProfilePage from './components/page/ProfilePage';
 
 export default function Item360(): JSX.Element {
-	const [state, setState] = Hook.useState(initialState);
-	const store: Store<Item360State> = Hook.useMemo(() => {
+	const [state, setState] = useState(initialState);
+	const store: Store<Item360State> = useMemo(() => {
 		return Store.create({
 			reducer,
 			state,
