@@ -1,5 +1,5 @@
 import {ApplicationHeader, GridPanel, ScrollPanel, StackPanel} from '@uif-js/component';
-import {Decorator, JSX, SystemIcon, useDispatch, useLayoutEffect} from '@uif-js/core';
+import {Decorator, Hook, JSX, SystemIcon} from '@uif-js/core';
 import PortletTotalItems from '../portlet/PortletTotalItems';
 import PortletInStock from '../portlet/PortletInStock';
 import PortletReminders from '../portlet/PortletReminders';
@@ -15,9 +15,9 @@ interface DashboardPageProps {
 
 export default function DashboardPage({items, dashboard}: DashboardPageProps): JSX.Element {
 	const {loading, data} = items;
-	const dispatch = useDispatch();
+	const dispatch = Hook.useDispatch();
 
-	useLayoutEffect(() => {
+	Hook.useLayoutEffect(() => {
 		dispatch(Action.itemsLoad());
 		dispatch(Action.remindersLoad());
 	}, []);

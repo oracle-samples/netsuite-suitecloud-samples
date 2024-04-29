@@ -1,4 +1,4 @@
-import {Router, Store, useMemo, useState} from '@uif-js/core';
+import {Hook, Router, Store} from '@uif-js/core';
 import {StackPanel} from '@uif-js/component';
 import reducer from './app/Reducer.js';
 import initialState from './app/InitialState';
@@ -14,8 +14,8 @@ import NotFoundPage from './page/NotFoundPage';
 
 export default function CountriesApp() {
 	// Setup state management - in this case it only statically stores the countries data
-	const [state, setState] = useState(initialState);
-	const store = useMemo(() => {
+	const [state, setState] = Hook.useState(initialState);
+	const store = Hook.useMemo(() => {
 		return Store.create({
 			reducer,
 			state: initialState,
