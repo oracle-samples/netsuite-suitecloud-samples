@@ -1,7 +1,7 @@
 const Credential = {
-    USERNAME: 'nlbuild@netsuite.com',
-    PASSWORD: 'foobar1',
-    COMPANY_ID: '1339499',
+    USERNAME: 'user@netsuite.com',
+    PASSWORD: 'password',
+    COMPANY_ID: '9999999',
 }
 
 export default Credential
