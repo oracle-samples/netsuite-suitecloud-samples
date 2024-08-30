@@ -6,7 +6,7 @@ import Record from 'N/record/instance'
 
 import search from 'N/search'
 import Search from 'N/search/instance'
-import ResultSet from 'N/search/resultset'
+import ResultSet from 'N/search/resultSet'
 import Result from 'N/search/result'
 import Filter from 'N/search/filter'
 
@@ -15,7 +15,7 @@ jest.mock('N/record/instance')
 jest.mock('N/search')
 jest.mock('N/search/instance')
 jest.mock('N/search/result')
-jest.mock('N/search/resultset')
+jest.mock('N/search/resultSet')
 
 beforeEach(() => {
   jest.clearAllMocks()
