@@ -1,0 +1,24 @@
+<customlist scriptid="customlist_ship_container_location">
+  <description></description>
+  <isinactive>F</isinactive>
+  <ismatrixoption>F</ismatrixoption>
+  <isordered>T</isordered>
+  <name>Container Location</name>
+  <customvalues>
+    <customvalue scriptid="val_57910_000071_105">
+      <abbreviation>C</abbreviation>
+      <isinactive>F</isinactive>
+      <value>Calais, FR</value>
+    </customvalue>
+    <customvalue scriptid="val_57911_000071_959">
+      <abbreviation>D</abbreviation>
+      <isinactive>F</isinactive>
+      <value>Southampton, UK</value>
+    </customvalue>
+    <customvalue scriptid="val_57912_000071_317">
+      <abbreviation>H</abbreviation>
+      <isinactive>F</isinactive>
+      <value>Houston, US</value>
+    </customvalue>
+  </customvalues>
+</customlist>

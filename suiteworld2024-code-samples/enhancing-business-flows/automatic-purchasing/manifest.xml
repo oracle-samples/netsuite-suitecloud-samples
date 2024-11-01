@@ -1,0 +1,7 @@
+<manifest projecttype="SUITEAPP">
+  <publisherid>com.test</publisherid>
+  <projectid>automaticpurchasing</projectid>
+  <projectname>com.test.automaticpurchasing</projectname>
+  <projectversion>1.0.0</projectversion>
+  <frameworkversion>1.0</frameworkversion>
+</manifest>

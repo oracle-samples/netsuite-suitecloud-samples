@@ -1,0 +1,39 @@
+<customlist scriptid="customlist_ship_container_status">
+  <description></description>
+  <isinactive>F</isinactive>
+  <ismatrixoption>F</ismatrixoption>
+  <isordered>T</isordered>
+  <name>Shipping Container Status</name>
+  <customvalues>
+    <customvalue scriptid="val_57901_000071_538">
+      <abbreviation>A</abbreviation>
+      <isinactive>F</isinactive>
+      <value>Available</value>
+    </customvalue>
+    <customvalue scriptid="val_57902_000071_122">
+      <abbreviation>L</abbreviation>
+      <isinactive>F</isinactive>
+      <value>Allocating</value>
+    </customvalue>
+    <customvalue scriptid="val_57903_000071_608">
+      <abbreviation>A</abbreviation>
+      <isinactive>F</isinactive>
+      <value>Allocated</value>
+    </customvalue>
+    <customvalue scriptid="val_57904_000071_226">
+      <abbreviation>I</abbreviation>
+      <isinactive>F</isinactive>
+      <value>Loading</value>
+    </customvalue>
+    <customvalue scriptid="val_57905_000071_687">
+      <abbreviation>I</abbreviation>
+      <isinactive>F</isinactive>
+      <value>In Transit</value>
+    </customvalue>
+    <customvalue scriptid="val_57906_000071_435">
+      <abbreviation>U</abbreviation>
+      <isinactive>F</isinactive>
+      <value>Unloading</value>
+    </customvalue>
+  </customvalues>
+</customlist>

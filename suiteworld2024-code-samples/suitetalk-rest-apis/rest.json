@@ -1,0 +1,1005 @@
+{
+	"info": {
+		"_postman_id": "1caff193-f02e-4df0-a16f-acae93775df5",
+		"name": "SW24 REST- Functional Demo OAuth 2.0 ACG",
+		"description": "Version: 1.0.0",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1 Metadata Capabilities",
+			"item": [
+				{
+					"name": "Ex 1.1: OpenAPI for Customer",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/swagger+json"
+							}
+						],
+						"url": {
+							"raw": "{{REST_SERVICES}}/record/v1/metadata-catalog/customer",
+							"host": [
+								"{{REST_SERVICES}}"
+							],
+							"path": [
+								"record",
+								"v1",
+								"metadata-catalog",
+								"customer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ex 1.2: OpenAPI for Customer and Sales Order",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/swagger+json"
+							}
+						],
+						"url": {
+							"raw": "{{REST_SERVICES}}/record/v1/metadata-catalog?select=customer,message",
+							"host": [
+								"{{REST_SERVICES}}"
+							],
+							"path": [
+								"record",
+								"v1",
+								"metadata-catalog"
+							],
+							"query": [
+								{
+									"key": "select",
+									"value": "customer,message"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test('response should be okay to process', () => {",
+							"    pm.response.to.not.be.error;",
+							"});"
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "2 Search & Query",
+			"item": [
+				{
+					"name": "Ex 2.1: Find Customer",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.collectionVariables.set(\"thisYearStart\", \"1/1/\" + new Date().getFullYear().toString());",
+									"pm.collectionVariables.set(\"thisYearEnd\", \"1/1/\" + (new Date().getFullYear() + 1).toString());"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "prefer",
+								"type": "text",
+								"value": "transient"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"q\": \"SELECT c.id, c.companyName, c.email, c.dateCreated FROM customer c WHERE c.email = 'Wayne_Enterprises_RD@roman.enterprises.com' \"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{REST_SERVICES}}/query/v1/suiteql?limit=50",
+							"host": [
+								"{{REST_SERVICES}}"
+							],
+							"path": [
+								"query",
+								"v1",
+								"suiteql"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "50"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "3 Record Service & Async Processing",
+			"item": [
+				{
+					"name": "Ex 3.1: Create New Customer",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code\", function () {",
+									"    pm.response.to.have.status(202);",
+									"});",
+									"",
+									"if (pm.response.code === 202) {",
+									"    const loc = pm.response.headers.get(\"Location\");",
+									"    const split = loc.split('/');",
+									"    const id = split[split.length - 1];",
+									"    ",
+									"    pm.environment.set(\"last_async_job\", id);",
+									"    console.log(\"last_async_job\" + \":\" + id);",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "prefer",
+								"value": "respond-async",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "X-NetSuite-idempotency-key",
+								"value": "cac827ea-3543-4cda-add2-bae634326c28",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{        \n\"CompanyName\": \"Wayne Industies\",\n\"email\": \"Wayne_Industies@roman.enterprises.com\"\n\"Subsidiary\": {\"id\": 2}\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{REST_SERVICES}}/record/v1/customer",
+							"host": [
+								"{{REST_SERVICES}}"
+							],
+							"path": [
+								"record",
+								"v1",
+								"customer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ex 3.2: Create Message for Wayne Industries",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code\", function () {",
+									"    pm.response.to.have.status(202);",
+									"});",
+									"",
+									"if (pm.response.code === 202) {",
+									"    const loc = pm.response.headers.get(\"Location\");",
+									"    const split = loc.split('/');",
+									"    const id = split[split.length - 1];",
+									"    ",
+									"    pm.environment.set(\"last_async_job\", id);",
+									"    console.log(\"last_async_job\" + \":\" + id);",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "prefer",
+								"value": "respond-async",
+								"type": "text"
+							},
+							{
+								"key": "X-NetSuite-idempotency-key",
+								"value": "cac827ea-3543-4cda-add2-bae634326c28",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{        \n\"entity\": { \"id\": 1514},\n\"subject\": \"Testing subject experiment\",\n\"message\": \"This is a test message to be attached to my partner.\",\n\"author\": { \"id\": 1098 },\n\"authorEmail\": \"Wayne_Enterprises_RD@roman.enterprises.com\",\n\"recipientEmail\": \"AwesomeCompany@awesomefit.com\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{REST_SERVICES}}/record/v1/message",
+							"host": [
+								"{{REST_SERVICES}}"
+							],
+							"path": [
+								"record",
+								"v1",
+								"message"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ex 3.2: Create Async Message for Wayne Ent. (idempotecy)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code\", function () {",
+									"    pm.response.to.have.status(202);",
+									"});",
+									"",
+									"if (pm.response.code === 202) {",
+									"    const loc = pm.response.headers.get(\"Location\");",
+									"    const split = loc.split('/');",
+									"    const id = split[split.length - 1];",
+									"    ",
+									"    pm.environment.set(\"last_async_job\", id);",
+									"    console.log(\"last_async_job\" + \":\" + id);",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "prefer",
+								"value": "respond-async",
+								"type": "text"
+							},
+							{
+								"key": "X-NetSuite-idempotency-key",
+								"value": "cac827ea-3543-4cda-add2-bae634326c28",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{        \n\"entity\": { \"id\": 1514},\n\"subject\": \"Testing subject experiment\",\n\"message\": \"This is a test message to be attached to my partner.\",\n\"author\": { \"id\": 1098 },\n\"authorEmail\": \"Wayne_Enterprises_RD@roman.enterprises.com\",\n\"recipientEmail\": \"AwesomeCompany@awesomefit.com\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{REST_SERVICES}}/record/v1/message",
+							"host": [
+								"{{REST_SERVICES}}"
+							],
+							"path": [
+								"record",
+								"v1",
+								"message"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ex 3.3: Get Async Job status",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{REST_SERVICES}}/async/v1/job/{{last_async_job}}",
+							"host": [
+								"{{REST_SERVICES}}"
+							],
+							"path": [
+								"async",
+								"v1",
+								"job",
+								"{{last_async_job}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ex 3.4: Get Async Task status",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{REST_SERVICES}}/async/v1/job/{{last_async_job}}/task/{{last_async_job}}",
+							"host": [
+								"{{REST_SERVICES}}"
+							],
+							"path": [
+								"async",
+								"v1",
+								"job",
+								"{{last_async_job}}",
+								"task",
+								"{{last_async_job}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ex 3.5: Get Async Task result",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{REST_SERVICES}}/async/v1/job/{{last_async_job}}/task/{{last_async_job}}/result",
+							"host": [
+								"{{REST_SERVICES}}"
+							],
+							"path": [
+								"async",
+								"v1",
+								"job",
+								"{{last_async_job}}",
+								"task",
+								"{{last_async_job}}",
+								"result"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "4 Search & Query Advanced",
+			"item": [
+				{
+					"name": "Ex 4.1: Find All Customers Messages Created This Year",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.collectionVariables.set(\"thisYearStart\", \"1/1/\" + new Date().getFullYear().toString());",
+									"pm.collectionVariables.set(\"thisYearEnd\", \"1/1/\" + (new Date().getFullYear() + 1).toString());"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "prefer",
+								"type": "text",
+								"value": "transient"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"q\": \"SELECT c.email AS email, c.companyName AS company, m.subject AS subject, m.messageDate AS date FROM customer c, message m WHERE m.entity = c.id AND m.messageDate >= '{{thisYearStart}}'\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{REST_SERVICES}}/query/v1/suiteql",
+							"host": [
+								"{{REST_SERVICES}}"
+							],
+							"path": [
+								"query",
+								"v1",
+								"suiteql"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "5",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ex 4.2: Customers Created This Year (Message & Company Name,Size JOIN) - Async Copy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "prefer",
+								"value": "transient",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-NetSuite-idempotency-key",
+								"value": "cac827ea-3543-4cda-add2-bae634326c27",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"q\": \"SELECT sender.companyName as sender, msg.id as messageId, msg.messagedate, msg.subject, cust.companyName as RecepientCompany, cl.Name as CompnaySize FROM message msg JOIN customer cust ON msg.entity = cust.id JOIN CUSTOMLIST_COMPANY_SIZE cl ON cust.custentity_company_size = cl.id JOIN customer sender ON msg.author = sender.id WHERE cl.Name = '1-99 Employees' AND messagedate >= '{{thisYearStart}}' AND messagedate < '{{thisYearEnd}}' AND sender.companyName LIKE 'Wayne%' ORDER BY msg.messagedate DESC\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{REST_SERVICES}}/query/v1/suiteql?limit=5",
+							"host": [
+								"{{REST_SERVICES}}"
+							],
+							"path": [
+								"query",
+								"v1",
+								"suiteql"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ex 4.3: Find Customers Created This Year with Paging",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.collectionVariables.set(\"thisYearStart\", \"1/1/\" + new Date().getFullYear().toString());",
+									"pm.collectionVariables.set(\"thisYearEnd\", \"1/1/\" + (new Date().getFullYear() + 1).toString());"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{REST_SERVICES}}/record/v1/customer?q=dateCreated ON_OR_AFTER \"{{thisYearStart}}\" AND dateCreated BEFORE \"{{thisYearEnd}}\"&limit=2&offset=2",
+							"host": [
+								"{{REST_SERVICES}}"
+							],
+							"path": [
+								"record",
+								"v1",
+								"customer"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "dateCreated ON_OR_AFTER \"{{thisYearStart}}\" AND dateCreated BEFORE \"{{thisYearEnd}}\""
+								},
+								{
+									"key": "limit",
+									"value": "2"
+								},
+								{
+									"key": "offset",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ex 4.4: List All Datesets",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "prefer",
+								"type": "text",
+								"value": "transient"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{REST_SERVICES}}/query/v1/dataset",
+							"host": [
+								"{{REST_SERVICES}}"
+							],
+							"path": [
+								"query",
+								"v1",
+								"dataset"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ex 4.5: Execute Dataset",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "prefer",
+								"type": "text",
+								"value": "transient"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{REST_SERVICES}}/query/v1/dataset/custdataset4/result",
+							"host": [
+								"{{REST_SERVICES}}"
+							],
+							"path": [
+								"query",
+								"v1",
+								"dataset",
+								"custdataset4",
+								"result"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "4 Help",
+			"item": [
+				{
+					"name": "Hlp: Update Customer Size",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test('response should contain location header', () => {",
+									"    pm.response.to.have.header(\"Location\");",
+									"});",
+									"",
+									"pm.test('response should not contain any property validation warnings', () => {",
+									"    pm.response.to.not.have.header(\"X-NetSuite-PropertyValidation\");",
+									"});",
+									"",
+									"pm.test('response should not contain any system warnings', () => {",
+									"    pm.response.to.not.have.header(\"X-NetSuite-Warning\");",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\n    \"companyName\": \"Awesome updated {{$timestamp}}\",\n    \"custentity_company_size\": 1\n}"
+						},
+						"url": {
+							"raw": "{{REST_SERVICES}}/record/v1/customer/1514",
+							"host": [
+								"{{REST_SERVICES}}"
+							],
+							"path": [
+								"record",
+								"v1",
+								"customer",
+								"1514"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test('response should be okay to process', () => {",
+							"    pm.response.to.not.be.error;",
+							"});"
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Obsolete",
+			"item": [
+				{
+					"name": "Ex 2.2: Pair Sales Orders With Customer",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "prefer",
+								"value": "transient",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"q\": \"SELECT c.email AS email, c.companyName AS company, t.tranId AS document, t.tranDate AS date FROM customer c, transaction t WHERE t.entity = c.id AND t.type = 'SalesOrd'\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{REST_SERVICES}}/query/v1/suiteql?limit=5",
+							"host": [
+								"{{REST_SERVICES}}"
+							],
+							"path": [
+								"query",
+								"v1",
+								"suiteql"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ex 2.1: Find Customers Created This Year Copy",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.collectionVariables.set(\"thisYearStart\", \"1/1/\" + new Date().getFullYear().toString());",
+									"pm.collectionVariables.set(\"thisYearEnd\", \"1/1/\" + (new Date().getFullYear() + 1).toString());"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "prefer",
+								"type": "text",
+								"value": "transient"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"q\": \"SELECT id, companyName, email, dateCreated FROM customer WHERE dateCreated >= '{{thisYearStart}}' AND dateCreated < '{{thisYearEnd}}'\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{REST_SERVICES}}/query/v1/suiteql?limit=5",
+							"host": [
+								"{{REST_SERVICES}}"
+							],
+							"path": [
+								"query",
+								"v1",
+								"suiteql"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "oauth2",
+		"oauth2": [
+			{
+				"key": "useBrowser",
+				"value": false,
+				"type": "boolean"
+			},
+			{
+				"key": "grant_type",
+				"value": "authorization_code",
+				"type": "string"
+			},
+			{
+				"key": "tokenName",
+				"value": "REST Token",
+				"type": "string"
+			},
+			{
+				"key": "accessTokenUrl",
+				"value": "{{COMPANY_URL}}/services/rest/auth/oauth2/v1/token",
+				"type": "string"
+			},
+			{
+				"key": "authUrl",
+				"value": "{{COMPANY_URL}}/app/login/oauth2/authorize.nl",
+				"type": "string"
+			},
+			{
+				"key": "challengeAlgorithm",
+				"value": "S256",
+				"type": "string"
+			},
+			{
+				"key": "state",
+				"value": "youShallPassWithThisState",
+				"type": "string"
+			},
+			{
+				"key": "scope",
+				"value": "rest_webservices",
+				"type": "string"
+			},
+			{
+				"key": "redirect_uri",
+				"value": "https://localhost/oauth2/callback",
+				"type": "string"
+			},
+			{
+				"key": "clientSecret",
+				"value": "{{CONSUMER_SECRET}}",
+				"type": "string"
+			},
+			{
+				"key": "clientId",
+				"value": "{{CONSUMER_KEY}}",
+				"type": "string"
+			},
+			{
+				"key": "addTokenTo",
+				"value": "header",
+				"type": "string"
+			},
+			{
+				"key": "client_authentication",
+				"value": "header",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "thisYearStart",
+			"value": ""
+		},
+		{
+			"key": "thisYearEnd",
+			"value": ""
+		},
+		{
+			"key": "lastCustomer",
+			"value": ""
+		}
+	]
+}
