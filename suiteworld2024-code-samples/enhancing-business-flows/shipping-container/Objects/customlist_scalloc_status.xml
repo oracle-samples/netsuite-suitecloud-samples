@@ -1,0 +1,24 @@
+<customlist scriptid="customlist_scalloc_status">
+  <description></description>
+  <isinactive>F</isinactive>
+  <ismatrixoption>F</ismatrixoption>
+  <isordered>T</isordered>
+  <name>Sh.Cont. Allocation Status</name>
+  <customvalues>
+    <customvalue scriptid="val_57959_000071_972">
+      <abbreviation>A</abbreviation>
+      <isinactive>F</isinactive>
+      <value>Allocating</value>
+    </customvalue>
+    <customvalue scriptid="val_57960_000071_303">
+      <abbreviation>A</abbreviation>
+      <isinactive>F</isinactive>
+      <value>Allocated</value>
+    </customvalue>
+    <customvalue scriptid="val_57961_000071_523">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>Finished</value>
+    </customvalue>
+  </customvalues>
+</customlist>

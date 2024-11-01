@@ -1,0 +1,5 @@
+<subtab scriptid="custtab_vend_autopurch_tab">
+  <parent></parent>
+  <tabtype>ENTITY</tabtype>
+  <title>Automatic Purchase</title>
+</subtab>
