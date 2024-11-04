@@ -1,0 +1,22 @@
+<restlet scriptid="customscript_restlet">
+  <description></description>
+  <isinactive>F</isinactive>
+  <name>Suiteworld Restlet</name>
+  <notifyadmins>F</notifyadmins>
+  <notifyemails></notifyemails>
+  <notifyowner>T</notifyowner>
+  <notifyuser>F</notifyuser>
+  <scriptfile>[/SuiteApps/com.netsuite.playground/customscript_restlet.js]</scriptfile>
+  <scriptdeployments>
+    <scriptdeployment scriptid="customdeploy_restlet">
+      <allemployees>F</allemployees>
+      <allpartners>F</allpartners>
+      <allroles>F</allroles>
+      <audslctrole></audslctrole>
+      <isdeployed>T</isdeployed>
+      <loglevel>DEBUG</loglevel>
+      <status>TESTING</status>
+      <title>Suiteworld Restlet</title>
+    </scriptdeployment>
+  </scriptdeployments>
+</restlet>
