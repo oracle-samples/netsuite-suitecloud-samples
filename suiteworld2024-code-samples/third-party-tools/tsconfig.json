@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "module": "ESNext",
+    "target": "ESNext",
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "noUnusedLocals": false,
+    "moduleResolution": "node",
+    "newLine": "LF",
+    "baseUrl": ".",
+    "lib": ["ESNext", "dom"],
+    "paths": {
+      "N": ["node_modules/@hitc/netsuite-types/N"],
+      "N/*": ["node_modules/@hitc/netsuite-types/N/*"]
+    },
+    "outDir": "./build/",
+    "rootDir": "./src/Typescripts/"
+  }
+}
