@@ -1,5 +1,5 @@
 // Enumeration of available actions
-import {flightInfo, gateInfo} from '../../../../../types/appTypes';
+import {FlightInfo, GateInfo} from '../../../../../types/appTypes';
 import FlightService from '../services/FlightService';
 import GateService from '../services/GateService';
 
@@ -24,7 +24,7 @@ const Action = {
 		};
 	},
 	// Load gates
-	gatesLoaded(gates: [gateInfo]) {
+	gatesLoaded(gates: [GateInfo]) {
 		return {
 			type: ActionType.GATES_LOADED,
 			gates,
@@ -38,14 +38,14 @@ const Action = {
 		};
 	},
 	// Load flights
-	flightsLoaded(flights: flightInfo) {
+	flightsLoaded(flights: FlightInfo) {
 		return {
 			type: ActionType.FLIGHTS_LOADED,
 			flights,
 		};
 	},
 	// Set gate status to closed
-	gateClosed(gate: gateInfo) {
+	gateClosed(gate: GateInfo) {
 		return {
 			type: ActionType.GATE_CLOSED,
 			gate,

@@ -104,7 +104,6 @@ export default class GateList extends PureComponent {
 		const {loading, data} = this.props.gates;
 		const listView = ListView.ofStaticData({
 			dataProvider: () => data, // array of data objects
-			//@ts-ignore
 			layout: {
 				[ListView.Layout.TABLE]: {
 					columns: this.columns, // array of columns definition

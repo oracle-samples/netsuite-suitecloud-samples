@@ -1,10 +1,20 @@
 import {expect, test} from '@jest/globals';
-import {ContentPanel, Heading} from '@uif-js/component';
-import HelloWorld from '../../src/SuiteApps/com.netsuite.uifhwjs/helloworld/HelloWorld';
+import {ContentPanel, Heading, ThemeSelector} from '@uif-js/component';
+import HelloWorld from '../../src/SuiteApps/com.netsuite.uifhwjs/helloworld/HelloWorld.js';
 
-test('HelloWorld renders a Heading inside a ContentPanel', () => {
-	const foo = HelloWorld();
-	expect(foo.type).toBe(ContentPanel);
-	expect(foo.props.children.type).toBe(Heading);
-	expect(foo.props.children.props.children).toBe('Hello World!');
+describe('App Components', () => {
+	test('component HelloWorld renders a Heading inside a ContentPanel, all wrapped in ThemeSelector', () => {
+		const root = HelloWorld();
+
+		expect(root.type).toBe(ThemeSelector);
+
+		const rootChild = root.props.children;
+
+		expect(rootChild.type).toBe(ContentPanel);
+
+		const content = rootChild.props.children;
+
+		expect(content.type).toBe(Heading);
+		expect(content.props.children).toBe('Hello World!');
+	});
 });

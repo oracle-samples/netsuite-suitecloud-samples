@@ -47,8 +47,6 @@ Testing is carried out using [Jest](https://jestjs.io/) for both unit and e2e (e
 You can run unit tests out of the box. Before you start with e2e tests, you need to configure some of the files in the `/test` folder first:
 
 1. Ensure you have set up an account using `suitecloud account:setup` and have a valid authentication ID.
-2. Modify the `baseUrl` specified in `e2e/jest.config.json` to match the URL of your NetSuite account.
-3. Look for the `.suitecloud-sdk` folder located in your root folder by default.
-4. Copy the credentials from `.suitecloud-sdk/credentials` to `e2e/setup/credentials`. You can either copy the contents of the credentials file or simply replace the file.
-5. Check that the `COMPANY_ID` in `e2e/constants/credential.ts` is correct.
-6. Run `npm run test_e2e` for end-to-end tests and `npm run test_unit` for unit tests, or run `npm run test` for both.
+2. In `e2e/jest.config.json`, modify the `baseUrl` to match the URL of your NetSuite account.
+3. In `e2e/constants/credential.ts`, specify the `USERNAME`, `PASSWORD`, and `COMPANY_ID` that you use in the specified NetSuite account.
+4. Run `npm run test_e2e` for end-to-end tests and `npm run test_unit` for unit tests, or run `npm run test` for both.

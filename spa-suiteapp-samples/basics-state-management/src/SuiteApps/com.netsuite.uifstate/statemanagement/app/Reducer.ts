@@ -1,7 +1,8 @@
 import {ImmutableUpdate} from '@uif-js/core';
-import {ActionType} from './Action.js';
+import {ActionType, AtomicAction} from './Action.js';
+import {CounterState} from './InitialState';
 
-export default function reducer(state, action) {
+export default function reducer(state: CounterState, action: AtomicAction): CounterState {
 	switch (action.type) {
 		// Reacts to ActionType.COUNTER_INCREMENT action
 		case ActionType.COUNTER_INCREMENT: {

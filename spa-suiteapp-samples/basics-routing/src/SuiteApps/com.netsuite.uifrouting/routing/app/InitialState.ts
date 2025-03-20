@@ -1,5 +1,77 @@
 // Initial state that contains list off all countries and data about them
-export default {
+export interface CountriesState {
+	countries: Country[];
+}
+
+interface CountryFlags {
+	svg: string;
+	png: string;
+}
+
+interface CountryCurrency {
+	code: string;
+	name: string;
+	symbol: string;
+}
+
+interface CountryLanguage {
+	iso639_1?: string;
+	iso639_2: string;
+	name: string;
+	nativeName?: string;
+}
+
+interface CountryTranslations {
+	br: string;
+	pt: string;
+	nl: string;
+	hr: string;
+	fa?: string;
+	de: string;
+	es: string;
+	fr: string;
+	ja: string;
+	it: string;
+	hu: string;
+}
+
+interface CountryRegionalBlogs {
+	acronym: string;
+	name: string;
+	otherNames?: string[];
+	otherAcronyms?: string[];
+}
+
+export interface Country {
+	name: string;
+	topLevelDomain: string[];
+	alpha2Code: string;
+	alpha3Code: string;
+	callingCodes: string[];
+	capital?: string;
+	altSpellings?: string[];
+	subregion: string;
+	region: string;
+	population: number;
+	latlng?: number[];
+	demonym: string;
+	area?: number;
+	timezones: string[];
+	borders?: string[];
+	nativeName: string;
+	numericCode: string;
+	flags: CountryFlags;
+	currencies?: CountryCurrency[];
+	languages: CountryLanguage[];
+	translations: CountryTranslations;
+	flag: string;
+	regionalBlocs?: CountryRegionalBlogs[];
+	cioc?: string;
+	independent: boolean;
+	gini?: number;
+}
+
+export const initialState: CountriesState = {
 	countries: [
 		{
 			name: 'Afghanistan',

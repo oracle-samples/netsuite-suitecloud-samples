@@ -15,7 +15,7 @@ export default function TopListItem({name, price, inStock, isLast}: TopListItemP
 				color: Decorator.Color.NEUTRAL,
 				strength: Decorator.Strength.LIGHT,
 		  })
-		: null;
+		: undefined;
 	return (
 		<StackPanel
 			itemGap={StackPanel.GapSize.M}

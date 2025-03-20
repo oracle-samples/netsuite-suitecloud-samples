@@ -9,5 +9,6 @@
 !test/unit/**/*
 !test/e2e/__test__/**/*
 types/uif/**/*
+!test/integration/**/*
 
 

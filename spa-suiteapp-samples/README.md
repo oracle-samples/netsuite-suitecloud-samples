@@ -6,8 +6,7 @@ These samples use the SPA SuiteApp project template that contains a TypeScript c
 
 Each sample SuiteApp contains `ESLint` and `Prettier` configuration files, and you can configure them using the `inspect` and `lint` npm scripts available in each SuiteApp. Using both is highly recommended to ensure adherence to coding standards.
 
-## Availability
-The Single Page Application feature in NetSuite is available by request only. Currently, this feature can be enabled only for SDN partners with a publisher ID. This feature requires the use of SuiteCloud Development Framework (SDF) SuiteApp projects and SuiteScript 2.1. For information about the requirements to use this feature and how to request access, see [Single Page Applications](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/article_161244635803.html#Single-Page-Applications).
+The Single Page Application feature in NetSuite requires the use of SDF SuiteApp projects and SuiteScript 2.1. For more information, see [Single Page Applications](https://docs.oracle.com/en/cloud/saas/netsuite/ns-online-help/article_161244635803.html#Single-Page-Applications).
 
 ## Environment Setup
 

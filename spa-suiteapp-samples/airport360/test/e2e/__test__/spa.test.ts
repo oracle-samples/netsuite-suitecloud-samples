@@ -29,7 +29,7 @@ describe('SPA SuiteApp', () => {
 		'should build the application successfully',
 		async () => {
 			const commandOutput = executeShellCommandPipe('npm run build', getPath('./'));
-			await expect(commandOutput).toEqual(expect.stringContaining("Finished 'build' after"));
+			expect(commandOutput).toEqual(expect.stringContaining("Finished 'build' after"));
 		},
 		TEST_TIMEOUT
 	);
@@ -38,7 +38,7 @@ describe('SPA SuiteApp', () => {
 		'should deploy the application successfully',
 		async () => {
 			const commandOutput = executeShellCommandPipe('npm run deploy', getPath('./src/'));
-			await expect(commandOutput).toEqual(expect.stringContaining('Installation COMPLETE'));
+			expect(commandOutput).toEqual(expect.stringContaining('Installation COMPLETE'));
 		},
 		TEST_TIMEOUT
 	);
@@ -48,7 +48,7 @@ describe('SPA SuiteApp', () => {
 			await page.goto(resolve.viewSPA('com.netsuite.airport360', 'airport#', ''));
 			await page.waitForNetworkIdle();
 			const flights = await page.$eval('body > div:last-of-type', (el) => el.textContent);
-			await expect(flights).toEqual(expect.stringContaining('Airport 360Flight & Gate Dashboard'));
+			expect(flights).toEqual(expect.stringContaining('Airport 360Flight & Gate Dashboard'));
 		},
 		TEST_TIMEOUT
 	);
@@ -58,7 +58,7 @@ describe('SPA SuiteApp', () => {
 		async () => {
 			await page.goto(resolve.viewSPA(suiteAppName, SPA, 'flights'));
 			const flights = await page.$eval('body > div:last-of-type', (el) => el.textContent);
-			await expect(flights).toEqual(expect.stringContaining('DashboardFlightsGatesFlights'));
+			expect(flights).toEqual(expect.stringContaining('DashboardFlightsGatesFlights'));
 		},
 		TEST_TIMEOUT
 	);
@@ -68,7 +68,7 @@ describe('SPA SuiteApp', () => {
 		async () => {
 			await page.goto(resolve.viewSPA(suiteAppName, SPA, 'gates'));
 			const gates = await page.$eval('body > div:last-of-type', (el) => el.textContent);
-			await expect(gates).toEqual(expect.stringContaining('DashboardFlightsGatesGates'));
+			expect(gates).toEqual(expect.stringContaining('DashboardFlightsGatesGates'));
 		},
 		TEST_TIMEOUT
 	);
@@ -78,7 +78,7 @@ describe('SPA SuiteApp', () => {
 		async () => {
 			await page.goto(resolve.viewSPA('com.netsuite.airport360', 'airport#', 'flights/1'));
 			const details = await page.$eval('body > div:last-of-type', (el) => el.textContent);
-			await expect(details).toEqual(expect.stringContaining('Flight 1Details PageOriginBarcelona - BCN'));
+			expect(details).toEqual(expect.stringContaining('Flight 1BackOriginBarcelona - BCN'));
 		},
 		TEST_TIMEOUT
 	);

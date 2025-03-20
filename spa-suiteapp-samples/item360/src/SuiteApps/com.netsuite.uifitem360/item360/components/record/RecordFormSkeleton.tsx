@@ -6,7 +6,7 @@ interface RecordFormSkeletonProps {
 }
 
 export default function RecordFormSkeleton({sectionsCount = 3}: RecordFormSkeletonProps): JSX.Element {
-	const sections = [];
+	const sections: JSX.Element[] = [];
 	for (let i = 0; i < sectionsCount; i++) {
 		sections.push(<RecordSectionSkeleton />);
 	}

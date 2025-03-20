@@ -12,6 +12,7 @@
         "jsx": "react-jsx",
         "jsxImportSource": "@uif-js/core",
         "sourceMap": false,
+        "strictNullChecks": true,
         "typeRoots": [
             "node_modules/@types",
             "node_modules/@oracle/netsuite-uif-types"

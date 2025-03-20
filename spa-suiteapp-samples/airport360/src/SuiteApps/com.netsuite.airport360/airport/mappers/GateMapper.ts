@@ -1,7 +1,7 @@
-import {gateInfo} from '../../../../../types/appTypes';
+import {GateInfo} from '../../../../../types/appTypes';
 
 export default {
-	sourceToProjection: (source): gateInfo => {
+	sourceToProjection: (source): GateInfo => {
 		return {
 			id: parseInt(source.custrecord_gate_id),
 			gateNumber: source.custrecord_gate_gate_number,

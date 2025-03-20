@@ -43,7 +43,7 @@ function ItemsList({data}: ItemsListProps): JSX.Element {
 
 	const deleteActionHandle = async (id: number): Promise<void> => {
 		const {result, error} = await dispatch(Action.itemDelete(id));
-		if (result) {
+		if (result === true) {
 			messaging.info({
 				title: 'Record Deleted',
 				content: 'The record has been successfully deleted',
@@ -160,7 +160,7 @@ function ItemsList({data}: ItemsListProps): JSX.Element {
 
 	const sort = ({currentDirections}) => {
 		const direction = currentDirections[0];
-		if (!direction) {
+		if (direction !== false) {
 			setSortedDataSource(dataGridData);
 		} else {
 			const ascending = direction.direction === DataGrid.SortDirection.ASCENDING;

@@ -1,7 +1,8 @@
 import {Chart, Portlet, Skeleton} from '@uif-js/component';
 import {JSX} from '@uif-js/core';
+import {ChartServerObject} from '../../service/ServerDataService';
 
-export default function PortletChart({data, loading}): JSX.Element {
+export default function PortletChart({data, loading}: {data: ChartServerObject; loading: boolean}): JSX.Element {
 	const definition = {
 		chart: {type: 'pie'},
 		title: {
@@ -23,7 +24,7 @@ export default function PortletChart({data, loading}): JSX.Element {
 	};
 	return (
 		<Portlet title={'Number of Items per Vendor'}>
-			{loading ? <Skeleton.Chart /> : <Chart definition={definition} />}
+			{loading === true ? <Skeleton.Chart /> : <Chart definition={definition} />}
 		</Portlet>
 	);
 }

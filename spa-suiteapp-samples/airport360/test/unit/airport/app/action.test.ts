@@ -45,7 +45,7 @@ const MOCK_GATES = [
 	},
 ];
 import {ActionType, Action} from '../../../../src/SuiteApps/com.netsuite.airport360/airport/app/Action';
-import {flightInfo, gateInfo} from '../../../../types/appTypes';
+import {FlightInfo, GateInfo} from '../../../../types/appTypes';
 
 const mockDispatch = jest.fn();
 jest.mock('../../../../src/SuiteApps/com.netsuite.airport360/airport/services/FlightService', () => ({
@@ -76,7 +76,7 @@ describe('Test app actions', () => {
 
 	it('gatesLoaded action should return the expected object', async () => {
 		//ARRANGE
-		const testGates: [gateInfo] = [
+		const testGates: [GateInfo] = [
 			{id: 42, gateNumber: '42', airline: '4Airline2', flight: 'Flight 42', active: true},
 		];
 
@@ -102,7 +102,7 @@ describe('Test app actions', () => {
 
 	it('flightsLoaded action should return the expected object', async () => {
 		//ARRANGE
-		const testFlight: flightInfo = {
+		const testFlight: FlightInfo = {
 			id: 42,
 			origin: {
 				code: '42',
@@ -135,7 +135,7 @@ describe('Test app actions', () => {
 
 	it('gateClosed action should return the expected object', async () => {
 		//ARRANGE
-		const testGate: gateInfo = {
+		const testGate: GateInfo = {
 			id: 42,
 			gateNumber: '42',
 			airline: '42',

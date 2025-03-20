@@ -1,5 +1,5 @@
-import {JSX, Router, Store, useMemo, useState} from '@uif-js/core';
-import {StackPanel} from '@uif-js/component';
+import {JSX, Router, Store, Theme, useMemo, useState} from '@uif-js/core';
+import {StackPanel, ThemeSelector} from '@uif-js/component';
 import reducer from './app/Reducer';
 import {
 	initialState,
@@ -40,39 +40,41 @@ export default function Item360(): JSX.Element {
 		profile: Item360StateProfile;
 	} = state;
 	return (
-		<Router.Hash>
-			<Store.Provider store={store}>
-				<StackPanel>
-					<StackPanel.Item shrink={0}>
-						<Navigation />
-					</StackPanel.Item>
-					<StackPanel.Item grow={1}>
-						<Router.Routes>
-							<Router.Route path={RootRoute.DASHBOARD} exact={true}>
-								<DashboardPage items={items} dashboard={dashboard} />
-							</Router.Route>
-							<Router.Route path={RootRoute.ITEMS} exact={true}>
-								<ItemsPage items={items} />
-							</Router.Route>
-							<Router.Route path={RootRoute.ITEM} exact={true}>
-								<ItemPage item={item} />
-							</Router.Route>
-							<Router.Route path={RootRoute.ITEM_EDIT} exact={true}>
-								<ItemPage item={item} mode={RecordPage.Mode.EDIT} />
-							</Router.Route>
-							<Router.Route path={RootRoute.ITEM_CREATE} exact={true}>
-								<ItemPage item={item} mode={RecordPage.Mode.CREATE} />
-							</Router.Route>
-							<Router.Route path={RootRoute.PROFILE}>
-								<ProfilePage profile={profile} />
-							</Router.Route>
-							<Router.Route path={RootRoute.OTHERS}>
-								<NotFoundPage />
-							</Router.Route>
-						</Router.Routes>
-					</StackPanel.Item>
-				</StackPanel>
-			</Store.Provider>
-		</Router.Hash>
+		<ThemeSelector supportedThemes={[Theme.Name.REDWOOD, Theme.Name.REFRESHED]}>
+			<Router.Hash>
+				<Store.Provider store={store}>
+					<StackPanel>
+						<StackPanel.Item shrink={0}>
+							<Navigation />
+						</StackPanel.Item>
+						<StackPanel.Item grow={1}>
+							<Router.Routes>
+								<Router.Route path={RootRoute.DASHBOARD} exact={true}>
+									<DashboardPage items={items} dashboard={dashboard} />
+								</Router.Route>
+								<Router.Route path={RootRoute.ITEMS} exact={true}>
+									<ItemsPage items={items} />
+								</Router.Route>
+								<Router.Route path={RootRoute.ITEM} exact={true}>
+									<ItemPage item={item} />
+								</Router.Route>
+								<Router.Route path={RootRoute.ITEM_EDIT} exact={true}>
+									<ItemPage item={item} mode={RecordPage.Mode.EDIT} />
+								</Router.Route>
+								<Router.Route path={RootRoute.ITEM_CREATE} exact={true}>
+									<ItemPage item={item} mode={RecordPage.Mode.CREATE} />
+								</Router.Route>
+								<Router.Route path={RootRoute.PROFILE}>
+									<ProfilePage profile={profile} />
+								</Router.Route>
+								<Router.Route path={RootRoute.OTHERS}>
+									<NotFoundPage />
+								</Router.Route>
+							</Router.Routes>
+						</StackPanel.Item>
+					</StackPanel>
+				</Store.Provider>
+			</Router.Hash>
+		</ThemeSelector>
 	);
 }

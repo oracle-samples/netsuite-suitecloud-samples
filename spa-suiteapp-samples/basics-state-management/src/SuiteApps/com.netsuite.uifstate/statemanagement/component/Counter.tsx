@@ -1,8 +1,12 @@
 import {Button, Heading, StackPanel} from '@uif-js/component';
-import {SystemIcon, useDispatch} from '@uif-js/core';
+import {JSX, SystemIcon, useDispatch} from '@uif-js/core';
 import {Action} from '../app/Action';
 
-export default function Counter({value}) {
+interface CounterProps {
+	value: number;
+}
+
+export default function Counter({value}: CounterProps): JSX.Element {
 	// dispatch function made available by the Store.Provider wrapper in 'CounterApp.js'
 	const dispatch = useDispatch();
 

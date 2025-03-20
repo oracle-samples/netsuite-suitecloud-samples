@@ -1,7 +1,8 @@
 import {ContentPanel, Heading, Link, StackPanel} from '@uif-js/component';
 import {RootRoute} from '../app/CountriesAppRoute';
+import {JSX} from '@uif-js/core';
 
-export default function NotFoundPage() {
+export default function NotFoundPage(): JSX.Element {
 	return (
 		<StackPanel.Vertical alignment={StackPanel.Alignment.CENTER} outerGap={ContentPanel.GapSize.LARGE}>
 			<StackPanel.Item>

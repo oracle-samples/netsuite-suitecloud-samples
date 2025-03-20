@@ -6,7 +6,7 @@
   <clientscriptfile>[/SuiteApps/com.netsuite.uifhwjs/helloworld/SpaClient.js]</clientscriptfile>
   <serverscriptfile>[/SuiteApps/com.netsuite.uifhwjs/helloworld/SpaServer.js]</serverscriptfile>
   <assetsfolder>[/SuiteApps/com.netsuite.uifhwjs/helloworld/assets/]</assetsfolder>
-  <loglevel>ERROR</loglevel>
+  <loglevel>AUDIT</loglevel>
   <audienceallroles>F</audienceallroles>
   <audienceroles></audienceroles>
   <executeas></executeas>

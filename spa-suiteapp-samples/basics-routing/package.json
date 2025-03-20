@@ -3,14 +3,9 @@
 	"version": "1.0.0",
 	"description": "Basics - Routing",
 	"devDependencies": {
-		"@oracle/netsuite-uif-types": "^5.0.0",
+		"@oracle/netsuite-uif-types": "^6.0.0",
 		"@rollup/plugin-terser": "^0.4.0",
-		"@typescript-eslint/eslint-plugin": "^6.4.1",
-		"@typescript-eslint/parser": "^6.4.1",
-		"eslint": "^8.47.0",
-		"eslint-config-prettier": "^8.5.0",
-		"eslint-plugin-import": "^2.26.0",
-		"eslint-plugin-react": "^7.31.0",
+		"@types/jest": "^29.5.14",
 		"gulp": "^4.0.0",
 		"gulp-typescript": "^5.0.0",
 		"jest": "^29.0.0",
@@ -19,17 +14,31 @@
 		"ts-jest": "^29.0.0",
 		"typescript": "^5.1.0"
 	},
+	"peerDependencies": {
+		"@eslint/js": "^8.54.0",
+		"@typescript-eslint/eslint-plugin": "^6.13.0",
+		"@typescript-eslint/parser": "^6.13.0",
+		"eslint": "^8.54.0",
+		"eslint-config-prettier": "^9.0.0",
+		"eslint-import-resolver-typescript": "^3.6.1",
+		"eslint-plugin-import": "^2.29.0",
+		"eslint-plugin-jasmine": "^4.1.0",
+		"eslint-plugin-jest": "^27.6.0",
+		"eslint-plugin-jest-formatting": "^3",
+		"eslint-plugin-react": "^7.33.2",
+		"globals": "^13.23.0"
+	},
 	"scripts": {
 		"clean": "gulp clean",
 		"build": "gulp build",
 		"bundle": "gulp bundle",
 		"deploy": "npm run bundle && suitecloud project:deploy",
 		"test": "jest",
-		"inspect": "npm run eslint-inspect && npm run prettier-inspect",
-		"lint": "npm run eslint-fix && npm run prettier-fix",
-		"eslint-inspect": "eslint src/SuiteApps test/unit",
-		"eslint-fix": "eslint --fix src/SuiteApps test/unit",
-		"prettier-inspect": "prettier --check .",
-		"prettier-fix": "prettier --write ."
+		"eslint-inspection": "eslint .",
+		"eslint-fix": "eslint --fix .",
+		"prettier-inspection": "prettier . --check",
+		"prettier-fix": "prettier . --write",
+		"inspections": "npm run eslint-inspection && npm run prettier-inspection",
+		"lint": "npm run eslint-fix && npm run prettier-fix"
 	}
 }

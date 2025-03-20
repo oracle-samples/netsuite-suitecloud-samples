@@ -3,8 +3,8 @@
 	"version": "1.0.0",
 	"description": "Hello World UIF SuiteApp - TS",
 	"devDependencies": {
-		"@oracle/netsuite-uif-types": "^5.0.0",
-		"@hitc/netsuite-types": "^2023.2.2",
+		"@oracle/netsuite-uif-types": "^6.0.0",
+		"@hitc/netsuite-types": "^2024.2.2",
 		"@typescript-eslint/eslint-plugin": "^5.50.0",
 		"@typescript-eslint/parser": "^5.50.0",
 		"cross-env": "^7.0.3",
@@ -14,16 +14,17 @@
 		"eslint-plugin-jasmine": "^4.1.0",
 		"eslint-plugin-react": "^7.31.0",
 		"fast-xml-parser": "^4.0.0",
-		"jest": "^29.6.4",
-		"jest-puppeteer": "^9.0.0",
 		"prettier": "^2.8.1",
-		"puppeteer": "^21.1.0",
-		"ts-jest": "^29.1.1",
 		"@rollup/plugin-terser": "^0.4.0",
 		"gulp": "^4.0.0",
 		"gulp-typescript": "^5.0.0",
 		"rollup": "^3.26.0",
-		"typescript": "^5.1.0"
+		"typescript": "^5.1.0",
+		"@types/jest": "^29.5.14",
+		"jest": "^29.7.0",
+		"jest-puppeteer": "^11.0.0",
+		"puppeteer": "^24.2.1",
+		"ts-jest": "^29.2.5"
 	},
 	"scripts": {
 		"clean": "gulp clean",

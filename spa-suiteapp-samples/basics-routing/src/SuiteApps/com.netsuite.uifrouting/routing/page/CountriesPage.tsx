@@ -1,8 +1,13 @@
 import {ApplicationHeader, ContentPanel, DataGrid, StackPanel} from '@uif-js/component';
-import {ArrayDataSource, Route, SystemIcon, useMemo} from '@uif-js/core';
+import {ArrayDataSource, JSX, Route, SystemIcon, useMemo} from '@uif-js/core';
 import {RootRoute} from '../app/CountriesAppRoute';
+import {Country} from '../app/InitialState';
 
-export default function CountriesPage({countries}) {
+interface CountriesPageProps {
+	countries: Country[];
+}
+
+export default function CountriesPage({countries}: CountriesPageProps): JSX.Element {
 	const columns = useMemo(() => {
 		return [
 			{name: 'countryCode', label: 'Country Code', binding: 'countryCode', type: DataGrid.ColumnType.LINK},
@@ -40,7 +45,11 @@ export default function CountriesPage({countries}) {
 					outerGap={ContentPanel.GapSize.LARGE}
 					horizontalAlignment={ContentPanel.HorizontalAlignment.START}
 				>
-					<DataGrid dataSource={dataSource} columns={columns} />
+					<DataGrid
+						dataSource={dataSource}
+						columns={columns}
+						autoSize={DataGrid.SizingStrategy.INITIAL_WIDTH}
+					/>
 				</ContentPanel>
 			</StackPanel.Item>
 		</StackPanel.Vertical>

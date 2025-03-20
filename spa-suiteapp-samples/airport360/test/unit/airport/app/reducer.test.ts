@@ -3,7 +3,7 @@ import reducer from '../../../../src/SuiteApps/com.netsuite.airport360/airport/a
 import {Action} from '../../../../src/SuiteApps/com.netsuite.airport360/airport/app/Action';
 import initialState from '../../../../src/SuiteApps/com.netsuite.airport360/airport/app/InitialState';
 import {ImmutableUpdate} from '../../../stubs/@uif-js/core';
-import {gateInfo} from '../../../../types/appTypes';
+import {GateInfo} from '../../../../types/appTypes';
 import Route from '../../../../src/SuiteApps/com.netsuite.airport360/airport/app/Route';
 
 describe('Test app reducer', () => {
@@ -30,7 +30,7 @@ describe('Test app reducer', () => {
 	// Finish loading gates info
 	it('Reduce ActionType GATES_LOADED should add gates items and have them loaded', async () => {
 		// ARRANGE
-		const testGates: [gateInfo] = [
+		const testGates: [GateInfo] = [
 			{id: 42, gateNumber: '42', airline: '4Airline2', flight: 'Flight 42', active: true},
 		];
 		let items = {items: testGates};

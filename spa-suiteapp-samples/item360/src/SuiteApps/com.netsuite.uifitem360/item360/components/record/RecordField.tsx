@@ -1,7 +1,7 @@
 import {ArrayDataSource, Date, JSX, useMemo, useState} from '@uif-js/core';
 import {CheckBox, DatePicker, Dropdown, Field, Text, TextArea, TextBox} from '@uif-js/component';
 import DynamicRecord from '../../data/DynamicRecord';
-import format from 'N/format';
+import NFormat from 'N/format';
 import record from 'N/record';
 import {FieldName} from '../../data/ItemRecord';
 
@@ -13,16 +13,16 @@ interface RecordFieldProps {
 
 export default function RecordField({record, fieldId, readonly}: RecordFieldProps): JSX.Element {
 	const field = record.getField({fieldId});
-	const inline = field.type === DynamicRecord.FieldType.CHECK_BOX;
+	const inline = field?.type === DynamicRecord.FieldType.CHECK_BOX;
 	const size = inline ? Field.Size.AUTO : Field.Size.LARGE;
 	const [valid, setValid] = useState(true);
 	const [statusMessage, setStatusMessage] = useState('');
 	return (
 		<Field
-			label={field.label}
+			label={field?.label}
 			size={size}
 			inline={inline}
-			mandatory={!readonly && field.isMandatory}
+			mandatory={!readonly && field?.isMandatory}
 			valid={valid}
 			statusMessage={statusMessage}
 		>
@@ -110,13 +110,13 @@ function RecordFieldControl({record, field, readonly, validSetter, statusMessage
 function RecordFieldTextBox({record, readonly, field, validSetter, statusMessageSetter, valid}): JSX.Element {
 	const {id, isReadOnly, isDisabled} = field;
 	const text = record.getText(id);
-	return readonly || isReadOnly ? (
+	return readonly === true || isReadOnly === true ? (
 		<Text>{text}</Text>
 	) : (
 		<TextBox
 			text={text}
 			valid={valid}
-			enabled={!isDisabled}
+			enabled={isDisabled !== false}
 			on={{
 				[TextBox.Event.TEXT_ACCEPTED]: ({currentText}) => {
 					try {
@@ -136,17 +136,18 @@ function RecordFieldTextBox({record, readonly, field, validSetter, statusMessage
 function RecordFieldCurrency({record, readonly, field, validSetter, statusMessageSetter, valid}): JSX.Element {
 	const {id, isReadOnly, isDisabled} = field;
 	const text = record.getText(id);
-	return readonly || isReadOnly ? (
+	return readonly === true || isReadOnly === true ? (
 		<Text>{text}</Text>
 	) : (
 		<TextBox
 			text={text}
-			enabled={!isDisabled}
+			enabled={isDisabled !== false}
 			valid={valid}
 			on={{
 				[TextBox.Event.TEXT_ACCEPTED]: ({currentText}) => {
 					try {
-						const number = format.parse({value: currentText, type: format.Type.FLOAT});
+						// eslint-disable-next-line
+						const number = NFormat.parse({value: currentText, type: NFormat.Type.FLOAT});
 						validSetter(true);
 						record.setValue(id, number);
 						statusMessageSetter(null);
@@ -163,12 +164,12 @@ function RecordFieldCurrency({record, readonly, field, validSetter, statusMessag
 function RecordFieldTextArea({record, readonly, field, validSetter, statusMessageSetter, valid}): JSX.Element {
 	const {id, isReadOnly, isDisabled} = field;
 	const text = record.getText(id);
-	return readonly || isReadOnly ? (
+	return readonly === true || isReadOnly === true ? (
 		<Text>{text}</Text>
 	) : (
 		<TextArea
 			text={text}
-			enabled={!isDisabled}
+			enabled={isDisabled !== false}
 			valid={valid}
 			on={{
 				[TextArea.Event.TEXT_ACCEPTED]: ({currentText}) => {
@@ -189,11 +190,11 @@ function RecordFieldTextArea({record, readonly, field, validSetter, statusMessag
 function RecordFieldCheck({record, readonly, field}): JSX.Element {
 	const {id, isReadOnly, isDisabled} = field;
 	const value = record.getValue(id);
-	const readOnly = readonly || isReadOnly;
+	const readOnly = readonly === true || isReadOnly;
 	return (
 		<CheckBox
 			value={value}
-			enabled={!readOnly && !isDisabled}
+			enabled={readOnly !== false && isDisabled !== false}
 			on={{
 				[CheckBox.Event.TOGGLED]: ({value}) => {
 					record.setValue(id, value);
@@ -210,7 +211,7 @@ function RecordFieldSelect({record, readonly, field, validSetter, statusMessageS
 	const selectOptions = useMemo(() => {
 		return new ArrayDataSource(field.getSelectOptions());
 	}, []);
-	return readonly || isReadOnly ? (
+	return readonly === true || isReadOnly === true ? (
 		<Text>{selectedText}</Text>
 	) : (
 		<Dropdown
@@ -218,12 +219,13 @@ function RecordFieldSelect({record, readonly, field, validSetter, statusMessageS
 			valueMember={'value'}
 			displayMember={'text'}
 			selectedValue={selectedValue}
-			enabled={!isDisabled}
+			enabled={isDisabled !== false}
 			valid={valid}
 			on={{
 				[Dropdown.Event.SELECTED_ITEM_CHANGED]: ({currentValue}) => {
 					try {
-						const number = format.parse({value: currentValue, type: format.Type.INTEGER});
+						// eslint-disable-next-line
+						const number = NFormat.parse({value: currentValue, type: NFormat.Type.INTEGER});
 						validSetter(true);
 						record.setValue(id, number);
 						statusMessageSetter(null);
@@ -243,17 +245,17 @@ function RecordFieldDate({record, readonly, field, validSetter, statusMessageSet
 	const currentDate = record.getValue(id);
 	const [currentUIFDate, currentUIFDateSetter] = useState(new Date(currentDate));
 	const isRequired = field.isMandatory;
-	return readonly || isReadOnly ? (
+	return readonly === true || isReadOnly === true ? (
 		<Text>{currenDateText}</Text>
 	) : (
 		<DatePicker
 			date={currentUIFDate}
-			allowEmptyValue={!isRequired}
-			enabled={!isDisabled}
+			allowEmptyValue={isRequired !== true}
+			enabled={isDisabled !== true}
 			valid={valid}
 			on={{
 				[DatePicker.Event.DATE_CHANGED]: ({currentDate}) => {
-					if (currentDate) {
+					if (currentDate !== null) {
 						try {
 							validSetter(true);
 							currentUIFDateSetter(currentDate);

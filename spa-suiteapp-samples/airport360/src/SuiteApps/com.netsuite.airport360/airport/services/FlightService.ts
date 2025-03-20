@@ -1,8 +1,7 @@
 import FlightDAO from '../dao/FlightDao';
 
 async function getFlights() {
-	const test = await FlightDAO.fetchFlights();
-	return test;
+	return await FlightDAO.fetchFlights();
 }
 
 async function assignGate(index, number) {
