@@ -1,4 +1,4 @@
-import query from 'N/query';
+import query, {runSuiteQL} from 'N/query';
 import record from 'N/record';
 import {Async} from '@uif-js/core';
 import * as ItemRecord from '../data/ItemRecord';
@@ -18,11 +18,11 @@ interface ChartServerDataItem {
 	y: number;
 }
 
-type ChartServerData = ChartServerDataItem[];
+export type ChartServerData = ChartServerDataItem[];
 
 export interface ChartServerSeriesObject {
 	name: string;
-	data: ChartServerData[];
+	data: ChartServerData;
 }
 
 export type ChartServerObject = ChartServerSeriesObject[];
@@ -78,14 +78,14 @@ export default {
                                        where scriptid = UPPER('${VendorRecord.Type}')`;
 
 		const [items, vendorRecordIdArray]: [query.ResultSet, query.ResultSet] = await Promise.all([
-			query.runSuiteQL.promise({
+			runSuiteQL.promise({
 				query: itemsSuiteQL,
 			}),
-			query.runSuiteQL.promise({
+			runSuiteQL.promise({
 				query: vendorRecordIdSuiteQl,
 			}),
 		]);
-		const vendorRecordId: string | number | boolean = vendorRecordIdArray.asMappedResults()[0].internalid;
+		const vendorRecordId: string | number | boolean | null = vendorRecordIdArray.asMappedResults()[0].internalid;
 		await artificialDelay();
 		const result = items.asMappedResults().map((item: query.QueryResultMap) => {
 			return {
@@ -93,12 +93,13 @@ export default {
 				vendorRecordId,
 			};
 		});
-		// @ts-ignore
+		// @ts-expect-error types are not complete
 		return result;
 	},
 	// Item
 	itemLoad: async (id: number): Promise<record.Record> => {
 		await artificialDelay();
+		// eslint-disable-next-line
 		return await record.load.promise({
 			type: ItemRecord.Type,
 			id,
@@ -107,6 +108,7 @@ export default {
 	},
 	itemCreate: async (): Promise<record.Record> => {
 		await artificialDelay();
+		// eslint-disable-next-line
 		return await record.create.promise({
 			type: ItemRecord.Type,
 			isDynamic: true,
@@ -118,6 +120,7 @@ export default {
 	},
 	itemDelete: async (id: number): Promise<number> => {
 		await artificialDelay();
+		// eslint-disable-next-line
 		return await record.delete.promise({
 			type: ItemRecord.Type,
 			id,

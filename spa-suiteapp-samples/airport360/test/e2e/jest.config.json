@@ -12,6 +12,6 @@
     "node_modules"
     ],
     "globals": {
-        "baseUrl": "https://<AccountID>.app.netsuite.com/"
+        "baseUrl": "<YOUR URL HERE>"
     }
     }

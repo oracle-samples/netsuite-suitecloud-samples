@@ -1,19 +1,29 @@
 import {ApplicationHeader, Breadcrumbs, ContentPanel, Heading, Image, StackPanel, Table} from '@uif-js/component';
-import {Array, Decorator, SystemIcon} from '@uif-js/core';
+import {Array, Decorator, JSX, SystemIcon} from '@uif-js/core';
 import {RootRoute} from '../app/CountriesAppRoute';
+import {Country} from '../app/InitialState';
 
-export default function CountryPage({countryCode, countries}) {
-	let country = null;
+interface CountryPageProps {
+	countryCode?: string;
+	countries: Country[];
+}
+
+type CountryRecord = null | Country;
+
+export default function CountryPage({countryCode, countries}: CountryPageProps): JSX.Element {
+	let country: CountryRecord = null;
 	const query = Array.findFirst(countries, (country) => {
-		return country.alpha3Code.toLowerCase() === countryCode.toLowerCase();
+		if (typeof countryCode === 'string') {
+			return country.alpha3Code.toLowerCase() === countryCode.toLowerCase();
+		} else {
+			return false;
+		}
 	});
 
 	if (query.found) {
 		country = query.item;
 	}
-
-	const title = country ? country.name : 'N/A';
-
+	const title = typeof countryCode === 'string' && country !== null ? country.name : 'N/A';
 	return (
 		<StackPanel.Vertical>
 			<StackPanel.Item>
@@ -35,14 +45,17 @@ export default function CountryPage({countryCode, countries}) {
 			</StackPanel.Item>
 			<StackPanel.Item>
 				<ContentPanel outerGap={ContentPanel.GapSize.LARGE}>
-					{country ? <Country data={country} /> : <CountryNotFound />}
+					{country !== null ? <CountryComponent data={country} /> : <CountryNotFound />}
 				</ContentPanel>
 			</StackPanel.Item>
 		</StackPanel.Vertical>
 	);
 }
 
-function Country({data}) {
+interface CountryProps {
+	data: Country;
+}
+function CountryComponent({data}: CountryProps): JSX.Element {
 	return (
 		<StackPanel.Vertical alignment={StackPanel.Alignment.START} itemGap={StackPanel.GapSize.LARGE}>
 			<StackPanel.Item>

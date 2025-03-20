@@ -1,7 +1,7 @@
 import {ApplicationHeader, ContentPanel, Heading, StackPanel} from '@uif-js/component';
-import {SystemIcon} from '@uif-js/core';
+import {JSX, SystemIcon} from '@uif-js/core';
 
-export default function DashboardPage() {
+export default function DashboardPage(): JSX.Element {
 	return (
 		<StackPanel.Vertical>
 			<StackPanel.Item>

@@ -39,7 +39,6 @@ describe('Test flight DAO', () => {
 		};
 	};
 
-
 	it('the flight DAO should correctly retrieve the data', async () => {
 		global.fetch = jest.fn(() =>
 			Promise.resolve({

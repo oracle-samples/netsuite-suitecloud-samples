@@ -1,7 +1,7 @@
 import {expect, it, jest, describe} from '@jest/globals';
 import Route from '../../src/SuiteApps/com.netsuite.airport360/airport/app/Route';
 
-const MOCK_FLIGHT: flightInfo[] = [
+const MOCK_FLIGHT: FlightInfo[] = [
 	{
 		id: 1,
 		origin: {code: 'BCN', name: 'Barcelona'},
@@ -180,7 +180,7 @@ const MOCK_FLIGHT: flightInfo[] = [
 	},
 ];
 
-const MOCK_GATE: gateInfo[] = [
+const MOCK_GATE: GateInfo[] = [
 	{id: 1, gateNumber: '1A', airline: 'AA', flight: 'IB42', active: true},
 	{id: 2, gateNumber: '1B', airline: 'AA', flight: 'IB43', active: true},
 	{id: 3, gateNumber: '2A', airline: 'AA', flight: 'IB44', active: true},
@@ -194,12 +194,12 @@ const MOCK_GATE: gateInfo[] = [
 
 import FlightService from '../../src/SuiteApps/com.netsuite.airport360/airport/services/FlightService';
 import GateService from '../../src/SuiteApps/com.netsuite.airport360/airport/services/GateService';
-import {flightInfo, gateInfo} from '../../types/appTypes';
+import {FlightInfo, GateInfo} from '../../types/appTypes';
 
 jest.mock('../../src/SuiteApps/com.netsuite.airport360/airport/dao/FlightDAO', () => ({
 	fetchFlights: jest.fn().mockReturnValue(MOCK_FLIGHT),
 	updateGate: jest.fn(
-		(flight: flightInfo, number: string) =>
+		(flight: FlightInfo, number: string) =>
 			(flight.gateNumber = {
 				route: {
 					route: Route.GATE,
@@ -214,8 +214,8 @@ jest.mock('../../src/SuiteApps/com.netsuite.airport360/airport/dao/FlightDAO', (
 
 jest.mock('../../src/SuiteApps/com.netsuite.airport360/airport/dao/GateDAO', () => ({
 	fetchGates: jest.fn().mockReturnValue(MOCK_GATE),
-	toggleGate: jest.fn((gate: gateInfo) => (gate.active = !gate.active)),
-	unassignGates: jest.fn((flights: [flightInfo]) =>
+	toggleGate: jest.fn((gate: GateInfo) => (gate.active = !gate.active)),
+	unassignGates: jest.fn((flights: [FlightInfo]) =>
 		flights.forEach(
 			(flight) => (flight.gateNumber = {route: {route: Route.GATE, parameters: {gateID: ''}}, label: ''})
 		)

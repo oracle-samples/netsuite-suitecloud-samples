@@ -76,10 +76,10 @@ function PortletIsOnlineNumber({type, children}: PortletIsOnlineNumberProps) {
 				const root = Style.of`
 					font-size: ${tokens.fontSizeLarge};
 					font-weight: ${tokens.fontWeightSemiBold};
-					&.${type[PortletIsOnlineNumber.Type.IN_STOCK].toString()}{
+					&.${type[PortletIsOnlineNumber.Type.IN_STOCK.toString()]}{
 						color: ${tokens.colorTextUtilitySuccess};
 					}
-					&.${type[PortletIsOnlineNumber.Type.OUT_OF_STOCK].toString()}{
+					&.${type[PortletIsOnlineNumber.Type.OUT_OF_STOCK.toString()]}{
 						color: ${tokens.colorTextUtilityError};
 					}
 				`;
@@ -96,13 +96,13 @@ function PortletIsOnlineNumber({type, children}: PortletIsOnlineNumberProps) {
 				};
 
 				const root = Style.of`
-					font-size: ${tokens.fontSizeLarge};
+					font-size: ${tokens.fontSizeBodyMD};
 					font-weight: ${tokens.fontWeightSemiBold};
-					&.${type[PortletIsOnlineNumber.Type.IN_STOCK].toString()}{
-						color: ${tokens.colorTextUtilitySuccess};
+					&.${type[PortletIsOnlineNumber.Type.IN_STOCK.toString()]}{
+						color: ${tokens.colorLightTextSuccess};
 					}
-					&.${type[PortletIsOnlineNumber.Type.OUT_OF_STOCK].toString()}{
-						color: ${tokens.colorTextUtilityDanger};
+					&.${type[PortletIsOnlineNumber.Type.OUT_OF_STOCK.toString()]}{
+						color: ${tokens.colorLightTextDanger};
 					}
 				`;
 

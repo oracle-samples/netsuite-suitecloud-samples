@@ -10,6 +10,9 @@
       <feature required="true">SERVERSIDESCRIPTING</feature>
       <feature required="true">RESTWEBSERVICES</feature>
       <feature required="true">OAUTH2</feature>
+      <feature required="true">EXTREMELIST</feature>
+      <feature required="true">MAILMERGE</feature>
+      <feature required="true">MULTILANGUAGE</feature>
     </features>
   </dependencies>
 </manifest>

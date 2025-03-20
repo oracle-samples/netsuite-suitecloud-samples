@@ -1,5 +1,14 @@
-import {Button, Dropdown, GrowlMessage, Heading, Image, StackPanel} from '@uif-js/component';
-import {ContextType, Decorator, ImageMetadata, PureComponent, UserMessageService} from '@uif-js/core';
+import {
+	ApplicationHeader,
+	Dropdown,
+	GridPanel,
+	GrowlMessage,
+	Image,
+	Portlet,
+	StackPanel,
+	Text,
+} from '@uif-js/component';
+import {ContextType, ImageMetadata, PureComponent, SystemIcon, UserMessageService} from '@uif-js/core';
 import {Action} from '../../app/Action';
 
 export default class FlightPage extends PureComponent {
@@ -51,214 +60,102 @@ export default class FlightPage extends PureComponent {
 	render() {
 		const navigator = this.context[ContextType.ROUTER_NAVIGATION];
 		return (
-			<StackPanel.Vertical
-				outerGap={StackPanel.GapSize.MEDIUM}
-				decorator={Decorator.custom({
-					shape: Decorator.Shape.ROUNDED_SMALL,
-					depth: Decorator.Depth.MEDIUM,
-				})}
-			>
+			<StackPanel.Vertical>
 				<StackPanel.Item>
-					<Button
-						label={'< Back'}
-						action={() => {
-							navigator.back();
-						}}
-						size={Button.Size.SMALL}
+					<ApplicationHeader
+						title={`Flight ${this.props.flightID}`}
+						actions={[
+							{
+								label: 'Back',
+								action: () => {
+									navigator.back();
+								},
+							},
+						]}
 					/>
 				</StackPanel.Item>
 				<StackPanel.Item>
-					<StackPanel.Vertical>
-						<StackPanel.Item>
-							<Heading type={Heading.Type.PAGE_TITLE}>Flight {this.props.flightID}</Heading>
-						</StackPanel.Item>
-						<StackPanel.Item>
-							<Heading type={Heading.Type.PAGE_SUBTITLE}>Details Page</Heading>
-						</StackPanel.Item>
-					</StackPanel.Vertical>
-				</StackPanel.Item>
-				<StackPanel.Item>
-					<StackPanel itemGap={StackPanel.GapSize.LARGE}>
-						<StackPanel.Item>
-							<StackPanel.Vertical>
-								<StackPanel.Item>
-									<Heading type={Heading.Type.MEDIUM_HEADING}>Origin</Heading>
-								</StackPanel.Item>
-								<StackPanel.Item>
-									<Heading type={Heading.Type.LARGE_HEADING}>
-										{this.flight.origin.name} - {this.flight.origin.code}
-									</Heading>
-								</StackPanel.Item>
-							</StackPanel.Vertical>
-						</StackPanel.Item>
-						<StackPanel.Item>
-							<StackPanel.Vertical>
-								<StackPanel.Item>
-									<Heading type={Heading.Type.MEDIUM_HEADING}>Destination</Heading>
-								</StackPanel.Item>
-								<StackPanel.Item>
-									<Heading type={Heading.Type.LARGE_HEADING}>
-										{this.flight.destination.name} - {this.flight.destination.code}
-									</Heading>
-								</StackPanel.Item>
-							</StackPanel.Vertical>
-						</StackPanel.Item>
-					</StackPanel>
-				</StackPanel.Item>
-				<StackPanel.Item>
-					<StackPanel
-						justification={StackPanel.Justification.SPACE_EVENLY}
-						itemGap={StackPanel.GapSize.LARGE}
-						alignment={StackPanel.Alignment.START}
-						decorator={Decorator.custom({
-							background: {
-								color: Decorator.Color.THEMED,
-								strength: Decorator.Strength.LIGHTEST,
-							},
-							shape: Decorator.Shape.ROUNDED_SMALL,
-							depth: Decorator.Depth.SMALL,
-						})}
+					<GridPanel
+						columns={['1fr', '1fr', '1fr', '1fr']}
+						columnGap={GridPanel.GapSize.M}
+						rowGap={GridPanel.GapSize.M}
+						outerGap={GridPanel.GapSize.S}
 					>
-						<StackPanel.Item>
-							<StackPanel.Vertical>
-								<StackPanel.Item>
-									<Heading type={Heading.Type.MEDIUM_HEADING}>Status</Heading>
-								</StackPanel.Item>
-								<StackPanel.Item>
-									<Heading type={Heading.Type.LARGE_HEADING}>{this.flight.status}</Heading>
-								</StackPanel.Item>
-							</StackPanel.Vertical>
-						</StackPanel.Item>
-						<StackPanel.Item>
-							<StackPanel.Vertical>
-								<StackPanel.Item>
-									<Heading type={Heading.Type.MEDIUM_HEADING}>Boarding</Heading>
-								</StackPanel.Item>
-								<StackPanel.Item>
-									<Heading type={Heading.Type.LARGE_HEADING}>{this.boardingInfo}</Heading>
-								</StackPanel.Item>
-							</StackPanel.Vertical>
-						</StackPanel.Item>
-						<StackPanel.Item>
-							<StackPanel.Vertical>
-								<StackPanel.Item>
-									<Heading type={Heading.Type.MEDIUM_HEADING}>Change Gate</Heading>
-								</StackPanel.Item>
-								<StackPanel.Item>
-									<Dropdown
-										dataSource={this.activeGates}
-										valueMember={'id'}
-										displayMember={'gateNumber'}
-										noDataMessage='No gates are open!'
-										on={{
-											[Dropdown.Event.SELECTED_ITEM_CHANGED]: ({currentText}) => {
-												this.changeGate(currentText);
-											},
-										}}
-									/>
-								</StackPanel.Item>
-							</StackPanel.Vertical>
-						</StackPanel.Item>
-					</StackPanel>
-				</StackPanel.Item>
-				<StackPanel.Item>
-					<StackPanel justification={StackPanel.Justification.SPACE_EVENLY}>
-						<StackPanel.Item>
-							<StackPanel.Vertical>
-								<StackPanel.Item>
-									<StackPanel.Vertical>
-										<StackPanel.Item>
-											<Heading>Flight Number</Heading>
-										</StackPanel.Item>
-										<StackPanel.Item>
-											<Heading type={Heading.Type.MEDIUM_HEADING}>
-												{this.flight.flightNumber}
-											</Heading>
-										</StackPanel.Item>
-									</StackPanel.Vertical>
-								</StackPanel.Item>
-								<StackPanel.Item>
-									<StackPanel.Vertical>
-										<StackPanel.Item>
-											<Heading>Airline</Heading>
-										</StackPanel.Item>
-										<StackPanel.Item>
-											<Heading type={Heading.Type.MEDIUM_HEADING}>{this.flight.airline}</Heading>
-										</StackPanel.Item>
-									</StackPanel.Vertical>
-								</StackPanel.Item>
-							</StackPanel.Vertical>
-						</StackPanel.Item>
-						<StackPanel.Item>
-							<StackPanel.Vertical>
-								<StackPanel.Item>
-									<StackPanel.Vertical>
-										<StackPanel.Item>
-											<Heading>Departure Time</Heading>
-										</StackPanel.Item>
-										<StackPanel.Item>
-											<Heading type={Heading.Type.MEDIUM_HEADING}>
-												{this.flight.departure}
-											</Heading>
-										</StackPanel.Item>
-									</StackPanel.Vertical>
-								</StackPanel.Item>
-								<StackPanel.Item>
-									<StackPanel.Vertical>
-										<StackPanel.Item>
-											<Heading>Arrival Time</Heading>
-										</StackPanel.Item>
-										<StackPanel.Item>
-											<Heading type={Heading.Type.MEDIUM_HEADING}>{this.flight.arrival}</Heading>
-										</StackPanel.Item>
-									</StackPanel.Vertical>
-								</StackPanel.Item>
-							</StackPanel.Vertical>
-						</StackPanel.Item>
-
-						<StackPanel.Item>
-							<StackPanel.Vertical>
-								<StackPanel.Item>
-									<StackPanel.Vertical>
-										<StackPanel.Item>
-											<Heading>Altitude</Heading>
-										</StackPanel.Item>
-										<StackPanel.Item>
-											<Heading type={Heading.Type.MEDIUM_HEADING}>
-												{this.flight.altitude + ' ft'}
-											</Heading>
-										</StackPanel.Item>
-									</StackPanel.Vertical>
-								</StackPanel.Item>
-								<StackPanel.Item>
-									<StackPanel.Vertical>
-										<StackPanel.Item>
-											<Heading>Speed</Heading>
-										</StackPanel.Item>
-										<StackPanel.Item>
-											<Heading type={Heading.Type.MEDIUM_HEADING}>
-												{this.flight.speed + ' mph'}
-											</Heading>
-										</StackPanel.Item>
-									</StackPanel.Vertical>
-								</StackPanel.Item>
-							</StackPanel.Vertical>
-						</StackPanel.Item>
-
-						<StackPanel.Item>
-							<StackPanel.Vertical>
-								<StackPanel.Item>
-									<Heading>Flight Map</Heading>
-								</StackPanel.Item>
-								<StackPanel.Item>
-									<Image
-										size={{height: 613, width: 1065}}
-										image={ImageMetadata.withUrl(this.mapPath)}
-									/>
-								</StackPanel.Item>
-							</StackPanel.Vertical>
-						</StackPanel.Item>
-					</StackPanel>
+						<GridPanel.Item rowIndex={0} columnIndex={0}>
+							<Portlet title={'Origin'} icon={SystemIcon.ARROW_DIAGONAL_UP}>
+								<Text size={Text.Size.L}>
+									{this.flight.origin.name} - {this.flight.origin.code}
+								</Text>
+							</Portlet>
+						</GridPanel.Item>
+						<GridPanel.Item rowIndex={0} columnIndex={1}>
+							<Portlet title={'Destination'} icon={SystemIcon.ARROW_DIAGONAL_DOWN}>
+								<Text size={Text.Size.L}>
+									{this.flight.origin.name} - {this.flight.origin.code}
+								</Text>
+							</Portlet>
+						</GridPanel.Item>
+						<GridPanel.Item rowIndex={1} columnIndex={0}>
+							<Portlet title={'Status'} icon={SystemIcon.INFO}>
+								<Text size={Text.Size.L}>{this.flight.status}</Text>
+							</Portlet>
+						</GridPanel.Item>
+						<GridPanel.Item rowIndex={1} columnIndex={1}>
+							<Portlet title={'Boarding'} icon={SystemIcon.START_DATE}>
+								<Text size={Text.Size.L}>{this.boardingInfo}</Text>
+							</Portlet>
+						</GridPanel.Item>
+						<GridPanel.Item rowIndex={1} columnIndex={2}>
+							<Portlet title={'Change Gate'} icon={SystemIcon.DEPARTMENTS}>
+								<Dropdown
+									dataSource={this.activeGates}
+									valueMember={'id'}
+									displayMember={'gateNumber'}
+									noDataMessage='No gates are open!'
+									on={{
+										[Dropdown.Event.SELECTED_ITEM_CHANGED]: ({currentText}) => {
+											this.changeGate(currentText);
+										},
+									}}
+								/>
+							</Portlet>
+						</GridPanel.Item>
+						<GridPanel.Item rowIndex={2} columnIndex={0}>
+							<Portlet title={'Flight Number'} icon={SystemIcon.NUMERIC}>
+								<Text size={Text.Size.L}>{this.flight.flightNumber}</Text>
+							</Portlet>
+						</GridPanel.Item>
+						<GridPanel.Item rowIndex={2} columnIndex={1}>
+							<Portlet title={'Airline'} icon={SystemIcon.PERSON}>
+								<Text size={Text.Size.L}>{this.flight.airline}</Text>
+							</Portlet>
+						</GridPanel.Item>
+						<GridPanel.Item rowIndex={2} columnIndex={2} rowSpan={3} columnSpan={2}>
+							<Portlet title={'Flight Map'} icon={SystemIcon.MAP}>
+								<Image scalable={true} image={ImageMetadata.withUrl(this.mapPath)} />
+							</Portlet>
+						</GridPanel.Item>
+						<GridPanel.Item rowIndex={3} columnIndex={0}>
+							<Portlet title={'Departure Time'} icon={SystemIcon.CLOCK}>
+								<Text size={Text.Size.L}>{this.flight.departure}</Text>
+							</Portlet>
+						</GridPanel.Item>
+						<GridPanel.Item rowIndex={3} columnIndex={1}>
+							<Portlet title={'Arrival Time'} icon={SystemIcon.CLOCK}>
+								<Text size={Text.Size.L}>{this.flight.arrival}</Text>
+							</Portlet>
+						</GridPanel.Item>
+						<GridPanel.Item rowIndex={4} columnIndex={0}>
+							<Portlet title={'Altitude'} icon={SystemIcon.HEIGHT}>
+								<Text size={Text.Size.L}>{this.flight.altitude + ' ft'}</Text>
+							</Portlet>
+						</GridPanel.Item>
+						<GridPanel.Item rowIndex={4} columnIndex={1}>
+							<Portlet title={'Speed'} icon={SystemIcon.INSERT}>
+								<Text size={Text.Size.L}>{this.flight.speed + ' mph'}</Text>
+							</Portlet>
+						</GridPanel.Item>
+					</GridPanel>
 				</StackPanel.Item>
 			</StackPanel.Vertical>
 		);

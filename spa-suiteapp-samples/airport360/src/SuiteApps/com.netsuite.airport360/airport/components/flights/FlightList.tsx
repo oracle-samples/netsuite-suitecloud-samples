@@ -42,7 +42,6 @@ export default class FlightList extends PureComponent {
 		const {loading, data, missingGates} = flights;
 		const listView = ListView.ofStaticData({
 			dataProvider: () => data, // array of data objects
-			//@ts-ignore
 			layout: {
 				[ListView.Layout.TABLE]: {
 					columns: this.columns, // array of columns definition

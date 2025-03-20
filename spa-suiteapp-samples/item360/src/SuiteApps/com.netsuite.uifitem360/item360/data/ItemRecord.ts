@@ -1,5 +1,5 @@
 // Item record ID
-export const Type: string = 'customrecord_item360_pcpart';
+export const Type = 'customrecord_item360_pcpart';
 
 // Item field names
 export enum FieldName {

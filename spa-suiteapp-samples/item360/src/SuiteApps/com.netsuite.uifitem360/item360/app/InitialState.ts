@@ -11,7 +11,7 @@ export interface Item360StateItems {
 export interface Item360StateItem {
 	loading: boolean;
 	saving: boolean;
-	record: record.Record;
+	record: record.Record | null;
 }
 
 export interface Item360StateDashboardReminders {

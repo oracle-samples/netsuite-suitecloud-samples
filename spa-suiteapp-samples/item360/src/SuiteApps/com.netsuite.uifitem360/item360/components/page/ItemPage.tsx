@@ -18,7 +18,7 @@ export default function ItemPage({mode = RecordPage.Mode.VIEW, id, item}: ItemPa
 	useLayoutEffect(() => {
 		if (mode === RecordPage.Mode.CREATE) {
 			dispatch(Action.itemCreate());
-		} else {
+		} else if (id !== undefined) {
 			dispatch(Action.itemLoad(id));
 		}
 	}, [id, mode]);

@@ -26,7 +26,6 @@ describe('Test gate DAO', () => {
 		};
 	};
 
-
 	it('the gate DAO should correctly retrieve the data', async () => {
 		global.fetch = jest.fn(() =>
 			Promise.resolve({

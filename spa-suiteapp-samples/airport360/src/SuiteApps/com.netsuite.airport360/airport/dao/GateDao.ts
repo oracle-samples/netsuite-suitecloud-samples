@@ -1,12 +1,13 @@
 import * as record from 'N/record';
 import GateMapper from '../mappers/GateMapper';
-import {gateInfo} from '../../../../../types/appTypes';
+import {GateInfo} from '../../../../../types/appTypes';
+import Queries from './Queries';
 
-async function fetchGates(): Promise<[gateInfo]> {
+async function fetchGates(): Promise<[GateInfo]> {
 	const response = await fetch('/services/rest/query/v1/suiteql', {
 		method: 'POST',
 		headers: {Prefer: 'transient'},
-		body: JSON.stringify({q: 'SELECT * FROM customrecord_gate'}),
+		body: JSON.stringify({q: Queries.fetchGates}),
 	});
 	const responseJson = await response.json();
 	return responseJson.items.map((request) => GateMapper.sourceToProjection(request));

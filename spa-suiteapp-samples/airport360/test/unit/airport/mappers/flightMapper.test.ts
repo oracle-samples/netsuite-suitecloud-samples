@@ -40,7 +40,6 @@ describe('Test flight mapper', () => {
 		custrecord_flight_status: 'A',
 	};
 
-
 	it('FlightMapper should correctly map the raw flight data', async () => {
 		const mappedDataFull = FlightMapper.sourceToProjection(flightDataFull);
 		const mappedDataMissing = FlightMapper.sourceToProjection(flightDataMissing);

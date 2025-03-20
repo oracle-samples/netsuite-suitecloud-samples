@@ -1,4 +1,5 @@
 import ServerDataService, {
+	ChartServerData,
 	ChartServerObject,
 	ItemObject,
 	ProfileServerObject,
@@ -6,7 +7,7 @@ import ServerDataService, {
 	RemindersServerObject,
 } from '../service/ServerDataService';
 import {Store, Type} from '@uif-js/core';
-import record, {Record} from 'N/record';
+import record from 'N/record';
 
 // Action types - enumeration of available actions
 export enum ActionType {
@@ -48,7 +49,7 @@ interface ItemSetLoadingAction {
 
 interface ItemLoadDataAction {
 	type: typeof ActionType.ITEM_LOAD_DATA;
-	record: Record;
+	record: record.Record;
 }
 
 interface ItemSetSavingAction {
@@ -107,8 +108,8 @@ export type AtomicAction =
 
 interface ItemResponseObject {
 	result: boolean;
-	error: {message: string};
-	recordId?: number;
+	error: {message: string} | null;
+	recordId?: number | null;
 }
 
 // Action creators - functions that return the action object
@@ -302,15 +303,15 @@ function getCheapest(items: ItemObject[]): ItemObject[] {
 }
 
 function getChartData(items: ItemObject[]): ChartServerObject {
-	const vendors = {};
+	const vendors: Record<string, number> = {};
 	items.forEach(({custrecord_pcpart_vendor_name}) => {
-		if (vendors[custrecord_pcpart_vendor_name]) {
+		if (vendors[custrecord_pcpart_vendor_name] !== undefined) {
 			vendors[custrecord_pcpart_vendor_name] += 1;
 		} else {
 			vendors[custrecord_pcpart_vendor_name] = 1;
 		}
 	});
-	const data = [];
+	const data: ChartServerData = [];
 	for (const [vendor, items] of Object.entries(vendors)) {
 		data.push({
 			name: vendor,

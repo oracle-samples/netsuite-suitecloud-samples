@@ -1,8 +1,8 @@
-import {flightInfo} from '../../../../../types/appTypes';
+import {FlightInfo} from '../../../../../types/appTypes';
 import Route from '../app/Route';
 
 export default {
-	sourceToProjection: (source): flightInfo => {
+	sourceToProjection: (source): FlightInfo => {
 		const gate = source.custrecord_flight_gate_number || '';
 		return {
 			id: parseInt(source.custrecord_flight_id),

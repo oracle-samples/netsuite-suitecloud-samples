@@ -1,5 +1,5 @@
 
-export interface gateInfo {
+export interface GateInfo {
 	id: number;
 	gateNumber: string;
 	airline: string;
@@ -7,10 +7,10 @@ export interface gateInfo {
 	active: boolean;
 }
 
-export interface flightInfo { 
+export interface FlightInfo { 
 	id: number, 
-	origin: airportData, 
-	destination: airportData,
+	origin: AirportData, 
+	destination: AirportData,
 	departure: undefined, 
 	arrival: undefined, 
 	status: string, 
@@ -24,7 +24,7 @@ export interface flightInfo {
 	model: string
 }
 
-interface airportData{
+interface AirportData{
 	code:string,
 	name:string
 }

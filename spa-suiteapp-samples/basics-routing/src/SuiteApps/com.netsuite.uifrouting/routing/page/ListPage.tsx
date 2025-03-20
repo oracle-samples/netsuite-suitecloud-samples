@@ -1,8 +1,8 @@
 import {ApplicationHeader, Card, GridPanel, StackPanel} from '@uif-js/component';
-import {ContextType, SystemIcon, useContext} from '@uif-js/core';
+import {ContextType, JSX, SystemIcon, useContext} from '@uif-js/core';
 import {RootRoute, ListRoute} from '../app/CountriesAppRoute';
 
-export default function ListPage() {
+export default function ListPage(): JSX.Element {
 	const navigator = useContext(ContextType.ROUTER_NAVIGATION);
 	return (
 		<StackPanel.Vertical>
