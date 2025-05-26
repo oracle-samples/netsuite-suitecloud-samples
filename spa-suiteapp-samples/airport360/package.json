@@ -3,7 +3,7 @@
 	"version": "1.0.0",
 	"description": "Hello World UIF SuiteApp - TS",
 	"devDependencies": {
-		"@oracle/netsuite-uif-types": "^6.0.0",
+		"@oracle/netsuite-uif-types": "^7.0.0",
 		"@hitc/netsuite-types": "^2024.2.2",
 		"@typescript-eslint/eslint-plugin": "^5.50.0",
 		"@typescript-eslint/parser": "^5.50.0",
