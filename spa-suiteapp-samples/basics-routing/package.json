@@ -3,7 +3,7 @@
 	"version": "1.0.0",
 	"description": "Basics - Routing",
 	"devDependencies": {
-		"@oracle/netsuite-uif-types": "^6.0.0",
+		"@oracle/netsuite-uif-types": "^7.0.0",
 		"@rollup/plugin-terser": "^0.4.0",
 		"@types/jest": "^29.5.14",
 		"gulp": "^4.0.0",
