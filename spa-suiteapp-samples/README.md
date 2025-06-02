@@ -57,7 +57,7 @@ The SuiteApps use the NetSuite UIF TypeScript type declarations ([@netsuite-uif-
 In the `package.json`:
    ```json
    devDependencies: {
-      "@oracle/netsuite-uif-types": "^5.0.0",
+      "@oracle/netsuite-uif-types": "^7.0.0",
       "typescript": "^5.2.0"
    }
    ```
