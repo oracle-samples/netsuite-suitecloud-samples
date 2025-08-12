@@ -1,0 +1,36 @@
+<tool scriptid="customtool_salesandorders_acp">
+  <name>Sales and Orders Tools</name>
+  <scriptfile>[/SuiteScripts/salesandorders_acp.js]</scriptfile>
+  <rpcschema>[/SuiteScripts/salesandorders_schema_acp.json]</rpcschema>
+  <exposeto3rdpartyagents>T</exposeto3rdpartyagents>
+ <permissions>
+    <permission>
+      <permkey>TRAN_FIND</permkey>
+      <permlevel>VIEW</permlevel>
+    </permission>
+    <permission>
+      <permkey>TRAN_SALESORD</permkey>
+      <permlevel>VIEW</permlevel>
+    </permission>
+     <permission>
+      <permkey>LIST_CUSTJOB</permkey>
+      <permlevel>VIEW</permlevel>
+    </permission>
+     <permission>
+      <permkey>LIST_EMPLOYEE_RECORD</permkey>
+      <permlevel>VIEW</permlevel>
+    </permission>
+    <permission>
+      <permkey>LIST_EMPLOYEE</permkey>
+      <permlevel>VIEW</permlevel>
+    </permission>
+     <permission>
+      <permkey>TRAN_CUSTINVC</permkey>
+      <permlevel>VIEW</permlevel>
+    </permission>
+    <permission>
+      <permkey>REPO_BOOKINGS</permkey>
+      <permlevel>VIEW</permlevel>
+    </permission>
+    </permissions>
+</tool>
