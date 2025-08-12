@@ -1,0 +1,20 @@
+<tool scriptid="customtool_financial_acp">
+  <name>Financial Tools</name>
+  <scriptfile>[/SuiteScripts/financial_acp.js]</scriptfile>
+  <rpcschema>[/SuiteScripts/financial_schema_acp.json]</rpcschema>
+  <exposeto3rdpartyagents>T</exposeto3rdpartyagents>
+ <permissions>
+    <permission>
+      <permkey>TRAN_FIND</permkey>
+      <permlevel>VIEW</permlevel>
+    </permission>
+     <permission>
+      <permkey>TRAN_SALESORD</permkey>
+      <permlevel>VIEW</permlevel>
+    </permission>
+     <permission>
+      <permkey>REPO_FINANCIALS</permkey>
+      <permlevel>VIEW</permlevel>
+    </permission>
+    </permissions>
+</tool>
