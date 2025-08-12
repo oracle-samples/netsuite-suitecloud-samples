@@ -1,0 +1,28 @@
+<tool scriptid="customtool_customermanagement_acp">
+  <name>Customer Management Tools</name>
+  <scriptfile>[/SuiteScripts/customermanagement_acp.js]</scriptfile>
+  <rpcschema>[/SuiteScripts/customermanagement_schema_acp.json]</rpcschema>
+  <exposeto3rdpartyagents>T</exposeto3rdpartyagents>
+  <permissions>
+    <permission>
+      <permkey>TRAN_FIND</permkey>
+      <permlevel>VIEW</permlevel>
+    </permission>
+    <permission>
+      <permkey>TRAN_CUSTINVC</permkey>
+      <permlevel>VIEW</permlevel>
+    </permission>
+    <permission>
+      <permkey>TRAN_SALESORD</permkey>
+      <permlevel>VIEW</permlevel>
+    </permission>
+     <permission>
+      <permkey>LIST_CUSTJOB</permkey>
+      <permlevel>EDIT</permlevel>
+    </permission>
+    <permission>
+      <permkey>LIST_CONTACT</permkey>
+      <permlevel>VIEW</permlevel>
+    </permission>
+    </permissions>
+</tool>

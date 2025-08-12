@@ -1,0 +1,12 @@
+<tool scriptid="customtool_inventory_acp">
+  <name>General Tools</name>
+  <scriptfile>[/SuiteScripts/inventory_acp.js]</scriptfile>
+  <rpcschema>[/SuiteScripts/inventory_schema_acp.json]</rpcschema>
+  <exposeto3rdpartyagents>T</exposeto3rdpartyagents>
+  <permissions>
+      <permission>
+      <permkey>LIST_ITEM</permkey>
+      <permlevel>VIEW</permlevel>
+    </permission>
+  </permissions>
+</tool>
