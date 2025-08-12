@@ -1,0 +1,6 @@
+<tool scriptid="customtool_suiteql_acp">
+  <name>SuiteQL Tools</name>
+  <scriptfile>[/SuiteScripts/suiteql_acp.js]</scriptfile>
+  <rpcschema>[/SuiteScripts/suiteql_schema_acp.json]</rpcschema>
+  <exposeto3rdpartyagents>T</exposeto3rdpartyagents>
+</tool>

@@ -1,0 +1,9 @@
+<manifest projecttype="ACCOUNTCUSTOMIZATION">
+  <projectname>NetSuite Core Tools ACP</projectname>
+  <frameworkversion>1.0</frameworkversion>
+  <dependencies>
+    <features>
+      <feature required="true">SERVERSIDESCRIPTING</feature>
+    </features>
+  </dependencies> 
+</manifest>
