@@ -1,6 +1,0 @@
-<tool scriptid="customtool_suiteql">
-  <name>SuiteQL Tools</name>
-  <scriptfile>[/SuiteApps/com.netsuite.mcptools/suiteql.js]</scriptfile>
-  <rpcschema>[/SuiteApps/com.netsuite.mcptools/suiteql_schema.json]</rpcschema>
-  <exposeto3rdpartyagents>T</exposeto3rdpartyagents>
-</tool>
