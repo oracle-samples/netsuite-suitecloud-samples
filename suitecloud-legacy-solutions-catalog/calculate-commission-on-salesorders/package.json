@@ -1,6 +1,7 @@
 {
   "name": "suitecloud-project",
   "version": "1.0.0",
+  "main": "./src/FileCabinet/SuiteScripts/ue_calculateCommission.js",
   "scripts": {
     "test": "jest --testPathPattern=__tests__ --coverage --collectCoverageFrom=src/FileCabinet/SuiteScripts/*"
   },
@@ -13,9 +14,5 @@
     "neostandard": "^0.12.2",
     "globals": "^16.4.0",
     "jest": "^27.5.1"
-  },
-  "main": "./src/FileCabinet/SuiteScripts/cs_copyValueToItem.js",
-  "author": "",
-  "license": "ISC",
-  "description": ""
+  }
 }

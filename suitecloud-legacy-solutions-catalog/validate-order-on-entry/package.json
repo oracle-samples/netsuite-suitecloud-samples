@@ -1,5 +1,5 @@
 {
-  "name": "suitecloud-project",
+  "name": "validate-order-on-entry",
   "version": "1.0.0",
   "scripts": {
     "test": "jest --testPathPattern=__tests__ --coverage --collectCoverageFrom=src/FileCabinet/SuiteScripts/*"
@@ -14,7 +14,7 @@
     "globals": "^16.4.0",
     "jest": "^27.5.1"
   },
-  "main": "./src/FileCabinet/SuiteScripts/cs_copyValueToItem.js",
+  "main": "./src/FileCabinet/SuiteScripts/cs_validateOrder.js",
   "author": "",
   "license": "ISC",
   "description": ""

@@ -1,5 +1,5 @@
 {
-  "name": "suitecloud-project",
+  "name": "copy-a-value-to-the-item-column",
   "version": "1.0.0",
   "scripts": {
     "test": "jest --testPathPattern=__tests__ --coverage --collectCoverageFrom=src/FileCabinet/SuiteScripts/*"
