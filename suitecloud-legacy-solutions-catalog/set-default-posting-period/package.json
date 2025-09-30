@@ -1,0 +1,21 @@
+{
+  "name": "set-default-posting-period",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "jest --testPathPattern=__tests__ --coverage --collectCoverageFrom=src/FileCabinet/SuiteScripts/*"
+  },
+  "devDependencies": {
+    "@oracle/suitecloud-unit-testing": "^1.2.0",
+    "suitecloud-unit-testing-stubs": "^1.0.2",
+    "eslint": "^9.35.0",
+    "@eslint/js": "^9.35.0",
+    "eslint-plugin-jsdoc": "^58.1.1",
+    "neostandard": "^0.12.2",
+    "globals": "^16.4.0",
+    "jest": "^27.5.1"
+  },
+  "main": "jest.config.js",
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
