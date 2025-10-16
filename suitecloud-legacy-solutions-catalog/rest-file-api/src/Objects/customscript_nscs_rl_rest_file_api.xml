@@ -1,0 +1,22 @@
+<restlet scriptid="customscript_nscs_rl_rest_file_api">
+  <description></description>
+  <isinactive>F</isinactive>
+  <name>RS | REST File API</name>
+  <notifyadmins>F</notifyadmins>
+  <notifyemails></notifyemails>
+  <notifyowner>T</notifyowner>
+  <notifyuser>F</notifyuser>
+  <scriptfile>[/SuiteScripts/NSCS/REST File API/nscs_rl_file_api.js]</scriptfile>
+  <scriptdeployments>
+    <scriptdeployment scriptid="customdeploy_nscs_rl_rest_file_api">
+      <allemployees>F</allemployees>
+      <allpartners>F</allpartners>
+      <allroles>T</allroles>
+      <audslctrole>CUSTOMER_CENTER|EMPLOYEE_CENTER|NETSUITE_SUPPORT_CENTER|NETSUITE_SUPPORT_CENTER__BASIC|ONLINE_FORM_USER|PARTNER_CENTER|SHOPPER|VENDOR_CENTER</audslctrole>
+      <isdeployed>T</isdeployed>
+      <loglevel>DEBUG</loglevel>
+      <status>TESTING</status>
+      <title>RS | REST File API</title>
+    </scriptdeployment>
+  </scriptdeployments>
+</restlet>
