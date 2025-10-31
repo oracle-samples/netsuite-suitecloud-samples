@@ -1,0 +1,4 @@
+<manifest projecttype="ACCOUNTCUSTOMIZATION">
+  <projectname>rest-file-api</projectname>
+  <frameworkversion>1.0</frameworkversion>
+</manifest>
