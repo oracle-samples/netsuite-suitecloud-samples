@@ -1,6 +1,7 @@
 /*
- * customermanagement.js
+ * customermanagement_acp.js
  * @NApiVersion 2.1
+ * @NScriptType CUSTOMTOOL
  */
 
 define(['N/record', 'N/query', 'N/log'], function (record, query, log) {
