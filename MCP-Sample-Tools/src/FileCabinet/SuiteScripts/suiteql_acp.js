@@ -1,7 +1,7 @@
 /*
- * suiteql.js
+ * suiteql_acp.js
  * @NApiVersion 2.1
- * @NModuleScope Public
+ * @NScriptType CUSTOMTOOL
  */
 
 define(['N/query', 'N/log'], function (query, log) {

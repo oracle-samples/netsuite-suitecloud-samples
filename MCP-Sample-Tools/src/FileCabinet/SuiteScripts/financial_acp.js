@@ -1,6 +1,7 @@
 /*
- * financialtools.js
+ * financial_acp.js
  * @NApiVersion 2.1
+ * @NScriptType CUSTOMTOOL
  */
 
 define(['N/query', 'N/log'], function (query, log) {
