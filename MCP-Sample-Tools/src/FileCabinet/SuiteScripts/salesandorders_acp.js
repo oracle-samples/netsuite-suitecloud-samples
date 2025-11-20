@@ -1,7 +1,7 @@
 /*
  * salesandorders_acp.js
  * @NApiVersion 2.1
- * @NScriptType CUSTOMTOOL
+ * @NScriptType CustomTool
  */
 
 define(['N/record', 'N/query', 'N/log'], function (record, query, log) {
