@@ -1,7 +1,7 @@
 /*
  * inventory_acp.js
  * @NApiVersion 2.1
- * @NScriptType CUSTOMTOOL
+ * @NScriptType CustomTool
  */
 define(['N/query'], function (query) {
 	return {
