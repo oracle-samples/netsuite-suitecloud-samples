@@ -1,0 +1,496 @@
+{
+  "generatedAt": "right now",
+  "repository": "oracle-samples/netsuite-suitecloud-samples",
+  "branch": "main",
+  "baseURL": "https://github.com/oracle-samples/netsuite-suitecloud-samples/tree/main",
+  "directories": [
+    {
+      "id": "suitecloud-legacy-solutions-catalog",
+      "name": "suitecloud-legacy-solutions-catalog",
+      "parent": null,
+      "path": "suitecloud-legacy-solutions-catalog",
+      "url": "https://github.com/oracle-samples/netsuite-suitecloud-samples/tree/main/suitecloud-legacy-solutions-catalog"
+    },
+    {
+      "id": "spa-suiteapp-samples",
+      "name": "spa-suiteapp-samples",
+      "parent": null,
+      "path": "spa-suiteapp-samples",
+      "url": "https://github.com/oracle-samples/netsuite-suitecloud-samples/tree/main/spa-suiteapp-samples"
+    },
+    {
+      "id": "suiteworld-samples",
+      "name": "suiteworld-samples",
+      "parent": null,
+      "path": "suiteworld-samples",
+      "url": "https://github.com/oracle-samples/netsuite-suitecloud-samples/tree/main/suiteworld-samples"
+    },
+    {
+      "id": "suiteworld-samples/suiteworld2024-code-samples",
+      "name": "suiteworld2024-code-samples",
+      "parent": "suiteworld-samples",
+      "path": "suiteworld-samples/suiteworld2024-code-samples",
+      "url": "https://github.com/oracle-samples/netsuite-suitecloud-samples/tree/main/suiteworld-samples/suiteworld2024-code-samples"
+    },
+    {
+      "id": "suiteworld-samples/suiteworld2024-code-samples/enhancing-business-flows",
+      "name": "enhancing-business-flows",
+      "parent": "suiteworld-samples/suiteworld2024-code-samples",
+      "path": "suiteworld-samples/suiteworld2024-code-samples/enhancing-business-flows",
+      "url": "https://github.com/oracle-samples/netsuite-suitecloud-samples/tree/main/suiteworld-samples/suiteworld2024-code-samples/enhancing-business-flows"
+    },
+    {
+      "id": "suiteworld-samples/suiteworld2024-code-samples/llm",
+      "name": "llm",
+      "parent": "suiteworld-samples/suiteworld2024-code-samples",
+      "path": "suiteworld-samples/suiteworld2024-code-samples/llm",
+      "url": "https://github.com/oracle-samples/netsuite-suitecloud-samples/tree/main/suiteworld-samples/suiteworld2024-code-samples/llm"
+    },
+    {
+      "id": "suiteworld-samples/suiteworld2024-code-samples/map-reduce-suiteql",
+      "name": "map-reduce-suiteql",
+      "parent": "suiteworld-samples/suiteworld2024-code-samples",
+      "path": "suiteworld-samples/suiteworld2024-code-samples/map-reduce-suiteql",
+      "url": "https://github.com/oracle-samples/netsuite-suitecloud-samples/tree/main/suiteworld-samples/suiteworld2024-code-samples/map-reduce-suiteql"
+    },
+    {
+      "id": "suiteworld-samples/suiteworld2024-code-samples/record-scripting",
+      "name": "record-scripting",
+      "parent": "suiteworld-samples/suiteworld2024-code-samples",
+      "path": "suiteworld-samples/suiteworld2024-code-samples/record-scripting",
+      "url": "https://github.com/oracle-samples/netsuite-suitecloud-samples/tree/main/suiteworld-samples/suiteworld2024-code-samples/record-scripting"
+    },
+    {
+      "id": "suiteworld-samples/suiteworld2024-code-samples/suitescript-internationalization",
+      "name": "suitescript-internationalization",
+      "parent": "suiteworld-samples/suiteworld2024-code-samples",
+      "path": "suiteworld-samples/suiteworld2024-code-samples/suitescript-internationalization",
+      "url": "https://github.com/oracle-samples/netsuite-suitecloud-samples/tree/main/suiteworld-samples/suiteworld2024-code-samples/suitescript-internationalization"
+    },
+    {
+      "id": "suiteworld-samples/suiteworld2024-code-samples/suitescript-optimization",
+      "name": "suitescript-optimization",
+      "parent": "suiteworld-samples/suiteworld2024-code-samples",
+      "path": "suiteworld-samples/suiteworld2024-code-samples/suitescript-optimization",
+      "url": "https://github.com/oracle-samples/netsuite-suitecloud-samples/tree/main/suiteworld-samples/suiteworld2024-code-samples/suitescript-optimization"
+    },
+    {
+      "id": "suiteworld-samples/suiteworld2024-code-samples/suitetalk-rest-apis",
+      "name": "suitetalk-rest-apis",
+      "parent": "suiteworld-samples/suiteworld2024-code-samples",
+      "path": "suiteworld-samples/suiteworld2024-code-samples/suitetalk-rest-apis",
+      "url": "https://github.com/oracle-samples/netsuite-suitecloud-samples/tree/main/suiteworld-samples/suiteworld2024-code-samples/suitetalk-rest-apis"
+    },
+    {
+      "id": "suiteworld-samples/suiteworld2024-code-samples/third-party-tools",
+      "name": "third-party-tools",
+      "parent": "suiteworld-samples/suiteworld2024-code-samples",
+      "path": "suiteworld-samples/suiteworld2024-code-samples/third-party-tools",
+      "url": "https://github.com/oracle-samples/netsuite-suitecloud-samples/tree/main/suiteworld-samples/suiteworld2024-code-samples/third-party-tools"
+    },
+    {
+      "id": "suiteworld2024-code-samples",
+      "name": "suiteworld2024-code-samples",
+      "parent": "suiteworld-samples",
+      "path": "suiteworld-samples/suiteworld2024-code-samples",
+      "url": ""
+    },
+    {
+      "id": "llm",
+      "name": "llm",
+      "parent": "suiteworld-samples/suiteworld2024-code-samples",
+      "path": "suiteworld-samples/suiteworld2024-code-samples/llm",
+      "url": ""
+    },
+    {
+      "id": "record-scripting",
+      "name": "record-scripting",
+      "parent": "suiteworld-samples/suiteworld2024-code-samples",
+      "path": "suiteworld-samples/suiteworld2024-code-samples/record-scripting",
+      "url": ""
+    },
+    {
+      "id": "map-reduce-scripts",
+      "name": "map-reduce-scripts",
+      "parent": "suitecloud-legacy-solutions-catalog",
+      "path": "suitecloud-legacy-solutions-catalog/map-reduce-scripts",
+      "url": ""
+    }
+  ],
+  "samples": [
+    {
+      "id": "helloworld-js",
+      "parent": "spa-suiteapp-samples",
+      "title": "SuiteApp Hello World JS",
+      "link": "https://github.com/oracle-samples/netsuite-suitecloud-samples/tree/main/spa-suiteapp-samples/helloworld-js",
+      "tags": ["SuiteApp"],
+      "modules": null,
+      "difficulty": "Beginner",
+      "scriptType": ["SPA"],
+      "description": "Minimal 'Hello World' SuiteApp in JavaScript."
+    },
+    {
+      "id": "chatbot",
+      "parent": "llm",
+      "title": "LLM Chatbot",
+      "link": "https://github.com/oracle-samples/netsuite-suitecloud-samples/tree/main/suiteworld-samples/suiteworld2024-code-samples/llm/chatbot",
+      "tags": ["Project", "SuiteWorld2024"],
+      "modules": ["N/ui/serverWidget", "N/llm"],
+      "difficulty": "Beginner",
+      "scriptType": ["Suitelet Script"],
+      "description": "Create a chatbot on a Suitelet form. (From SuiteWorld 2024)"
+    },
+    {
+      "id": "add-button-using-workflow",
+      "parent": "suitecloud-legacy-solutions-catalog",
+      "title": "Add Button Using Workflow",
+      "link": "https://github.com/oracle-samples/netsuite-suitecloud-samples/tree/main/suitecloud-legacy-solutions-catalog/add-button-using-workflow",
+      "tags": ["Project"],
+      "modules": ["N/record"],
+      "difficulty": "Beginner",
+      "scriptType": ["SuiteFlow Script"],
+      "description": "Implement a custom workflow action for additional processing on the sales order record."
+    },
+    {
+      "id": "airport360",
+      "parent": "spa-suiteapp-samples",
+      "Title": "Airport 360",
+      "link": "https://github.com/oracle-samples/netsuite-suitecloud-samples/tree/main/spa-suiteapp-samples/airport360",
+      "tags": ["SuiteApp"],
+      "modules": null,
+      "difficulty": "Advanced",
+      "scriptType": ["SPA"],
+      "description": "SuiteApp demonstrating the use of various NetSuite UIF features such as routing."
+    },
+    {
+      "id": "fix-typos",
+      "parent": "llm",
+      "title": "Fix Text Typos",
+      "link": "https://github.com/oracle-samples/netsuite-suitecloud-samples/tree/main/suiteworld-samples/suiteworld2024-code-samples/llm/fix-typos",
+      "tags": ["Project, SuiteWorld 2024"],
+      "modules": ["N/record", "N/llm"],
+      "difficulty": "Beginner",
+      "scriptType": ["User Event Script"],
+      "description": "Use generative AI to correct the text for the purchase and sales description fields of an inventory item. (from SuiteWorld 2024)"
+    },
+    {
+      "id": "item360",
+      "parent": "spa-suiteapp-samples",
+      "title": "Item 360",
+      "link": "https://github.com/oracle-samples/netsuite-suitecloud-samples/tree/main/spa-suiteapp-samples/item360",
+      "tags": ["SuiteApp", "TypeScript"],
+      "modules": null,
+      "difficulty": "Beginner",
+      "scriptType": ["SPA"],
+      "description": "SuiteApp demonstrating common SPA patterns and data handling using SuiteScript (TypeScript)"
+    },
+    {
+      "id": "map-reduce-suiteql",
+      "parent": "suiteworld2024-code-samples",
+      "title": "Process Sets of Data",
+      "link": "https://github.com/oracle-samples/netsuite-suitecloud-samples/tree/main/suiteworld-samples/suiteworld2024-code-samples/map-reduce-suiteql",
+      "tags": ["Project", "SuiteWorld 2024"],
+      "modules": ["N/query", "N/email", "N/log"],
+      "difficulty": "Intermediate",
+      "scriptType": ["Map/Reduce Script"],
+      "description": "Process large sets of data with the N/query module and SuiteQL with support for complex queries."
+    },
+    {
+      "id": "com.netsuite.defaulting",
+      "parent": "record-scripting",
+      "title": "Specify Default Field Values",
+      "link": "https://github.com/oracle-samples/netsuite-suitecloud-samples/tree/main/suiteworld-samples/suiteworld2024-code-samples/record-scripting/com.netsuite.defaulting",
+      "tags": ["Example", "SuiteWorld 2024"],
+      "modules": ["N/query", "N/ui/message"],
+      "difficulty": "Intermediate",
+      "scriptType": ["User Event Script"],
+      "description": "Default certain field values on a new record when created through a specific process."
+    },
+    {
+      "id": "com.netsuite.dyanmicOptions",
+      "parent": "record-scripting",
+      "title": "Automate Invoices with External Vendors",
+      "link": "https://github.com/oracle-samples/netsuite-suitecloud-samples/tree/main/suiteworld-samples/suiteworld2024-code-samples/record-scripting/com.netsuite.dynamicOptions",
+      "tags": ["Example", "SuiteWorld 2024"],
+      "modules": ["N/query", "N/ui/message", "N/ui/serverWidget"],
+      "difficulty": "Advanced",
+      "scriptType": ["User Event Script", "Client Script"],
+      "description": "Automatically generate invoices with multiple vendors and their varying conditions."
+    },
+    {
+      "id": "com.netsuite.locking",
+      "parent": "record-scripting",
+      "title": "Dealing with Concurrent Record Modification",
+      "link": "https://github.com/oracle-samples/netsuite-suitecloud-samples/tree/main/suiteworld-samples/suiteworld2024-code-samples/record-scripting/com.netsuite.locking",
+      "tags": ["Example", "SuiteWorld 2024"],
+      "modules": ["N/record", "N/runtime", "N/ui/message", "N/ui/serverWidget"],
+      "difficulty": "Advanced",
+      "scriptType": ["User Event Script"],
+      "description": "Deal with the concurrent record modification problem using a tracking mechanism and user notification."
+    },
+    {
+      "id": "com.netsuite.redirect",
+      "parent": "record-scripting",
+      "title": "Dynamic Record/User Access and Redirect",
+      "link": "https://github.com/oracle-samples/netsuite-suitecloud-samples/tree/main/suiteworld-samples/suiteworld2024-code-samples/record-scripting/com.netsuite.redirect",
+      "tags": ["Example", "SuiteWorld 2024"],
+      "modules": ["N/redirect", "N/runtime"],
+      "difficulty": "Intermediate",
+      "scriptType": ["User Event Script"],
+      "description": "Redirect to a specified Suitelet when a user's ID does not match a record's ID when viewing or editing."
+    },
+    {
+      "id": "suitescript-internalization",
+      "parent": "suiteworld2024-code-samples",
+      "title": "Translate Country Specific Information",
+      "link": "https://github.com/oracle-samples/netsuite-suitecloud-samples/tree/main/suiteworld-samples/suiteworld2024-code-samples/suitescript-internationalization",
+      "tags": ["Project", "SuiteWorld 2024"],
+      "modules": ["N/record", "N/runtime", "N/translation", "N/format", "N/log", "N/format/i18n", "N/config"],
+      "difficulty": "Advanced",
+      "scriptType": ["User Event Script"],
+      "description": "Use custom translation collections and strings to translate country specific information on employee records."
+    },
+    {
+      "id": "suitescript-optimization",
+      "parent": "suiteworld2024-code-samples",
+      "title": "Cache Specific Shipping Rates",
+      "link": "https://github.com/oracle-samples/netsuite-suitecloud-samples/tree/main/suiteworld-samples/suiteworld2024-code-samples/suitescript-optimization",
+      "tags": ["Project", "SuiteWorld 2024"],
+      "modules": ["N/cache", "N/https", "N/ui/serverWidget", "N/redirect"],
+      "difficulty": "Advanced",
+      "scriptType": ["Suitelet Script", "User Event Script"],
+      "description": "Caching mechanism for retrieving and storing state-specific shipping rates in NetSuite sales orders."
+    },
+    {
+      "id": "suitetalk-rest-apis",
+      "parent": "suiteworld2024-code-samples",
+      "title": "Automate Email Communication",
+      "link": "https://github.com/oracle-samples/netsuite-suitecloud-samples/tree/main/suiteworld-samples/suiteworld2024-code-samples/suitetalk-rest-apis",
+      "tags": ["Example", "SuiteWorld 2024"],
+      "modules": null,
+      "difficulty": "Advanced",
+      "scriptType": "REST",
+      "description": "Sample REST project to automate email communication to customers."
+    },
+    {
+      "id": "third-party-tools",
+      "parent": "suiteworld2024-code-samples",
+      "title": "Write SuiteScript in TypeScript",
+      "link": "https://github.com/oracle-samples/netsuite-suitecloud-samples/tree/main/suiteworld-samples/suiteworld2024-code-samples/third-party-tools",
+      "tags": ["Project", "SuiteWorld 2024", "TypeScript"],
+      "modules": ["N/runtime", "N/log"],
+      "difficulty": "Advanced",
+      "scriptType": ["Suitelet Script", "Restlet Script"],
+      "description": "Configure TypeScript with NetSuite type definitions for writing SuiteScript in TypeScript."
+    },
+    {
+      "id": "disable-tax-fields",
+      "parent": "suitecloud-legacy-solutions-catalog",
+      "title": "Disable Tax Fields",
+      "link": "https://github.com/oracle-samples/netsuite-suitecloud-samples/tree/main/suitecloud-legacy-solutions-catalog/disable-tax-fields",
+      "tags": ["Project"],
+      "modules": ["N/currentRecord", "N/runtime", "N/log"],
+      "difficulty": "Intermediate",
+      "scriptType": ["Client Script"],
+      "description": "Control who can edit tax fields on sales transactions."
+    },
+    {
+      "id": "fulfill-back-orders",
+      "parent": "suitecloud-legacy-solutions-catalog",
+      "title": "Fulfill Back Orders",
+      "link": "https://github.com/oracle-samples/netsuite-suitecloud-samples/tree/main/suitecloud-legacy-solutions-catalog/fulfill-back-orders",
+      "tags": ["Project"],
+      "modules": ["N/record", "N/log"],
+      "difficulty": "Intermediate",
+      "scriptType": ["Map/Reduce Script"],
+      "description": "Match the quantitiy of items on partially filled sales orders with their associated item fulfillment records."
+    },
+    {
+      "id": "add-custom-button-to-suitelet",
+      "parent": "suitecloud-legacy-solutions-catalog",
+      "title": "Add a Custom Button to Execute a Suitelet",
+      "link": "https://github.com/oracle-samples/netsuite-suitecloud-samples/tree/main/suitecloud-legacy-solutions-catalog/add-custom-button-to-suitelet",
+      "tags": ["Project"],
+      "modules": ["N/record", "N/log", "N/runtime"],
+      "difficulty": "Intermediate",
+      "scriptType": ["User Event Script", "Suitelet Script"],
+      "description": "Add a button to a sales order in Pending Fulfillment status"
+    },
+    {
+      "id": "helloworld-ts",
+      "parent": "spa-suiteapp-samples",
+      "title": "SuiteApp Hello World TS",
+      "link": "https://github.com/oracle-samples/netsuite-suitecloud-samples/tree/main/spa-suiteapp-samples/helloworld-ts",
+      "tags": ["SuiteApp", "TypeScript"],
+      "modules": null,
+      "difficulty": "Beginner",
+      "scriptType": ["SPA"],
+      "description": "Minimal 'Hello World' SuiteApp in TypeScript."
+    },
+    {
+      "id": "basics-routing",
+      "parent": "spa-suiteapp-samples",
+      "title": "Routing Basics",
+      "link": "https://github.com/oracle-samples/netsuite-suitecloud-samples/tree/main/spa-suiteapp-samples/basics-routing",
+      "tags": ["SuiteApp", "TypeScript"],
+      "modules": null,
+      "difficulty": "Intermediate",
+      "scriptType": ["SPA"],
+      "description": "SuiteApp demonstrating the basic principles of routing in TypeScript."
+    },
+    {
+      "id": "basics-state-management",
+      "parent": "spa-suiteapp-samples",
+      "title": "State Management Basics",
+      "link": "https://github.com/oracle-samples/netsuite-suitecloud-samples/tree/main/spa-suiteapp-samples/basics-state-management",
+      "tags": ["SuiteApp, TypeScript"],
+      "modules": null,
+      "difficulty": "Intermediate",
+      "scriptType": ["SPA"],
+      "description": "SuiteApp demonstrating the basic principles of state management in TypeScript."
+    },
+    {
+      "id": "calculate-commission-on-salesorders",
+      "parent": "suitecloud-legacy-solutions-catalog",
+      "title": "Calculate Commission on Sales Orders",
+      "link": "https://github.com/oracle-samples/netsuite-suitecloud-samples/tree/main/spa-suiteapp-samples/basics-state-management",
+      "tags": ["Project"],
+      "modules": ["N/record", "N/log"],
+      "difficulty": "Beginner",
+      "scriptType": ["User Event Script"],
+      "description": "Calculate a custom commission amount when a sales order is saved."
+    },
+    {
+      "id": "copy-value-to-item-column",
+      "parent": "suitecloud-legacy-solutions-catalog",
+      "title": "Copy Value to Item Column",
+      "link": "https://github.com/oracle-samples/netsuite-suitecloud-samples/tree/main/suitecloud-legacy-solutions-catalog/copy-value-to-item-column",
+      "tags": ["Project"],
+      "modules": ["N/currentRecord"],
+      "difficulty": "Beginner",
+      "scriptType": ["Client Script"],
+      "description": "Copies the value stored in the custom Billing Item field to the standard item field when selected or changed."
+    },
+    {
+      "id": "hide-column-in-sublist",
+      "parent": "suitecloud-legacy-solutions-catalog",
+      "title": "Hide Column in Sublist",
+      "link": "https://github.com/oracle-samples/netsuite-suitecloud-samples/tree/main/suitecloud-legacy-solutions-catalog/hide-column-in-sublist",
+      "tags": ["Project"],
+      "modules": ["N/record", "N/log", "N/ui/serverWidget"],
+      "difficulty": "Beginner",
+      "scriptType": ["User Event Script"],
+      "description": "Hides the item column on the item sublist for an invoice."
+    },
+    {
+      "id": "mr-create-record",
+      "parent": "map-reduce-scripts",
+      "title": "Create Record",
+      "link": "https://github.com/oracle-samples/netsuite-suitecloud-samples/tree/main/suitecloud-legacy-solutions-catalog/map-reduce-scripts/mr-create-record",
+      "tags": ["Project"],
+      "modules": ["N/record", "N/log", "N/query"],
+      "difficulty": "Intermediate",
+      "scriptType": ["Map/Reduce Script"],
+      "description": "Create a new sales order record based on custom workbook data."
+    },
+    {
+      "id": "mr-execute-macro",
+      "parent": "map-reduce-scripts",
+      "title": "Execute Macro",
+      "link": "https://github.com/oracle-samples/netsuite-suitecloud-samples/tree/main/suitecloud-legacy-solutions-catalog/map-reduce-scripts/mr-execute-macro",
+      "tags": ["Project"],
+      "modules": ["N/record", "N/log", "N/query"],
+      "difficulty": "Intermediate",
+      "scriptType": ["Map/Reduce Script"],
+      "description": "Triggers a macro against sales orders identified in a Transaction Workbook."
+    },
+    {
+      "id": "mr-transform-record",
+      "parent": "map-reduce-scripts",
+      "title": "Transform Record",
+      "link": "https://github.com/oracle-samples/netsuite-suitecloud-samples/tree/main/suitecloud-legacy-solutions-catalog/map-reduce-scripts/mr-transform-record",
+      "tags": ["Project"],
+      "modules": ["N/record", "N/log", "N/query"],
+      "difficulty": "Intermediate",
+      "scriptType": ["Map/Reduce Script"],
+      "description": "Creates an item fulfillment and invoice record based on Transaction Workbook data."
+    },
+    {
+      "id": "mr-update-record",
+      "parent": "map-reduce-scripts",
+      "title": "Update Record",
+      "link": "https://github.com/oracle-samples/netsuite-suitecloud-samples/tree/main/suitecloud-legacy-solutions-catalog/map-reduce-scripts/mr-update-record",
+      "tags": ["Project"],
+      "modules": ["N/record", "N/log", "N/query"],
+      "difficulty": "Intermediate",
+      "scriptType": ["Map/Reduce Script"],
+      "description": "Updates the memo field and description sublist field values of a sales order based on Transaction Workbook data."
+    },
+    {
+      "id": "salesorder-deposit-tracking",
+      "parent": "suitecloud-legacy-solutions-catalog",
+      "title": "Sales Order Deposit Tracking",
+      "link": "https://github.com/oracle-samples/netsuite-suitecloud-samples/tree/main/suitecloud-legacy-solutions-catalog/salesorder-deposit-tracking",
+      "tags": ["Project"],
+      "modules": ["N/record", "N/log", "N/search"],
+      "difficulty": "Advanced",
+      "scriptType": ["User Event Script"],
+      "description": "Track the total amount of deposits and refunds on sales orders."
+    },
+    {
+      "id": "set-default-posting-period",
+      "parent": "suitecloud-legacy-solutions-catalog",
+      "title": "Set Default Posting Period",
+      "link": "https://github.com/oracle-samples/netsuite-suitecloud-samples/tree/main/suitecloud-legacy-solutions-catalog/set-default-posting-period",
+      "tags": ["Project"],
+      "modules": ["N/log", "N/search", "N/runtime", "N/currentRecord"],
+      "difficulty": "Intermediate",
+      "scriptType": ["Client Script"],
+      "description": "Sets the custom Preferred Posting Period field with the most recent posting period from your saved search results."
+    },
+    {
+      "id": "set-default-values-in-sublist",
+      "parent": "suitecloud-legacy-solutions-catalog",
+      "title": "Set Default Values in Sublist",
+      "link": "https://github.com/oracle-samples/netsuite-suitecloud-samples/tree/main/suitecloud-legacy-solutions-catalog/set-default-values-in-sublist",
+      "tags": ["Project"],
+      "modules": ["N/log", "N/search", "N/currentRecord"],
+      "difficulty": "Intermediate",
+      "scriptType": ["Client Script"],
+      "description": "Populates the Department and Class sublist columns when a field in one of those sublists is changed."
+    },
+    {
+      "id": "set-item-amount-to-zero",
+      "parent": "suitecloud-legacy-solutions-catalog",
+      "title": "Set Item Amount to Zero",
+      "link": "https://github.com/oracle-samples/netsuite-suitecloud-samples/tree/main/suitecloud-legacy-solutions-catalog/set-item-amount-to-zero",
+      "tags": ["Project"],
+      "modules": ["N/record", "N/log"],
+      "difficulty": "Beginner",
+      "scriptType": ["User Event Script"],
+      "description": "Determines if the sales order being saved is a marketing order. If so, it sets the Amount field to zero."
+    },
+    {
+      "id": "set-po-exchange-rate",
+      "parent": "suitecloud-legacy-solutions-catalog",
+      "title": "Set Purchase Order Exchange Rate",
+      "link": "https://github.com/oracle-samples/netsuite-suitecloud-samples/tree/main/suitecloud-legacy-solutions-catalog/set-po-exchange-rate",
+      "tags": ["Project"],
+      "modules": ["N/currentRecord", "N/runtime", "N/currency", "N/log"],
+      "difficulty": "Beginner",
+      "scriptType": ["Client Script"],
+      "description": "Converts the transaction field total on a purchase order to a user-specific currency."
+    },
+    {
+      "id": "validate-order-on-entry",
+      "parent": "suitecloud-legacy-solutions-catalog",
+      "title": "Validate Order on Entry",
+      "link": "https://github.com/oracle-samples/netsuite-suitecloud-samples/tree/main/suitecloud-legacy-solutions-catalog/validate-order-on-entry",
+      "tags": ["Project"],
+      "modules": ["N/log", "N/currentRecord", "N/runtime"],
+      "difficulty": "Beginner",
+      "scriptType": ["Client Script"],
+      "description": "Validates the number of items in an order with the number of cases."
+    }
+  ]
+}
