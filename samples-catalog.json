@@ -154,7 +154,7 @@
     {
       "id": "airport360",
       "parent": "spa-suiteapp-samples",
-      "Title": "Airport 360",
+      "title": "Airport 360",
       "link": "https://github.com/oracle-samples/netsuite-suitecloud-samples/tree/main/spa-suiteapp-samples/airport360",
       "tags": ["SuiteApp"],
       "modules": null,
@@ -167,7 +167,7 @@
       "parent": "llm",
       "title": "Fix Text Typos",
       "link": "https://github.com/oracle-samples/netsuite-suitecloud-samples/tree/main/suiteworld-samples/suiteworld2024-code-samples/llm/fix-typos",
-      "tags": ["Project, SuiteWorld 2024"],
+      "tags": ["Project", "SuiteWorld 2024"],
       "modules": ["N/record", "N/llm"],
       "difficulty": "Beginner",
       "scriptType": ["User Event Script"],
@@ -207,7 +207,7 @@
       "description": "Default certain field values on a new record when created through a specific process."
     },
     {
-      "id": "com.netsuite.dyanmicOptions",
+      "id": "com.netsuite.dynamicOptions",
       "parent": "record-scripting",
       "title": "Automate Invoices with External Vendors",
       "link": "https://github.com/oracle-samples/netsuite-suitecloud-samples/tree/main/suiteworld-samples/suiteworld2024-code-samples/record-scripting/com.netsuite.dynamicOptions",
@@ -240,7 +240,7 @@
       "description": "Redirect to a specified Suitelet when a user's ID does not match a record's ID when viewing or editing."
     },
     {
-      "id": "suitescript-internalization",
+      "id": "suitescript-internationalization",
       "parent": "suiteworld2024-code-samples",
       "title": "Translate Country Specific Information",
       "link": "https://github.com/oracle-samples/netsuite-suitecloud-samples/tree/main/suiteworld-samples/suiteworld2024-code-samples/suitescript-internationalization",
@@ -269,7 +269,7 @@
       "tags": ["Example", "SuiteWorld 2024"],
       "modules": null,
       "difficulty": "Advanced",
-      "scriptType": "REST",
+      "scriptType": ["REST"],
       "description": "Sample REST project to automate email communication to customers."
     },
     {
@@ -303,7 +303,7 @@
       "modules": ["N/record", "N/log"],
       "difficulty": "Intermediate",
       "scriptType": ["Map/Reduce Script"],
-      "description": "Match the quantitiy of items on partially filled sales orders with their associated item fulfillment records."
+      "description": "Match the quantity of items on partially filled sales orders with their associated item fulfillment records."
     },
     {
       "id": "add-custom-button-to-suitelet",
@@ -343,7 +343,7 @@
       "parent": "spa-suiteapp-samples",
       "title": "State Management Basics",
       "link": "https://github.com/oracle-samples/netsuite-suitecloud-samples/tree/main/spa-suiteapp-samples/basics-state-management",
-      "tags": ["SuiteApp, TypeScript"],
+      "tags": ["SuiteApp", "TypeScript"],
       "modules": null,
       "difficulty": "Intermediate",
       "scriptType": ["SPA"],
@@ -353,7 +353,7 @@
       "id": "calculate-commission-on-salesorders",
       "parent": "suitecloud-legacy-solutions-catalog",
       "title": "Calculate Commission on Sales Orders",
-      "link": "https://github.com/oracle-samples/netsuite-suitecloud-samples/tree/main/spa-suiteapp-samples/basics-state-management",
+      "link": "https://github.com/oracle-samples/netsuite-suitecloud-samples/tree/main/suitecloud-legacy-solutions-catalog/calculate-commission-on-salesorders",
       "tags": ["Project"],
       "modules": ["N/record", "N/log"],
       "difficulty": "Beginner",
