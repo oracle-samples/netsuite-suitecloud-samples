@@ -1,0 +1,12 @@
+<toolset scriptid="custtoolset_inventory_acp">
+  <name>General Tools</name>
+  <scriptfile>[/SuiteScripts/inventory_acp.js]</scriptfile>
+  <rpcschema>[/SuiteScripts/inventory_schema_acp.json]</rpcschema>
+  <exposetoaiconnector>T</exposetoaiconnector>
+  <permissions>
+      <permission>
+      <permkey>LIST_ITEM</permkey>
+      <permlevel>VIEW</permlevel>
+    </permission>
+  </permissions>
+</toolset>
