@@ -1,0 +1,28 @@
+{
+	"tools": [
+		{
+			"name": "runCustomSuiteQL",
+			"description": "Runs a custom SuiteQL query in NetSuite. Useful for gathering information of all types",
+			"inputSchema": {
+				"type": "object",
+				"properties": {
+					"sqlQuery": {
+						"type": "string",
+						"description": "SuiteQL query string"
+					},
+					"description": {
+						"type": "string",
+						"description": "Description of the query"
+					}
+				},
+				"required": ["sqlQuery"]
+			},
+			"annotations": {
+				"title": "Run Custom SuiteQL",
+				"readOnlyHint": true,
+				"idempotentHint": true,
+				"openWorldHint": false
+			}
+		}
+	]
+}

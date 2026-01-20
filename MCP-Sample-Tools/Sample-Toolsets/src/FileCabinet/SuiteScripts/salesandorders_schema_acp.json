@@ -1,0 +1,80 @@
+{
+	"tools": [
+		{
+			"name": "getSalesOrder",
+			"description": "Retrieve detailed information about a specific sales order, including header fields and line items",
+			"inputSchema": {
+				"type": "object",
+				"properties": {
+					"orderId": {
+						"type": "string",
+						"description": "The internal ID of the sales order to retrieve"
+					}
+				},
+				"required": ["orderId"]
+			},
+			"annotations": {
+				"title": "Get Sales Order",
+				"readOnlyHint": true,
+				"idempotentHint": true,
+				"openWorldHint": false
+			}
+		},
+		{
+			"name": "getSalesOrderWithFilters",
+			"description": "Search and retrieve sales orders with optional filtering by customer, date range, and status. Remember for dates, always use MM/DD/YYYY format",
+			"inputSchema": {
+				"type": "object",
+				"properties": {
+					"customerId": {
+						"type": "string",
+						"description": "Filter by specific customer internal ID"
+					},
+					"dateFrom": {
+						"type": "string",
+						"description": "Start date for date range filter (MM/DD/YYYY)"
+					},
+					"dateTo": {
+						"type": "string",
+						"description": "End date for date range filter (MM/DD/YYYY)"
+					}
+				},
+				"required": []
+			},
+			"annotations": {
+				"title": "Get Sales Order With Filters",
+				"readOnlyHint": true,
+				"idempotentHint": true,
+				"openWorldHint": false
+			}
+		},
+		{
+			"name": "generateSalesReport",
+			"description": "Generates a Sales Report of your NetSuite Account. Always use MM/DD/YYYY format for dates. You can choose between 'customer', 'date' or leave empty for default grouping",
+			"inputSchema": {
+				"type": "object",
+				"properties": {
+					"dateFrom": {
+						"type": "string",
+						"description": "Start date of the sales report in MM/DD/YYYY format"
+					},
+					"dateTo": {
+						"type": "string",
+						"description": "End date of the sales report in MM/DD/YYYY format"
+					},
+					"grouping": {
+						"type": "string",
+						"description": "Grouping of columns. Can be [customer, date] or empty for default grouping"
+					}
+				},
+				"required": ["dateFrom", "dateTo"]
+			},
+			"annotations": {
+				"title": "Generate Sales Report",
+				"readOnlyHint": true,
+				"idempotentHint": true,
+				"openWorldHint": false
+			}
+		}
+	]
+}

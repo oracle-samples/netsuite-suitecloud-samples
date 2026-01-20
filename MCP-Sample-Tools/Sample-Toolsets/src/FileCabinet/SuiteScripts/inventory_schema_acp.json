@@ -1,0 +1,44 @@
+{
+	"tools": [
+		{
+			"name": "getItemDetails",
+			"description": "Get detailed information about a specific item, including inventory details by location",
+			"inputSchema": {
+				"type": "object",
+				"properties": {
+					"itemId": {
+						"type": "string",
+						"description": "Internal ID of the item to retrieve details for"
+					}
+				},
+				"required": ["itemId"]
+			},
+			"annotations": {
+				"title": "Get Item Details",
+				"readOnlyHint": true,
+				"idempotentHint": true,
+				"openWorldHint": false
+			}
+		},
+		{
+			"name": "checkInventoryLevels",
+			"description": "Check inventory levels, optionally filtered by location ID",
+			"inputSchema": {
+				"type": "object",
+				"properties": {
+					"locationId": {
+						"type": "string",
+						"description": "Optional location ID to filter by"
+					}
+				},
+				"required": []
+			},
+			"annotations": {
+				"title": "Check Inventory Levels",
+				"readOnlyHint": true,
+				"idempotentHint": true,
+				"openWorldHint": false
+			}
+		}
+	]
+}
