@@ -1,6 +1,6 @@
 import query from 'N/query';
 import ResultSet from 'N/query/resultSet'
-import suiteql from "../src/FileCabinet/SuiteScripts/suiteql_acp.js"
+import suiteql from "../src/FileCabinet/SuiteScripts/toolset/suiteql.js"
 import { handleTestResultAndErrors } from './__utils__/handleErrors.js';
 
 

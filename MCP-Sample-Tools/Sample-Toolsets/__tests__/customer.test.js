@@ -5,7 +5,7 @@ import QueryIterator from 'N/query/iterator'
 import ResultSet from 'N/query/resultSet'
 import record from 'N/record';
 import Record from 'N/record/instance';
-import customermanagement from "../src/FileCabinet/SuiteApps/com.netsuite.mcptools/customermanagement.js"
+import customermanagement from "../src/FileCabinet/SuiteScripts/toolset/customer.js"
 import { handleTestResultAndErrors } from './__utils__/handleErrors.js';
 jest.mock('N/query');
 jest.mock('N/query/instance')

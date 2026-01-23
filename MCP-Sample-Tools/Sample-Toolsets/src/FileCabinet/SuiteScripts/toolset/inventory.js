@@ -1,5 +1,5 @@
 /*
- * inventory_acp.js
+ * inventory.js
  * @NApiVersion 2.1
  * @NScriptType CustomTool
  */

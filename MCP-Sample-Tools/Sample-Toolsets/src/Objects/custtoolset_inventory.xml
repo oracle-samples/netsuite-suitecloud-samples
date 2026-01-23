@@ -1,7 +1,7 @@
-<toolset scriptid="custtoolset_inventory_acp">
+<toolset scriptid="custtoolset_inventory">
   <name>General Tools</name>
-  <scriptfile>[/SuiteScripts/inventory_acp.js]</scriptfile>
-  <rpcschema>[/SuiteScripts/inventory_schema_acp.json]</rpcschema>
+  <scriptfile>[/SuiteScripts/toolset/inventory.js]</scriptfile>
+  <rpcschema>[/SuiteScripts/toolset/inventory_schema.json]</rpcschema>
   <exposetoaiconnector>T</exposetoaiconnector>
   <permissions>
       <permission>

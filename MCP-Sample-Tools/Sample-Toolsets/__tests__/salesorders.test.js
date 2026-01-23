@@ -5,7 +5,7 @@ import ResultSet from 'N/query/resultSet'
 import QueryIterator from 'N/query/iterator'
 import record from 'N/record';
 import Record from 'N/record/instance';
-import salesandorders from "../src/FileCabinet/SuiteScripts/salesandorders_acp.js";
+import salesandorders from "../src/FileCabinet/SuiteScripts/toolset/salesorders.js";
 import { handleTestResultAndErrors } from './__utils__/handleErrors.js';
 
 jest.mock('N/query');

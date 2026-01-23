@@ -1,5 +1,5 @@
 /*
- * suiteql_acp.js
+ * suiteql.js
  * @NApiVersion 2.1
  * @NScriptType CustomTool
  */

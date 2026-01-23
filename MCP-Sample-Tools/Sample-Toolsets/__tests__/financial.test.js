@@ -2,7 +2,7 @@ import query from 'N/query';
 import Query from 'N/query/instance'
 import QueryResult from 'N/query/result'
 import ResultSet from 'N/query/resultSet'
-import financial from "../src/FileCabinet/SuiteScripts/financial_acp.js"
+import financial from "../src/FileCabinet/SuiteScripts/toolset/financial.js"
 import { handleTestResultAndErrors } from './__utils__/handleErrors.js';
 
 jest.mock('N/query');

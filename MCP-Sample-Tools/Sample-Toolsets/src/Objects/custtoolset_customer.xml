@@ -1,7 +1,7 @@
-<toolset scriptid="custtoolset_customermanagement_acp">
+<toolset scriptid="custtoolset_customer">
   <name>Customer Management Tools</name>
-  <scriptfile>[/SuiteScripts/customermanagement_acp.js]</scriptfile>
-  <rpcschema>[/SuiteScripts/customermanagement_schema_acp.json]</rpcschema>
+  <scriptfile>[/SuiteScripts/toolset/customer.js]</scriptfile>
+  <rpcschema>[/SuiteScripts/toolset/customer_schema.json]</rpcschema>
   <exposetoaiconnector>T</exposetoaiconnector>
   <permissions>
     <permission>

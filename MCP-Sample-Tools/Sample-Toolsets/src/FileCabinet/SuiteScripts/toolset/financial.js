@@ -1,5 +1,5 @@
 /*
- * financial_acp.js
+ * financial.js
  * @NApiVersion 2.1
  * @NScriptType CustomTool
  */

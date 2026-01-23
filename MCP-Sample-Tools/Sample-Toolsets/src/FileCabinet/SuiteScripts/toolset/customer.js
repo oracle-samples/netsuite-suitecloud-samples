@@ -1,5 +1,5 @@
 /*
- * customermanagement_acp.js
+ * customer.js
  * @NApiVersion 2.1
  * @NScriptType CustomTool
  */

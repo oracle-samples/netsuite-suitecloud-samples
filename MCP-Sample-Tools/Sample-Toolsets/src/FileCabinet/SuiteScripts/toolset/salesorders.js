@@ -1,5 +1,5 @@
 /*
- * salesandorders_acp.js
+ * salesorders.js
  * @NApiVersion 2.1
  * @NScriptType CustomTool
  */

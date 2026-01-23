@@ -1,7 +1,7 @@
-<toolset scriptid="custtoolset_salesandorders_acp">
+<toolset scriptid="custtoolset_salesorders">
   <name>Sales and Orders Tools</name>
-  <scriptfile>[/SuiteScripts/salesandorders_acp.js]</scriptfile>
-  <rpcschema>[/SuiteScripts/salesandorders_schema_acp.json]</rpcschema>
+  <scriptfile>[/SuiteScripts/toolset/salesorders.js]</scriptfile>
+  <rpcschema>[/SuiteScripts/toolset/salesorders_schema.json]</rpcschema>
   <exposetoaiconnector>T</exposetoaiconnector>
  <permissions>
     <permission>
