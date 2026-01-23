@@ -3,7 +3,7 @@ import Query from 'N/query/instance'
 import QueryResult from 'N/query/result'
 import QueryIterator from 'N/query/iterator'
 import ResultSet from 'N/query/resultSet'
-import inventory from "../src/FileCabinet/SuiteScripts/inventory_acp.js"
+import inventory from "../src/FileCabinet/SuiteScripts/toolset/inventory.js"
 import { handleTestResultAndErrors } from './__utils__/handleErrors.js';
 
 jest.mock('N/query');

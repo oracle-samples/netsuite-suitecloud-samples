@@ -1,0 +1,36 @@
+<toolset scriptid="custtoolset_salesorders">
+  <name>Sales and Orders Tools</name>
+  <scriptfile>[/SuiteScripts/toolset/salesorders.js]</scriptfile>
+  <rpcschema>[/SuiteScripts/toolset/salesorders_schema.json]</rpcschema>
+  <exposetoaiconnector>T</exposetoaiconnector>
+ <permissions>
+    <permission>
+      <permkey>TRAN_FIND</permkey>
+      <permlevel>VIEW</permlevel>
+    </permission>
+    <permission>
+      <permkey>TRAN_SALESORD</permkey>
+      <permlevel>VIEW</permlevel>
+    </permission>
+     <permission>
+      <permkey>LIST_CUSTJOB</permkey>
+      <permlevel>VIEW</permlevel>
+    </permission>
+     <permission>
+      <permkey>LIST_EMPLOYEE_RECORD</permkey>
+      <permlevel>VIEW</permlevel>
+    </permission>
+    <permission>
+      <permkey>LIST_EMPLOYEE</permkey>
+      <permlevel>VIEW</permlevel>
+    </permission>
+     <permission>
+      <permkey>TRAN_CUSTINVC</permkey>
+      <permlevel>VIEW</permlevel>
+    </permission>
+    <permission>
+      <permkey>REPO_BOOKINGS</permkey>
+      <permlevel>VIEW</permlevel>
+    </permission>
+    </permissions>
+</toolset>

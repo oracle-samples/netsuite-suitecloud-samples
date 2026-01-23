@@ -1,0 +1,12 @@
+<toolset scriptid="custtoolset_inventory">
+  <name>General Tools</name>
+  <scriptfile>[/SuiteScripts/toolset/inventory.js]</scriptfile>
+  <rpcschema>[/SuiteScripts/toolset/inventory_schema.json]</rpcschema>
+  <exposetoaiconnector>T</exposetoaiconnector>
+  <permissions>
+      <permission>
+      <permkey>LIST_ITEM</permkey>
+      <permlevel>VIEW</permlevel>
+    </permission>
+  </permissions>
+</toolset>

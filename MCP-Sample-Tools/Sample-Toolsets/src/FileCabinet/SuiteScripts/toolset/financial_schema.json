@@ -1,0 +1,28 @@
+{
+	"tools": [
+		{
+			"name": "getFinancialPerformance",
+			"description": "Generate a simple financial performance summary of your NetSuite Account. Always use MM/DD/YYYY format for dates.",
+			"inputSchema": {
+				"type": "object",
+				"properties": {
+					"dateFrom": {
+						"type": "string",
+						"description": "Start date for date range filter in the following format: MM/DD/YYYY"
+					},
+					"dateTo": {
+						"type": "string",
+						"description": "End date for date range filter in the following format: MM/DD/YYYY"
+					}
+				},
+				"required": ["dateFrom", "dateTo"]
+			},
+			"annotations": {
+				"title": "Get Financial Performance",
+				"readOnlyHint": true,
+				"idempotentHint": true,
+				"openWorldHint": false
+			}
+		}
+	]
+}

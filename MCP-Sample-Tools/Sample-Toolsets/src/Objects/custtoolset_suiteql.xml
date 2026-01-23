@@ -1,0 +1,6 @@
+<toolset scriptid="custtoolset_suiteql">
+  <name>SuiteQL Tools</name>
+  <scriptfile>[/SuiteScripts/toolset/suiteql.js]</scriptfile>
+  <rpcschema>[/SuiteScripts/toolset/suiteql_schema.json]</rpcschema>
+  <exposetoaiconnector>T</exposetoaiconnector>
+</toolset>
