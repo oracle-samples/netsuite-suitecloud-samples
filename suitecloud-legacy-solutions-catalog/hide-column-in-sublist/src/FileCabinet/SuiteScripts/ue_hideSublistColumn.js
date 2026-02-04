@@ -19,13 +19,16 @@ define(['N/ui/serverWidget', 'N/log'], (serverWidget, log) => {
       hideColumnField(context.form, 'item', 'item')
     }
     
+    
     //Is this linting correctly?
 
+    //According to the rules, the spaces here should be cleaned
 
 
-    //Will this run .esLint?
 
-    
+
+
+
     console.log("lint check")
   }
   /**
