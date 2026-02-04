@@ -1,0 +1,52 @@
+name: Lint and Test Subfolders
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch: # This adds a "Run manually" button in GitHub
+
+jobs:
+  detect-and-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Important for git diff to work
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 'lts/*'
+
+      - name: Get changed folders
+        id: vars
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            CHANGED=$(git diff --name-only origin/${{ github.base_ref }}...${{ github.sha }} | awk -F/ '{print $1}' | sort -u)
+          else
+            # For pushes, compare to previous commit
+            CHANGED=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }} | awk -F/ '{print $1}' | sort -u)
+          fi
+          
+          # Clean up and check for package.json
+          VALID_FOLDERS=""
+          for FOLDER in $CHANGED; do
+            if [ -f "$FOLDER/package.json" ]; then
+              VALID_FOLDERS="$VALID_FOLDERS $FOLDER"
+            fi
+          done
+          echo "folders=$VALID_FOLDERS" >> $GITHUB_OUTPUT
+
+      - name: Install, Lint, and Test
+        run: |
+          for FOLDER in ${{ steps.vars.outputs.folders }}; do
+            echo "Processing $FOLDER..."
+            cd $FOLDER
+            npm ci
+            npm run lint
+            npm run test
+            cd ..
+          done

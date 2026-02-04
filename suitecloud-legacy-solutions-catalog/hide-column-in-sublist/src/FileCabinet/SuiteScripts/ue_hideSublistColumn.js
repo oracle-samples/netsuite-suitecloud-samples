@@ -18,6 +18,15 @@ define(['N/ui/serverWidget', 'N/log'], (serverWidget, log) => {
     if (context.type === context.UserEventType.EDIT) {
       hideColumnField(context.form, 'item', 'item')
     }
+    
+    //Is this linting correctly?
+
+
+
+    //Will this run .esLint?
+
+    
+    console.log("lint check")
   }
   /**
    * @param {N/ui/serverWidget#Form} formObj Form where the column field exists.
