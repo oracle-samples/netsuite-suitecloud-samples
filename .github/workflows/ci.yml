@@ -1,11 +1,12 @@
-name: Lint and Test Subfolders
+name: PR Lint and Test
 
 on:
-  push:
-    branches: [ main ]
   pull_request:
-    branches: [ main ]
-  workflow_dispatch: # This adds a "Run manually" button in GitHub
+    branches:
+      - main
+  push:
+    branches:
+      - lint-ci
 
 jobs:
   detect-and-run:
@@ -14,39 +15,48 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0 # Important for git diff to work
+          fetch-depth: 0 
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 'lts/*'
 
-      - name: Get changed folders
+      - name: Identify Changed Projects
         id: vars
         run: |
+          # If it's a PR, compare the branch to the target (main)
           if [ "${{ github.event_name }}" = "pull_request" ]; then
+            echo "Detecting changes for PR..."
             CHANGED=$(git diff --name-only origin/${{ github.base_ref }}...${{ github.sha }} | awk -F/ '{print $1}' | sort -u)
           else
-            # For pushes, compare to previous commit
+            echo "Detecting changes for Push..."
             CHANGED=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }} | awk -F/ '{print $1}' | sort -u)
           fi
           
-          # Clean up and check for package.json
+          # Filter for directories containing package.json
           VALID_FOLDERS=""
           for FOLDER in $CHANGED; do
             if [ -f "$FOLDER/package.json" ]; then
               VALID_FOLDERS="$VALID_FOLDERS $FOLDER"
             fi
           done
+          
+          echo "Found folders: $VALID_FOLDERS"
           echo "folders=$VALID_FOLDERS" >> $GITHUB_OUTPUT
 
-      - name: Install, Lint, and Test
+      - name: Run Lint and Test
+        if: steps.vars.outputs.folders != ''
         run: |
           for FOLDER in ${{ steps.vars.outputs.folders }}; do
-            echo "Processing $FOLDER..."
+            echo "--- Processing $FOLDER ---"
             cd $FOLDER
             npm ci
             npm run lint
             npm run test
             cd ..
           done
+
+      - name: No Changes Found
+        if: steps.vars.outputs.folders == ''
+        run: echo "No subfolders with package.json were modified. Skipping tests."
