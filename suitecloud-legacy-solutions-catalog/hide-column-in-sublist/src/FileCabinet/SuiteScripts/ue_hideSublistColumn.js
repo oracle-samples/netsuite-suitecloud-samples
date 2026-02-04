@@ -23,13 +23,15 @@ define(['N/ui/serverWidget', 'N/log'], (serverWidget, log) => {
     //Is this linting correctly?
 
     //According to the rules, the spaces here should be cleaned
-
-
-
-
-
-
     console.log("lint check")
+
+    
+
+
+
+
+
+    //More modifications with spaces. Should be linted.
   }
   /**
    * @param {N/ui/serverWidget#Form} formObj Form where the column field exists.

@@ -1,62 +1,49 @@
-name: PR Lint and Test
+name: PR-Lint
 
 on:
   pull_request:
-    branches:
-      - main
+    branches: [main]
   push:
-    branches:
-      - lint-ci
+    branches: [lint-ci]
 
 jobs:
-  detect-and-run:
+  test:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0 
+          fetch-depth: 0
 
-      - name: Setup Node.js
+      - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 'lts/*'
 
-      - name: Identify Changed Projects
+      - name: Identify Changes
         id: vars
         run: |
-          # If it's a PR, compare the branch to the target (main)
-          if [ "${{ github.event_name }}" = "pull_request" ]; then
-            echo "Detecting changes for PR..."
-            CHANGED=$(git diff --name-only origin/${{ github.base_ref }}...${{ github.sha }} | awk -F/ '{print $1}' | sort -u)
-          else
-            echo "Detecting changes for Push..."
-            CHANGED=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }} | awk -F/ '{print $1}' | sort -u)
-          fi
-          
-          # Filter for directories containing package.json
-          VALID_FOLDERS=""
-          for FOLDER in $CHANGED; do
-            if [ -f "$FOLDER/package.json" ]; then
-              VALID_FOLDERS="$VALID_FOLDERS $FOLDER"
+          git fetch origin main --depth=1
+          FILES=$(git diff --name-only origin/main...HEAD)
+          echo "Files: $FILES"
+          VALID=""
+          for FILE in $FILES; do
+            FOLDER=$(echo "$FILE" | cut -d/ -f1)
+            if [ -d "$FOLDER" ] && [ -f "$FOLDER/package.json" ]; then
+              if [[ ! "$VALID" =~ "$FOLDER" ]]; then
+                VALID="$VALID $FOLDER"
+              fi
             fi
           done
-          
-          echo "Found folders: $VALID_FOLDERS"
-          echo "folders=$VALID_FOLDERS" >> $GITHUB_OUTPUT
+          echo "folders=$VALID" >> $GITHUB_OUTPUT
 
-      - name: Run Lint and Test
+      - name: Run Tools
         if: steps.vars.outputs.folders != ''
         run: |
           for FOLDER in ${{ steps.vars.outputs.folders }}; do
-            echo "--- Processing $FOLDER ---"
             cd $FOLDER
             npm ci
             npm run lint
             npm run test
             cd ..
           done
-
-      - name: No Changes Found
-        if: steps.vars.outputs.folders == ''
-        run: echo "No subfolders with package.json were modified. Skipping tests."
