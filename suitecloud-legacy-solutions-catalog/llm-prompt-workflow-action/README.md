@@ -47,21 +47,21 @@ The customization for this use case includes:
 * A script deployment with return type TEXT to enable the "Store Result In" workflow feature
 
 # Test the Solution
-1. Create a workflow on a record type (e.g., Sales Order) by going to Customization > Workflow > Workflows > New
-2. Set a Record Type and a Sub Type (e.g., RECORD TYPE > Transaction, SUB TYPES > Order)
-3. Set a name (e.g., LLM Prompt Workflow Action) and an optional ID (custworkflow_llm_prompt)
-4. Set the initiation of the workflow (e.g., EVENT BASED)
-5. Under Event Definition, set the state of the workflow (e.g., ON CREATE)
-6. Assign a trigger to the workflow (e.g., TRIGGER TYPE > After Record Submit)
-7. Save the workflow to be redirected to the Workflow Editor
-8. Click the Entry state (or create a new state)
-9. Add a New Action > Custom Action (e.g, LLM Prompt (Custom))
-10. Set the action's trigger (e.g., TIGGER ON > Entry)
-11. Set a field to store the workflow's result (e.g., Memo)
-12. Fill in the VALUE for the Prompt Text parameter (e.g., "Summarize this record in one sentence")
-13. Save the New Action
-14. Create or edit a record under the workflow trigger conditions (e.g., Transactions > Sales > Enter Orders)
-15. After the record is saved, verify that the target field contains an LLM-generated response based on your prompt and the record's data (e.g., Primary Information > Memo)
+1. Create a workflow on a record type (e.g., Sales Order) by going to Customization > Workflow > Workflows > New.
+2. Set a Record Type and a Sub Type (e.g., RECORD TYPE > Transaction, SUB TYPES > Order).
+3. Set a name (e.g., LLM Prompt Workflow Action) and an optional ID (custworkflow_llm_prompt).
+4. Set the initiation of the workflow (e.g., EVENT BASED).
+5. Under Event Definition, set the state of the workflow (e.g., ON CREATE).
+6. Assign a trigger to the workflow (e.g., TRIGGER TYPE > After Record Submit).
+7. Save the workflow to be redirected to the Workflow Editor.
+8. Click the Entry state (or create a new state).
+9. Add a New Action > Custom Action (e.g, LLM Prompt (Custom)).
+10. Set the action's trigger (e.g., TRIGGER ON > Entry).
+11. Set a field to store the workflow's result (e.g., Memo).
+12. Fill in the VALUE for the Prompt Text parameter (e.g., "Summarize this record in one sentence").
+13. Save the New Action.
+14. Create or edit a record under the workflow trigger conditions (e.g., Transactions > Sales > Enter Orders).
+15. After the record is saved, verify that the target field contains an LLM-generated response based on your prompt and the record's data (e.g., Primary Information > Memo).
 
 ## [License](./LICENSE.txt)
 Copyright (c) 2026 Oracle and/or its affiliates The Universal Permissive License (UPL), Version 1.0.

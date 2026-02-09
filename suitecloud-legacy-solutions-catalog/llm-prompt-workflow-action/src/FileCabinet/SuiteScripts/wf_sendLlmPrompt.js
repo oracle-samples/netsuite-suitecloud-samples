@@ -12,7 +12,7 @@ define(['N/llm', 'N/record', 'N/error', 'N/runtime', 'N/log'],
      */ (llm, record, error, runtime, log) => {
     // Domain Model: LLMPromptRequest
     class LLMPromptRequest {
-      constructor ({ prompt, currentRecord }) {
+      constructor({ prompt, currentRecord }) {
         this.prompt = prompt
         this.currentRecord = currentRecord
       }
@@ -20,19 +20,19 @@ define(['N/llm', 'N/record', 'N/error', 'N/runtime', 'N/log'],
 
     // Domain Model: LLMPromptResponse
     class LLMPromptResponse {
-      constructor ({ content }) {
+      constructor({ content }) {
         this.content = content
       }
     }
 
     // Port: LLMServicePort
     class LLMServicePort {
-      async sendPrompt (llmPromptRequest) { throw new Error('Not implemented') }
+      async sendPrompt(llmPromptRequest) { throw new Error('Not implemented') }
     }
 
     // Adapter: LLMServiceAdapter (uses N/llm)
     class LLMServiceAdapter extends LLMServicePort {
-      async sendPrompt (llmPromptRequest) {
+      async sendPrompt(llmPromptRequest) {
         log.audit('LLM Request', llmPromptRequest)
         log.audit('LLM Remaining Free Usage', await llm.getRemainingFreeUsage.promise())
         try {
@@ -65,7 +65,7 @@ define(['N/llm', 'N/record', 'N/error', 'N/runtime', 'N/log'],
 
     // Application Service: Orchestrates prompt, response, record update
     class LLMWorkflowActionService {
-      constructor ({ llmService, logger }) {
+      constructor({ llmService, logger }) {
         this.llmService = llmService // Port (interface)
         this.logger = logger
       }
@@ -74,7 +74,7 @@ define(['N/llm', 'N/record', 'N/error', 'N/runtime', 'N/log'],
              * Executes the workflow action
              * @param {Object} context NetSuite workflow context
              */
-      async execute (context) {
+      async execute(context) {
         // Get prompt text from a script parameter set in custom action configuration
         const scriptObj = runtime.getCurrentScript()
         const promptText = scriptObj.getParameter({ name: 'custscript_llm_prompttext' }) // param id should match what's in SDF
@@ -102,7 +102,7 @@ define(['N/llm', 'N/record', 'N/error', 'N/runtime', 'N/log'],
          * Main workflowAction entry point
          * @param {Object} context WorkflowActionScriptContext
          */
-    async function onAction (context) {
+    async function onAction(context) {
       const llmService = new LLMServiceAdapter()
       const appService = new LLMWorkflowActionService({ llmService, logger: log })
       // Return the model result so workflow "store result in" captures it
