@@ -30,7 +30,7 @@ beforeEach(() => {
 });
 
 describe('wf_sendLlmPrompt script test', () => {
-    
+
     it('should successfully execute onAction and return LLM response', async () => {
         // given
         const context = {
@@ -44,7 +44,7 @@ describe('wf_sendLlmPrompt script test', () => {
         });
 
         llm.getRemainingFreeUsage.promise.mockResolvedValue(100);
-        
+
         llm.generateText.promise.mockResolvedValue({ text: mockLlmResponse });
 
         const result = await script.onAction(context);
@@ -59,7 +59,7 @@ describe('wf_sendLlmPrompt script test', () => {
     it('should throw an error if the prompt parameter is too short', async () => {
         // given
         const context = { newRecord: { id: 123 } };
-        
+
         runtime.getCurrentScript.mockReturnValue({
             getParameter: jest.fn().mockReturnValue('abcd') // Too short (< 5)
         });
@@ -73,7 +73,7 @@ describe('wf_sendLlmPrompt script test', () => {
     it('should handle LLM request failure and throw LLM_REQUEST_FAILED', async () => {
 
         const context = { newRecord: { id: 123 } };
-        
+
         runtime.getCurrentScript.mockReturnValue({
             getParameter: jest.fn().mockReturnValue('Valid Long Prompt')
         });
