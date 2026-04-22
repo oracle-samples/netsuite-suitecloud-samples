@@ -1,0 +1,8 @@
+<toolset scriptid="custtoolset_helloworld_app">
+  <name>Hello World App</name>
+  <scriptfile>[/SuiteScripts/helloworld_app/helloworld_app.js]</scriptfile>
+  <rpcschema>[/SuiteScripts/helloworld_app/helloworld_app_schema.json]</rpcschema>
+  <exposetoaiconnector>T</exposetoaiconnector>
+  <permissions>
+  </permissions>
+</toolset>

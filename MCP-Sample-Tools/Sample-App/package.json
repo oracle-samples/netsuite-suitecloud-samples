@@ -1,0 +1,17 @@
+{
+  "name": "suitecloud-project",
+  "version": "1.0.0",
+  "workspaces": [
+    "app/helloworld_app"
+  ],
+  "scripts": {
+    "build:submodules": "gulp build:submodules",
+    "build": "gulp build",
+    "helloworld_app": "INCLUDE_HELLOWORLD_APP=true npm run build",
+    "clean": "npx --yes rimraf node_modules package-lock.json app/helloworld_app/node_modules app/helloworld_app/package-lock.json"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "rimraf": "^5.0.7"
+  }
+}
