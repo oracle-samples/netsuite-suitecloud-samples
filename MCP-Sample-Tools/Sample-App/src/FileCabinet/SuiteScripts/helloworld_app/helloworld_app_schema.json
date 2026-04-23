@@ -1,0 +1,29 @@
+{
+  "tools": [
+    {
+      "name": "helloworld_app",
+      "description": "Interactive Hello World MCP App.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string",
+            "description": "Optional message passed to the Hello World MCP App."
+          }
+        },
+        "required": []
+      },
+      "annotations": {
+        "title": "NetSuite Hello World MCP App",
+        "readOnlyHint": true,
+        "idempotentHint": true,
+        "openWorldHint": false
+      },
+      "_meta": {
+        "ui": {
+          "resourceUri": "ui://SuiteScripts/helloworld_app/mcp-app.html"
+        }
+      }
+    }
+  ]
+}

@@ -11,7 +11,8 @@ NetSuite 2026.1 includes changes to the custom tool script type and its correspo
 
 To view custom tool script execution logs in NetSuite 2026.1, you must update your custom tool implementations to use the new specifications and the `toolset` SDF object after your account is upgraded. New scripts should also use these specifications if you want to use the logging feature. For details and step-by-step instructions on how to update your custom tools, read [How to Update Custom Tool Scripts for Execution Log Support in NetSuite 2026.1 (SuiteAnswers ID: 1024036)](https://suiteanswers.custhelp.com/app/answers/detail/a_id/1024036) (NetSuite login required).
 
-This repository has two sample SuiteCloud projects:
+This repository includes the following sample SuiteCloud projects:
 
 - [Sample Toolsets for 2026.1](./Sample-Toolsets/) - This sample uses the new specifications for custom tool script and the `toolset` SDF object. It works on NetSuite 2026.1 accounts, but cannot be deployed to NetSuite 2025.2 accounts.
+- [Sample MCP App](./Sample-App/) - This sample demonstrates a minimal NetSuite MCP App implemented as a custom tool in an Account Customization Project (ACP), with a bundled HTML UI that is rendered by an MCP-capable AI client.
 - [Sample Tools for 2025.2](./Sample-Tools/) - This sample uses the old specifications for custom tool script and the `tool` SDF object. You can deploy it to NetSuite 2025.2 or 2026.1 accounts, but script execution logs won't be available.
