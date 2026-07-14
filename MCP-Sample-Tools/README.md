@@ -15,4 +15,3 @@ This repository includes the following sample SuiteCloud projects:
 
 - [Sample Toolsets for 2026.1](./Sample-Toolsets/) - This sample uses the new specifications for custom tool script and the `toolset` SDF object. It works on NetSuite 2026.1 accounts, but cannot be deployed to NetSuite 2025.2 accounts.
 - [Sample MCP App](./Sample-App/) - This sample demonstrates a minimal NetSuite MCP App implemented as a custom tool in an Account Customization Project (ACP), with a bundled HTML UI that is rendered by an MCP-capable AI client.
-- [Sample Tools for 2025.2](./Sample-Tools/) - This sample uses the old specifications for custom tool script and the `tool` SDF object. You can deploy it to NetSuite 2025.2 or 2026.1 accounts, but script execution logs won't be available.
