@@ -1,0 +1,60 @@
+{
+  "tools": [
+    {
+      "name": "getNewHireEquipmentRequirements",
+      "description": "Find active employees whose hire date is within the next 14 days. Returns each employee's name, start date, role, assigned project, work location, manager, onboarding status, and a credentials gap when credentials are not on the employee record. Call this before the New-hire equipment skill and before creating a purchase order. This read does not choose equipment or change records.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "windowDays": {
+            "type": "integer",
+            "description": "Look-ahead window. Always 14."
+          },
+          "employeeCount": {
+            "type": "integer"
+          },
+          "employees": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "employeeId": {"type": "string"},
+                "employeeNumber": {"type": "string"},
+                "name": {"type": "string"},
+                "startDate": {"type": "string"},
+                "role": {"type": "string"},
+                "assignedProject": {"type": "string"},
+                "workLocation": {"type": "string"},
+                "workLocationId": {"type": "string"},
+                "manager": {"type": "string"},
+                "onboardingStatus": {"type": "string"},
+                "credentials": {"type": "string"},
+                "credentialsVerification": {"type": "string"},
+                "isProjectResource": {"type": "string"},
+                "subsidiaryId": {"type": "string"}
+              }
+            }
+          },
+          "warnings": {
+            "type": "array",
+            "items": {"type": "string"}
+          }
+        },
+        "required": ["windowDays", "employeeCount", "employees", "warnings"]
+      },
+      "annotations": {
+        "title": "Get new-hire equipment requirements",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    }
+  ]
+}

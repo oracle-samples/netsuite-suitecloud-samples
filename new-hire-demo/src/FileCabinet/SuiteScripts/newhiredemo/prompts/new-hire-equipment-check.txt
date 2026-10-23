@@ -1,0 +1,7 @@
+Perform the new-hire equipment check now.
+
+Find every employee whose start date is within the next 14 days. Follow your instructions: call getNewHireEquipmentRequirements, run new-hire-equipment-skill for each employee it returns, then create draft purchase orders only for equipment that skill confirmed. Reuse an existing draft for the same employee and vendor. Do not approve a purchase order, email a vendor, or receive items.
+
+This is a scheduled run. Do not wait for a person. If a value is missing, record the gap and continue with what is verified. If nobody starts in the next 14 days, say so and do not create a purchase order.
+
+Reply with the summary from your instructions: each employee's name, start date, assignment, equipment ordered, draft numbers, items left off the order, and the next action, then the counts of employees reviewed, drafts created, drafts reused, and employees with exceptions.

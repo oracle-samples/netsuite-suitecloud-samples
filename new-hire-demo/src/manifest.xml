@@ -1,0 +1,11 @@
+<manifest projecttype="ACCOUNTCUSTOMIZATION">
+  <projectname>newhiredemo</projectname>
+  <frameworkversion>1.0</frameworkversion>
+  <dependencies>
+    <features>
+      <feature required="true">ACCOUNTING</feature>
+      <feature required="true">SERVERSIDESCRIPTING</feature>
+      <feature required="true">SUBSIDIARIES</feature>
+    </features>
+  </dependencies>
+</manifest>

@@ -1,0 +1,19 @@
+<scheduledagenttrigger scriptid="customscheduledtrigger_nh_equip">
+	<agent>[scriptid=customagent_nh_equip]</agent>
+	<prompt>[/SuiteScripts/newhiredemo/prompts/new-hire-equipment-check.txt]</prompt>
+	<runasrole>[scriptid=customrole_nh_equip]</runasrole>
+	<timeoutseconds>300</timeoutseconds>
+	<schedule>
+		<weekly>
+			<localtime>07:00</localtime>
+			<zoneid>America/New_York</zoneid>
+			<monday>T</monday>
+			<tuesday>F</tuesday>
+			<wednesday>F</wednesday>
+			<thursday>F</thursday>
+			<friday>F</friday>
+			<saturday>F</saturday>
+			<sunday>F</sunday>
+		</weekly>
+	</schedule>
+</scheduledagenttrigger>

@@ -1,0 +1,26 @@
+<agent scriptid="customagent_nh_equip">
+  <name>New-hire equipment agent</name>
+  <description>Looks up employees starting in the next 14 days and their roles. Uses the New-hire equipment skill to decide which equipment should be ordered, then creates a draft purchase order for that equipment.</description>
+  <instructions>[/SuiteScripts/newhiredemo/instructions.txt]</instructions>
+  <skills>
+    <skill>
+      <definition>[scriptid=customskill_nh_equip]</definition>
+    </skill>
+  </skills>
+  <toolsets>
+    <toolset>
+      <definition>[scriptid=custtoolset_nh_equip_req]</definition>
+    </toolset>
+    <toolset>
+      <definition>[scriptid=custtoolset_nh_equip_po]</definition>
+    </toolset>
+  </toolsets>
+  <triggers>
+    <trigger>
+      <type>ASKORACLE</type>
+    </trigger>
+    <trigger>
+      <type>SCHEDULED</type>
+    </trigger>
+  </triggers>
+</agent>
