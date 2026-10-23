@@ -63,7 +63,7 @@ This SDF project does not set the Ask Oracle audience. After deployment, an admi
 4. Grant your role access to the New-hire equipment agent, then in Ask Oracle ask it to perform the new-hire equipment check.
 5. Confirm the reply names the employee and start date, lists the Technician equipment, and cites a purchase order. Open that purchase order. When the account has approval status, it is Pending Approval. To Be Emailed is false. The tool does not create an item receipt. The external ID starts with `nh-equip-` and includes the employee ID and vendor ID.
 6. Run the same check again. The tool returns the existing purchase order for that external ID with `alreadyCreated` true and does not create a second one for the same vendor.
-7. In Agent Management, activate `customscheduledtrigger_nh_equip` only when you want the Monday 07:00 `America/New_York` run. Deploying the object does not turn that run on.
+7. In Agents (Setup > Agent Management > Agents), activate `customscheduledtrigger_nh_equip` only when you want the Monday 07:00 `America/New_York` run. Deploying the object does not turn that run on.
 
 ## [License](./LICENSE.txt)
 Copyright (c) 2026 Oracle and/or its affiliates The Universal Permissive License (UPL), Version 1.0.
