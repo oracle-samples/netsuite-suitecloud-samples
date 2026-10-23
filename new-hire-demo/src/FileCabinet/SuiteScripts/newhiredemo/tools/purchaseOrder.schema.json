@@ -1,0 +1,83 @@
+{
+  "tools": [
+    {
+      "name": "purchase_order",
+      "description": "Create a draft purchase order for verified new-hire equipment. Pass the employeeId from the new-hire search and the equipment lines confirmed by the New-hire equipment skill. Resolves each item by exact name and uses vendorId or that item's preferred vendor. Reuses an existing draft with the same employee and vendor instead of creating a second one. Does not approve, email, or receive the purchase order. Lines whose item or vendor cannot be verified are returned and are not added.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "employeeId": {
+            "type": "string",
+            "description": "Numeric employee internal ID returned by getNewHireEquipmentRequirements."
+          },
+          "vendorId": {
+            "type": "string",
+            "description": "Optional numeric vendor internal ID. When omitted, each item's preferred vendor is used."
+          },
+          "lines": {
+            "type": "array",
+            "description": "Verified equipment to order. Maximum 25 lines.",
+            "items": {
+              "type": "object",
+              "properties": {
+                "itemName": {
+                  "type": "string",
+                  "description": "Exact item name or display name, such as Hard Hat."
+                },
+                "quantity": {
+                  "type": "integer",
+                  "description": "Whole-number quantity from 1 to 99."
+                }
+              },
+              "required": ["itemName", "quantity"]
+            }
+          }
+        },
+        "required": ["employeeId", "lines"],
+        "additionalProperties": false
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "employeeId": {"type": "string"},
+          "employeeName": {"type": "string"},
+          "startDate": {"type": "string"},
+          "drafts": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "internalId": {"type": "string"},
+                "tranId": {"type": "string"},
+                "vendorId": {"type": "string"},
+                "externalId": {"type": "string"},
+                "alreadyCreated": {"type": "boolean"},
+                "approval": {"type": "string"},
+                "status": {"type": "string"}
+              }
+            }
+          },
+          "unverifiedItems": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "itemName": {"type": "string"},
+                "reason": {"type": "string"}
+              }
+            }
+          },
+          "createdCount": {"type": "integer"}
+        },
+        "required": ["employeeId", "drafts", "unverifiedItems", "createdCount"]
+      },
+      "annotations": {
+        "title": "Create draft purchase order",
+        "readOnlyHint": false,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": false
+      }
+    }
+  ]
+}

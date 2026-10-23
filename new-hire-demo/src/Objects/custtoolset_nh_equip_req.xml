@@ -1,0 +1,25 @@
+<toolset scriptid="custtoolset_nh_equip_req">
+  <name>Retrieve new-hire equipment requirements tools</name>
+  <exposetoaiconnector>F</exposetoaiconnector>
+  <exposetonetsuiteagents>T</exposetonetsuiteagents>
+  <scriptfile>[/SuiteScripts/newhiredemo/tools/getNewHireEquipmentRequirements.js]</scriptfile>
+  <rpcschema>[/SuiteScripts/newhiredemo/tools/getNewHireEquipmentRequirements.schema.json]</rpcschema>
+  <permissions>
+    <permission>
+      <permkey>LIST_EMPLOYEE</permkey>
+      <permlevel>VIEW</permlevel>
+    </permission>
+    <permission>
+      <permkey>LIST_EMPLOYEE_RECORD</permkey>
+      <permlevel>VIEW</permlevel>
+    </permission>
+    <permission>
+      <permkey>LIST_FIND</permkey>
+      <permlevel>VIEW</permlevel>
+    </permission>
+    <permission>
+      <permkey>LIST_LOCATION</permkey>
+      <permlevel>VIEW</permlevel>
+    </permission>
+  </permissions>
+</toolset>

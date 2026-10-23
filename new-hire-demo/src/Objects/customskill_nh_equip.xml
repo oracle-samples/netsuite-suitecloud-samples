@@ -1,0 +1,8 @@
+<agentskill scriptid="customskill_nh_equip">
+  <name>new-hire-equipment-skill</name>
+  <displayname>New-hire equipment skill</displayname>
+  <description>Evaluate the equipment a new hire needs from role, project, location, and credentials, then list unmet requirements, items that could not be verified, and recommended next actions.</description>
+  <skillfolder>[/SuiteScripts/newhiredemo/Skills/new-hire-equipment-skill/]</skillfolder>
+  <isinactive>F</isinactive>
+  <ispublic>T</ispublic>
+</agentskill>
